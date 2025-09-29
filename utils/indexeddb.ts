@@ -77,14 +77,20 @@ export class VietnamAdminDB {
           oldWardsStore.createIndex('ward_index', 'ward_index', { unique: false });
           oldWardsStore.createIndex('district_index', 'district_index', { unique: false });
           oldWardsStore.createIndex('province_index', 'province_index', { unique: false });
-          oldWardsStore.createIndex('ward_district_province_index', ['ward_index', 'district_index', 'province_index'], { unique: false });
+          oldWardsStore.createIndex(
+            'ward_district_province_index',
+            ['ward_index', 'district_index', 'province_index'],
+            { unique: false }
+          );
         }
 
         if (!db.objectStoreNames.contains('new_wards')) {
           const newWardsStore = db.createObjectStore('new_wards', { keyPath: 'ward_code' });
           newWardsStore.createIndex('ward_index', 'ward_index', { unique: false });
           newWardsStore.createIndex('province_index', 'province_index', { unique: false });
-          newWardsStore.createIndex('ward_province_index', ['ward_index', 'province_index'], { unique: false });
+          newWardsStore.createIndex('ward_province_index', ['ward_index', 'province_index'], {
+            unique: false,
+          });
         }
 
         if (!db.objectStoreNames.contains('ward_mappings')) {
@@ -195,7 +201,10 @@ export class VietnamAdminDB {
   async getNewWardsByNameAndProvince(wardName: string, provinceName: string): Promise<NewWard[]> {
     if (!this.db) throw new Error('Database not initialized');
 
-    const result = await this.db.getAllFromIndex('new_wards', 'ward_province_index', [wardName, provinceName]);
+    const result = await this.db.getAllFromIndex('new_wards', 'ward_province_index', [
+      wardName,
+      provinceName,
+    ]);
     return result || [];
   }
 
@@ -227,10 +236,18 @@ export class VietnamAdminDB {
     return result || [];
   }
 
-  async getOldWardsByFullAddress(wardName: string, districtName: string, provinceName: string): Promise<OldWard[]> {
+  async getOldWardsByFullAddress(
+    wardName: string,
+    districtName: string,
+    provinceName: string
+  ): Promise<OldWard[]> {
     if (!this.db) throw new Error('Database not initialized');
 
-    const result = await this.db.getAllFromIndex('old_wards', 'ward_district_province_index', [wardName, districtName, provinceName]);
+    const result = await this.db.getAllFromIndex('old_wards', 'ward_district_province_index', [
+      wardName,
+      districtName,
+      provinceName,
+    ]);
     return result || [];
   }
 

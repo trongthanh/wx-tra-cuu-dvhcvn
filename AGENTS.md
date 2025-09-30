@@ -95,23 +95,97 @@ public/              # Public assets
 - The extension includes both light and dark theme support in CSS
 - Always read part of the data files (./data/**) since their number of lines are very large
 
-## Data structure:
+## Data Structure
 
-`data/ward_mappings.json` contains an array of object with following shape:
+### CSV Files
 
+#### old_wards.csv
+Pre-reform ward data with hierarchical administrative structure.
 ```
-[
-  {
-    "old_ward_code": "26881",
-    "old_ward_name": "Phường 12",
-    "old_district_name": "Quận Gò Vấp",
-    "old_province_name": "Thành phố Hồ Chí Minh",
-    "new_ward_code": "26882",
-    "new_ward_name": "Phường An Hội Tây",
-    "new_province_name": "Thành phố Hồ Chí Minh"
-  },
-]
+ward_code,ward_name,district_name,province_name
+"26881","Phường 12","Quận Gò Vấp","Thành phố Hồ Chí Minh"
 ```
+
+#### new_wards.csv
+Post-reform ward data (districts merged into provinces).
+```
+ward_code,ward_name,province_name
+"26882","Phường An Hội Tây","Thành phố Hồ Chí Minh"
+```
+
+#### ward_mappings.csv
+Mapping between old and new ward codes (many-to-many relationship).
+```
+new_ward_code,old_ward_code
+"26882","26881"
+```
+
+#### new_provinces.csv
+Post-reform province data.
+```
+code,name,letter_code,type,alias
+"01","Thành phố Hà Nội","HNI","Thành phố Trung Ương",""
+```
+
+#### old_provinces.csv
+Pre-reform province data.
+```
+code,name,type,alias
+"01","Thành phố Hà Nội","Thành phố Trung ương","Hà Nội,HN,Tp. Hà Nội"
+```
+
+### IndexedDB Schema
+
+#### Object Stores
+
+**old_wards** (keyPath: `ward_code`)
+- Stores pre-reform ward data with district hierarchy
+- Indexes:
+  - `ward_index`: ward_index (normalized ward name)
+  - `district_index`: district_index (normalized district name)
+  - `province_index`: province_index (normalized province name)
+  - `ward_district_province_index`: [ward_index, district_index, province_index]
+  - `district_province_index`: [district_index, province_index]
+  - `province_district`: [province_name, district_name] (for efficient unique district lookup)
+
+**new_wards** (keyPath: `ward_code`)
+- Stores post-reform ward data (no district level)
+- Indexes:
+  - `ward_index`: ward_index (normalized ward name)
+  - `province_index`: province_index (normalized province name)
+  - `ward_province_index`: [ward_index, province_index]
+
+**new_provinces** (keyPath: `code`)
+- Stores post-reform province data
+- Indexes:
+  - `name_index`: name_index (normalized province name)
+  - `letter_code`: letter_code
+
+**old_provinces** (keyPath: `code`)
+- Stores pre-reform province data
+- Indexes:
+  - `name_index`: name_index (normalized province name)
+
+**ward_mappings** (autoIncrement key)
+- Stores many-to-many ward code mappings
+- Indexes:
+  - `old_ward_code`: old_ward_code
+  - `new_ward_code`: new_ward_code
+
+**version_info** (keyPath: `id`)
+- Stores data version information
+- Fields: `id`, `version`, `lastUpdated`
+
+### TypeScript Interfaces
+
+See `utils/indexeddb.ts` for complete type definitions:
+- `OldWard`: ward_code, ward_name, ward_index, district_name, district_index, province_name, province_index
+- `NewWard`: ward_code, ward_name, ward_index, province_name, province_index
+- `NewProvince`: code, name, name_index, letter_code, type, alias
+- `OldProvince`: code, name, name_index, type, alias
+- `WardMapping`: new_ward_code, old_ward_code
+- `VersionInfo`: version, lastUpdated
+
 
 ## Implementation Details
 
@@ -139,3 +213,7 @@ public/              # Public assets
 - **CSV Processing**: Handles large datasets from Vietnamese government sources
 - **Content Script Injection**: Real-time web page enhancement across all domains
 
+## IMMEDIATE NOTES:
+
+- There is no public release YET, therefore, do not change DB version as well as adding any DB migration condition. Treat DB schema as the very first one.
+- For any field used as index, create a new colum `_index` processed with the normalizeStr function to remove any Vietnamese diacritics and change case to all lower.

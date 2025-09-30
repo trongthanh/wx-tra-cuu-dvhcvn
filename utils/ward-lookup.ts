@@ -1,5 +1,4 @@
 import { VietnamAdminDB, OldWard, NewWard, WardMapping } from './indexeddb';
-import { normalizeStr } from './normalizeStr';
 
 export class WardLookupService {
   private db: VietnamAdminDB | null = null;
@@ -60,47 +59,37 @@ export class WardLookupService {
 
   async findNewWardsByName(wardName: string): Promise<NewWard[]> {
     await this.init();
-    const normalizedWardName = normalizeStr(wardName);
-    return this.db!.getNewWardsByName(normalizedWardName);
+    return this.db!.getNewWardsByName(wardName);
   }
 
   async findNewWardsByNameAndProvince(wardName: string, provinceName: string): Promise<NewWard[]> {
     await this.init();
-    const normalizedWardName = normalizeStr(wardName);
-    const normalizedProvinceName = normalizeStr(provinceName);
-    return this.db!.getNewWardsByNameAndProvince(normalizedWardName, normalizedProvinceName);
+    return this.db!.getNewWardsByNameAndProvince(wardName, provinceName);
   }
 
   async findOldWardsByName(wardName: string): Promise<OldWard[]> {
     await this.init();
-    const normalizedWardName = normalizeStr(wardName);
-    return this.db!.getOldWardsByName(normalizedWardName);
+    return this.db!.getOldWardsByName(wardName);
   }
 
   async findOldWardsByDistrict(districtName: string): Promise<OldWard[]> {
     await this.init();
-    const normalizedDistrictName = normalizeStr(districtName);
-    return this.db!.getOldWardsByDistrict(normalizedDistrictName);
+    return this.db!.getOldWardsByDistrict(districtName);
   }
 
   async findOldWardsByProvince(provinceName: string): Promise<OldWard[]> {
     await this.init();
-    const normalizedProvinceName = normalizeStr(provinceName);
-    return this.db!.getOldWardsByProvince(normalizedProvinceName);
+    return this.db!.getOldWardsByProvince(provinceName);
   }
 
   async findNewWardsByProvince(provinceName: string): Promise<NewWard[]> {
     await this.init();
-    const normalizedProvinceName = normalizeStr(provinceName);
-    return this.db!.getNewWardsByProvince(normalizedProvinceName);
+    return this.db!.getNewWardsByProvince(provinceName);
   }
 
   async findOldWardsByFullAddress(wardName: string, districtName: string, provinceName: string): Promise<OldWard[]> {
     await this.init();
-    const normalizedWardName = normalizeStr(wardName);
-    const normalizedDistrictName = normalizeStr(districtName);
-    const normalizedProvinceName = normalizeStr(provinceName);
-    return this.db!.getOldWardsByFullAddress(normalizedWardName, normalizedDistrictName, normalizedProvinceName);
+    return this.db!.getOldWardsByFullAddress(wardName, districtName, provinceName);
   }
 
   close(): void {

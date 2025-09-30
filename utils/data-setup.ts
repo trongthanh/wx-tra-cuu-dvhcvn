@@ -1,5 +1,5 @@
 import { deleteDB } from 'idb';
-import { VietnamAdminDB, OldWard, NewWard, WardMapping } from './indexeddb';
+import { VietnamAdminDB, OldWard, NewWard, WardMapping, NewProvince, OldProvince } from './indexeddb';
 import { parseCSV } from './csv-parser';
 import { normalizeStr } from './normalizeStr';
 
@@ -44,10 +44,12 @@ export class DataSetup {
     await this.db.clearAllData();
 
     // Load and parse CSV files
-    const [oldWardsData, newWardsData, wardMappingsData] = await Promise.all([
+    const [oldWardsData, newWardsData, wardMappingsData, newProvincesData, oldProvincesData] = await Promise.all([
       this.loadCSVFile('/data/old_wards.csv'),
       this.loadCSVFile('/data/new_wards.csv'),
       this.loadCSVFile('/data/ward_mappings.csv'),
+      this.loadCSVFile('/data/new_provinces.csv'),
+      this.loadCSVFile('/data/old_provinces.csv'),
     ]);
 
     // Transform and insert data
@@ -74,18 +76,37 @@ export class DataSetup {
       old_ward_code: row.old_ward_code,
     }));
 
+    const newProvinces: NewProvince[] = newProvincesData.map((row) => ({
+      code: row.code,
+      name: row.name,
+      name_index: normalizeStr(row.name),
+      letter_code: row.letter_code,
+      type: row.type,
+      alias: row.alias,
+    }));
+
+    const oldProvinces: OldProvince[] = oldProvincesData.map((row) => ({
+      code: row.code,
+      name: row.name,
+      name_index: normalizeStr(row.name),
+      type: row.type,
+      alias: row.alias,
+    }));
+
     // Insert data into IndexedDB
     await Promise.all([
       this.db.insertOldWards(oldWards),
       this.db.insertNewWards(newWards),
       this.db.insertWardMappings(wardMappings),
+      this.db.insertNewProvinces(newProvinces),
+      this.db.insertOldProvinces(oldProvinces),
     ]);
 
     // Update version
     await this.db.setVersion(DATA_VERSION);
 
     console.log(
-      `Data loaded: ${oldWards.length} old wards, ${newWards.length} new wards, ${wardMappings.length} mappings`
+      `Data loaded: ${oldWards.length} old wards, ${newWards.length} new wards, ${wardMappings.length} mappings, ${newProvinces.length} new provinces, ${oldProvinces.length} old provinces`
     );
   }
 

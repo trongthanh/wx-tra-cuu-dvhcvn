@@ -33,4 +33,5 @@ export default defineBackground(() => {
   });
   // FIXME:: expose to windows for testing
   globalThis.wardLookup = wardLookup;
+  globalThis.db = dataSetup.getDatabase();
 });

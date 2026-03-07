@@ -1,3 +1,9 @@
+# local
+data/
+.agents/
+.claude/
+
+
 # Logs
 logs
 *.log

@@ -63,6 +63,10 @@ public/              # Public assets
 └── wxt.svg         # WXT logo
 ```
 
+### WXT development guide
+
+To get up-to-date documentation: https://wxt.dev/knowledge/index.json
+
 ### Configuration
 - **TypeScript**: Configured through `.wxt/tsconfig.json` with strict mode enabled
 - **Path Aliases**: `@` and `~` map to project root for imports
@@ -149,7 +153,7 @@ code,name,type,alias
   - `province_district`: [province_name, district_name] (for efficient unique district lookup)
 
 **new_wards** (keyPath: `ward_code`)
-- Stores post-reform ward data (no district level)
+- Stores post-reform ward data (no district level)/var/folders/hf/j1b_ftlj4dqbd37ntn7jh7jw0000gp/T/TemporaryItems/NSIRD_screencaptureui_Tu1SJG/Screenshot\ 2026-03-07\ at\ 13.58.54.png 
 - Indexes:
   - `ward_index`: ward_index (normalized ward name)
   - `province_index`: province_index (normalized province name)

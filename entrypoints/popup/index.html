@@ -1,13 +1,108 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Popup Title</title>
+    <title>Tra cứu đơn vị hành chính</title>
     <meta name="manifest.type" content="browser_action" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="header">
+        <h1>Tra cứu Đơn Vị Hành Chính</h1>
+      </header>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="new-to-old">Mới &rarr; Cũ</button>
+        <button class="tab" data-tab="old-to-new">Cũ &rarr; Mới</button>
+        <button class="tab" data-tab="about">Giới thiệu</button>
+      </nav>
+
+      <!-- Tab 1: New to Old -->
+      <div class="tab-content active" id="tab-new-to-old">
+        <div class="quick-search-group">
+          <label for="quick-search">Tìm nhanh <button type="button" class="help-btn" data-help="new">?</button></label>
+          <div class="quick-search-wrapper">
+            <input
+              type="text"
+              id="quick-search"
+              placeholder="Nhập tên phường/xã, tỉnh/thành..."
+              autocomplete="off"
+            />
+            <div id="quick-search-results" class="quick-search-dropdown"></div>
+          </div>
+        </div>
+        <div class="form-divider"><span>hoặc chọn thủ công</span></div>
+        <div class="form-group">
+          <label for="new-province">Tỉnh/Thành phố mới</label>
+          <select id="new-province">
+            <option value="">-- Chọn tỉnh/thành --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="new-ward">Phường/Xã mới</label>
+          <select id="new-ward" disabled>
+            <option value="">-- Chọn phường/xã --</option>
+          </select>
+        </div>
+        <div id="new-to-old-result" class="result-area"></div>
+      </div>
+
+      <!-- Tab 2: Old to New -->
+      <div class="tab-content" id="tab-old-to-new">
+        <div class="quick-search-group">
+          <label for="old-quick-search">Tìm nhanh <button type="button" class="help-btn" data-help="old">?</button></label>
+          <div class="quick-search-wrapper">
+            <input
+              type="text"
+              id="old-quick-search"
+              placeholder="Nhập tên phường/xã, quận/huyện, tỉnh/thành..."
+              autocomplete="off"
+            />
+            <div id="old-quick-search-results" class="quick-search-dropdown"></div>
+          </div>
+        </div>
+        <div class="form-divider"><span>hoặc chọn thủ công</span></div>
+        <div class="form-group">
+          <label for="old-province">Tỉnh/Thành phố cũ</label>
+          <select id="old-province">
+            <option value="">-- Chọn tỉnh/thành --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="old-district">Quận/Huyện cũ</label>
+          <select id="old-district" disabled>
+            <option value="">-- Chọn quận/huyện --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="old-ward">Phường/Xã cũ</label>
+          <select id="old-ward" disabled>
+            <option value="">-- Chọn phường/xã --</option>
+          </select>
+        </div>
+        <div id="old-to-new-result" class="result-area"></div>
+      </div>
+
+      <!-- Tab 3: About -->
+      <div class="tab-content" id="tab-about">
+        <div class="about-section">
+          <h2>Tra cứu Đơn vị Hành chính</h2>
+          <p>
+            Tiện ích giúp tra cứu tên đơn vị hành chính (phường, xã, quận, huyện) sau cải cách hành
+            chính 2025.
+          </p>
+          <h3>Tính năng</h3>
+          <ul>
+            <li><strong>Mới &rarr; Cũ:</strong> Tra cứu tên cũ từ tên mới (sau cải cách)</li>
+            <li><strong>Cũ &rarr; Mới:</strong> Tra cứu tên mới từ tên cũ (trước cải cách)</li>
+            <li><strong>Tự động nhận diện:</strong> Tô sáng tên đơn vị cũ trên trang web</li>
+          </ul>
+          <h3>Phiên bản</h3>
+          <p class="version-text">v0.1.0</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="./main.ts"></script>
   </body>
 </html>

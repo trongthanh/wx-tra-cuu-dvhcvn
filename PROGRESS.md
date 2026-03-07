@@ -298,6 +298,43 @@ Seed data via a direct `VietnamAdminDB` instance; service under test shares the 
 
 ---
 
+---
+
+## Completed: Popup UI with Quick Search
+
+### Task: Implement lookup popup with quick search inputs
+**Date**: 2026-03-07
+**Status**: ✅ Complete
+
+#### What was added
+
+**Popup UI (Choices.js select inputs)**
+- "Mới → Cũ" tab: province + ward selects, results with copy buttons
+- "Cũ → Mới" tab: province + district + ward selects, results with copy buttons
+- "Giới thiệu" tab: about section
+
+**Quick search for both tabs**
+- Text input at the top of each lookup tab with debounced search (200ms)
+- Comma-separated parts: ward[, province] for new; ward[, district][, province] for old
+- Prefix-stripping: users can omit Phường/Xã/Thị trấn, Quận/Huyện/Thị xã, Tỉnh/Thành phố
+- Diacritic-insensitive: users can type without Vietnamese tone marks
+- Keyboard navigation (Arrow keys, Enter, Escape) and click-outside-to-close
+- On candidate selection, auto-fills the formal select inputs and shows results
+- Help popover (?) icon explaining input format with examples
+
+**New DB/service methods**
+- `searchNewWards(query, provinceQuery?)` — prefix match on ward_index with auto-prepend of ward prefixes
+- `searchOldWards(query, districtQuery?, provinceQuery?)` — same with district prefix support
+
+#### Files Modified
+- `utils/indexeddb.ts` — added `searchNewWards` and `searchOldWards` methods
+- `utils/ward-lookup.ts` — added service layer wrappers
+- `entrypoints/popup/index.html` — quick search inputs, help buttons, dividers
+- `entrypoints/popup/main.ts` — search logic, dropdown rendering, candidate selection, help popovers
+- `entrypoints/popup/style.css` — quick search, dropdown, help popover, divider styles (light + dark)
+
+---
+
 #### Usage Examples
 ```typescript
 // Get all provinces

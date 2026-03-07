@@ -364,6 +364,126 @@ export class VietnamAdminDB {
     return result || null;
   }
 
+  async searchNewWards(query: string, provinceQuery?: string): Promise<NewWard[]> {
+    if (!this.db) throw new Error('Database not initialized');
+
+    const normalizedQuery = normalizeStr(query);
+    if (!normalizedQuery) return [];
+
+    const WARD_PREFIXES = ['phuong ', 'xa ', 'thi tran '];
+    const PROVINCE_PREFIXES = ['tinh ', 'thanh pho '];
+
+    // Build search variants: the query as-is, plus with ward prefixes prepended
+    const wardQueries = [normalizedQuery];
+    const hasWardPrefix = WARD_PREFIXES.some((p) => normalizedQuery.startsWith(p));
+    if (!hasWardPrefix) {
+      for (const prefix of WARD_PREFIXES) {
+        wardQueries.push(prefix + normalizedQuery);
+      }
+    }
+
+    // Search all variants using prefix matching
+    const seen = new Set<string>();
+    const results: NewWard[] = [];
+
+    for (const wq of wardQueries) {
+      const range = IDBKeyRange.bound(wq, wq + '\uffff', false, false);
+      const matches = await this.db.getAllFromIndex('new_wards', 'ward_index', range);
+      for (const w of matches) {
+        if (!seen.has(w.ward_code)) {
+          seen.add(w.ward_code);
+          results.push(w);
+        }
+      }
+    }
+
+    // Filter by province if provided
+    if (provinceQuery) {
+      const normalizedProvince = normalizeStr(provinceQuery);
+      if (normalizedProvince) {
+        const provinceVariants = [normalizedProvince];
+        const hasProvincePrefix = PROVINCE_PREFIXES.some((p) => normalizedProvince.startsWith(p));
+        if (!hasProvincePrefix) {
+          for (const prefix of PROVINCE_PREFIXES) {
+            provinceVariants.push(prefix + normalizedProvince);
+          }
+        }
+        return results.filter((w) =>
+          provinceVariants.some((pv) => w.province_index.startsWith(pv))
+        );
+      }
+    }
+
+    return results;
+  }
+
+  async searchOldWards(query: string, districtQuery?: string, provinceQuery?: string): Promise<OldWard[]> {
+    if (!this.db) throw new Error('Database not initialized');
+
+    const normalizedQuery = normalizeStr(query);
+    if (!normalizedQuery) return [];
+
+    const WARD_PREFIXES = ['phuong ', 'xa ', 'thi tran '];
+    const DISTRICT_PREFIXES = ['quan ', 'huyen ', 'thi xa ', 'thanh pho '];
+    const PROVINCE_PREFIXES = ['tinh ', 'thanh pho '];
+
+    const wardQueries = [normalizedQuery];
+    const hasWardPrefix = WARD_PREFIXES.some((p) => normalizedQuery.startsWith(p));
+    if (!hasWardPrefix) {
+      for (const prefix of WARD_PREFIXES) {
+        wardQueries.push(prefix + normalizedQuery);
+      }
+    }
+
+    const seen = new Set<string>();
+    let results: OldWard[] = [];
+
+    for (const wq of wardQueries) {
+      const range = IDBKeyRange.bound(wq, wq + '\uffff', false, false);
+      const matches = await this.db.getAllFromIndex('old_wards', 'ward_index', range);
+      for (const w of matches) {
+        if (!seen.has(w.ward_code)) {
+          seen.add(w.ward_code);
+          results.push(w);
+        }
+      }
+    }
+
+    if (districtQuery) {
+      const normalizedDistrict = normalizeStr(districtQuery);
+      if (normalizedDistrict) {
+        const districtVariants = [normalizedDistrict];
+        const hasDistrictPrefix = DISTRICT_PREFIXES.some((p) => normalizedDistrict.startsWith(p));
+        if (!hasDistrictPrefix) {
+          for (const prefix of DISTRICT_PREFIXES) {
+            districtVariants.push(prefix + normalizedDistrict);
+          }
+        }
+        results = results.filter((w) =>
+          districtVariants.some((dv) => w.district_index.startsWith(dv))
+        );
+      }
+    }
+
+    if (provinceQuery) {
+      const normalizedProvince = normalizeStr(provinceQuery);
+      if (normalizedProvince) {
+        const provinceVariants = [normalizedProvince];
+        const hasProvincePrefix = PROVINCE_PREFIXES.some((p) => normalizedProvince.startsWith(p));
+        if (!hasProvincePrefix) {
+          for (const prefix of PROVINCE_PREFIXES) {
+            provinceVariants.push(prefix + normalizedProvince);
+          }
+        }
+        results = results.filter((w) =>
+          provinceVariants.some((pv) => w.province_index.startsWith(pv))
+        );
+      }
+    }
+
+    return results;
+  }
+
   async getNewProvincesByName(name: string): Promise<NewProvince[]> {
     if (!this.db) throw new Error('Database not initialized');
 

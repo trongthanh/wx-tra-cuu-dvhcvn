@@ -70,29 +70,30 @@ describe('WardLookupService', () => {
     });
   });
 
-  describe('getNewWardFromOld', () => {
-    it('returns the mapped new ward', async () => {
+  describe('getNewWardsFromOld', () => {
+    it('returns the mapped new wards', async () => {
       await db.insertOldWards([oldWard({ ward_code: '001' })]);
       await db.insertNewWards([newWard({ ward_code: '101' })]);
       await db.insertWardMappings([mapping('101', '001')]);
 
-      const result = await service.getNewWardFromOld('001');
-      expect(result?.ward_code).toBe('101');
+      const results = await service.getNewWardsFromOld('001');
+      expect(results).toHaveLength(1);
+      expect(results[0].ward_code).toBe('101');
     });
 
-    it('returns null when no mapping exists', async () => {
-      expect(await service.getNewWardFromOld('001')).toBeNull();
+    it('returns empty array when no mapping exists', async () => {
+      expect(await service.getNewWardsFromOld('001')).toEqual([]);
     });
 
-    it('returns the first mapped new ward when multiple mappings exist', async () => {
+    it('returns all mapped new wards when multiple mappings exist', async () => {
       await db.insertNewWards([
         newWard({ ward_code: '101' }),
         newWard({ ward_code: '102', ward_name: 'Phường B', ward_index: 'phuong b' }),
       ]);
       await db.insertWardMappings([mapping('101', '001'), mapping('102', '001')]);
 
-      const result = await service.getNewWardFromOld('001');
-      expect(result).not.toBeNull();
+      const results = await service.getNewWardsFromOld('001');
+      expect(results).toHaveLength(2);
     });
   });
 

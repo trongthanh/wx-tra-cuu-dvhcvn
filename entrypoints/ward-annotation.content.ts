@@ -86,6 +86,9 @@ function cleanupAnnotations(): void {
   // Reset province alias map so it's rebuilt on re-enable
   provinceAliasMap = null;
 
+  // Clear badge count
+  updateBadgeCount(0);
+
   console.log('[Vietnam Wards] Cleaned up annotations');
 }
 
@@ -345,6 +348,16 @@ async function processDocument() {
       `[Vietnam Wards] Found ${foundCount} ward candidates, annotated ${annotationCount}`,
     );
   }
+
+  // Count total annotations on the page for badge
+  const totalAnnotations = document.querySelectorAll(`.${ANNOTATION_CLASS}`).length;
+  updateBadgeCount(totalAnnotations);
+}
+
+function updateBadgeCount(count: number): void {
+  browser.runtime.sendMessage({ type: 'ANNOTATION_COUNT', count }).catch(() => {
+    // Ignore errors if background script is not ready
+  });
 }
 
 function collectTextNodes(): Text[] {

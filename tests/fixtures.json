@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://tuoitre.vn/video/cong-an-vao-cuoc-vu-thanh-nien-dap-pha-do-dac-cua-nu-hanh-khach-tai-cua-ra-nha-ga-t3-194869.htm",
+    "patterns": ["phường Bảy Hiền (TP.HCM)"]
+  },
+  {
+    "url": "https://tuoitre.vn/video/chay-lon-nhieu-nha-dan-o-phuong-minh-phung-tphcm-194867.htm",
+    "patterns": ["phường Minh Phụng, TP.HCM"]
+  },
+  {
+    "url": "https://vnexpress.net/cay-sa-ke-bat-goc-de-oto-o-tp-hcm-5047530.html",
+    "patterns": ["TP HCM", "phường Tam Thắng"]
+  },
+  {
+    "url": "https://vnexpress.net/mot-nguoi-tu-vong-sau-vu-tai-xe-say-ruou-tong-xe-lien-hoan-o-ha-noi-5047772.html",
+    "patterns": ["Hà Nội", "phường Yên Hòa"]
+  },
+  {
+    "url": "https://vnexpress.net/ha-noi-chuyen-doi-hon-4-ha-dat-cong-nghiep-phia-nam-de-xay-nha-thap-tang-5046909.html",
+    "patterns": ["Hà Nội", "phường Chương Mỹ"]
+  },
+  {
+    "url": "https://vnexpress.net/hai-phu-nu-bi-xe-dau-keo-tong-tu-vong-5047791.html",
+    "patterns": ["Hà Tĩnh", "phường Hoành Sơn", "phường Sông Trí"]
+  },
+  {
+    "url": "https://thanhnien.vn/hang-loat-vi-pham-tai-cac-bai-xe-tu-phat-phuong-cat-lai-ra-quan-xu-ly-185260308104307321.htm",
+    "patterns": ["phường Cát Lái (TP.HCM)", "phường Cát Lái"]
+  },
+  {
+    "url": "https://thanhnien.vn/xa-vinh-loc-kiem-tra-mua-ban-dat-nong-nghiep-lam-mo-ma-trai-phep-185260307100729723.htm",
+    "patterns": ["xã Vĩnh Lộc (TP.HCM)"]
+  }
+]

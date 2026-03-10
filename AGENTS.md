@@ -8,6 +8,10 @@ This is a WebExtension project built with WXT (Web eXTension Toolkit) and TypeSc
 
 **Purpose**: Vietnam Administrative Units Lookup Extension - helps users identify updated administrative unit names (wards, districts, provinces) in Vietnam by providing tooltips and augmented content on web pages.
 
+## Specification and Implementation plan
+
+Refer to @PLAN.md
+
 ## Development Commands
 
 - `pnpm dev` - Start development server for Chrome

@@ -4,7 +4,7 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   publicDir: 'public',
   manifest: {
-    permissions: ['storage'],
+    permissions: ['storage', 'activeTab'],
     web_accessible_resources: [
       {
         resources: ['data/*.csv'],

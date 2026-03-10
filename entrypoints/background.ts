@@ -23,14 +23,37 @@ export default defineBackground(() => {
     }
   });
 
-  // Expose database access for other parts of the extension
-  browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  // Handle messages from content scripts and popup
+  browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     if (message.type === 'GET_DATABASE') {
-      // This will allow content scripts or popup to request database access
       sendResponse({ success: true });
       return true;
     }
+
+    // Handle lookup requests from content scripts (they can't access extension IndexedDB)
+    if (message.type === 'LOOKUP_ALL_OLD_PROVINCES') {
+      wardLookup.getAllOldProvinces().then(sendResponse);
+      return true;
+    }
+    if (message.type === 'LOOKUP_ALL_NEW_PROVINCES') {
+      wardLookup.getAllNewProvinces().then(sendResponse);
+      return true;
+    }
+    if (message.type === 'LOOKUP_NEW_WARDS_BY_NAME') {
+      wardLookup.findNewWardsByName(message.wardName).then(sendResponse);
+      return true;
+    }
+    if (message.type === 'LOOKUP_NEW_WARDS_BY_NAME_AND_PROVINCE') {
+      wardLookup.findNewWardsByNameAndProvince(message.wardName, message.provinceName).then(sendResponse);
+      return true;
+    }
+    if (message.type === 'LOOKUP_OLD_WARDS_FROM_NEW') {
+      wardLookup.getOldWardsFromNew(message.wardCode).then(sendResponse);
+      return true;
+    }
+    return false;
   });
+
   // FIXME:: expose to windows for testing
   globalThis.wardLookup = wardLookup;
   globalThis.db = dataSetup.getDatabase();

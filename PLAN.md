@@ -19,11 +19,22 @@ So, during the transition to the new admin division system, people are often con
 
 So, here the web extension I'm building to ease the transition as well as a guide for users getting accustomed to new wards system:
 
-## Roadmap overview
+## Feature Roadmap overview
 
 1. [x] Look up new wards from old three level divisions
 2. [x] Look up old wards / district from new two level divisions
-3. [ ] Annotate new ward instances in site content with old district
+3. [x] Annotate new ward instances in site content with old district
+
+## Non-function tasks
+
+- [ ] Create the extension logos
+- [ ] Update manifest
+- [ ] Prepare screenshot
+- [ ] Write up about tab
+- [ ] Implement settings?
+- [ ] Create project landing page, with workable lookup tabs
+- [ ] i18n? Do we need English?
+- [ ] Upload to chrome web store and firefox extension marketplace
 
 ## Feature specification
 
@@ -67,7 +78,9 @@ Once a ward is selected:
 
 ### Annotate new wards with old wards in page content
 
-- The extensions will scan the page content for new ward names.
-- When a new ward name is found, it will either:
-    - Add a tooltip to the new ward name showing the old district and province
-    - Or replace the new ward name with "New Ward (Old District, Old Province)"
+- The extension scans the page content for new ward names using a regex pattern that captures `phường|xã|thị trấn` followed by up to 6 word tokens.
+- When a new ward name is found, it adds a dotted underline and `[?]` hint icon.
+- On hover, a tooltip displays the old district(s) and province(s) that the new ward was formed from.
+- **Fallback matching**: The regex may over-capture trailing words (e.g., "phường Yên Hòa tối 6/3"). The lookup retries with progressively shorter names until a match is found, then annotates only the matched portion.
+- Province hints in parentheses (e.g., "phường Bảy Hiền (TP.HCM)") help disambiguate wards with the same name across provinces.
+- Skips annotation inside `<script>`, `<style>`, `<a>`, `<button>`, and other non-content elements.

@@ -2,6 +2,7 @@ import './style.css';
 import 'choices.js/public/assets/styles/choices.min.css';
 import Choices from 'choices.js';
 import { WardLookupService } from '@/utils/ward-lookup';
+import { getSettings, setSetting } from '@/utils/settings';
 import type { OldWard, NewWard } from '@/utils/indexeddb';
 
 const lookup = new WardLookupService();
@@ -620,10 +621,32 @@ async function initOldToNew(): Promise<void> {
 
 // --- Init ---
 
+async function initSettings(): Promise<void> {
+  const enableAnnotationCheckbox = document.getElementById('setting-enable-annotation') as HTMLInputElement;
+  const settings = await getSettings();
+
+  enableAnnotationCheckbox.checked = settings.enableAnnotation;
+
+  enableAnnotationCheckbox.addEventListener('change', async () => {
+    const newValue = enableAnnotationCheckbox.checked;
+    await setSetting('enableAnnotation', newValue);
+
+    // Notify all content scripts about the setting change
+    const tabs = await browser.tabs.query({});
+    const newSettings = { enableAnnotation: newValue };
+
+    for (const tab of tabs) {
+      if (tab.id && tab.url && !tab.url.startsWith('chrome://') && !tab.url.startsWith('about:')) {
+        browser.tabs.sendMessage(tab.id, { type: 'SETTINGS_CHANGED', settings: newSettings }).catch(() => {});
+      }
+    }
+  });
+}
+
 async function main(): Promise<void> {
   await lookup.init();
   initHelpPopovers();
-  await Promise.all([initNewToOld(), initOldToNew()]);
+  await Promise.all([initNewToOld(), initOldToNew(), initSettings()]);
 }
 
 main();

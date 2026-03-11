@@ -1,23 +1,42 @@
-# Phường Mới Quận Cũ — Vietnam Administrative Units Lookup Extension
+# Web Extension Thông tin Đơn Vị Hành Chính Việt Nam
+[![license | ISC](https://img.shields.io/badge/License-ISC-7c3aed?labelColor=black)](https://github.com/trongthanh/wx-thong-tin-dvhcvn/blob/main/LICENSE)
 
-A browser extension to look up Vietnam's new and old administrative unit names after the 2025 reform that merged 63 provinces into 34 and removed the district level.
+Browser extension giúp tra cứu tên các đơn vị hành chính mới và cũ của Việt Nam sau sáp nhập và tổ chức lại các đơn vị hành chính năm 2025.
 
-## Features
+## Bối cảnh:
 
-- **Mới → Cũ**: Look up old wards/districts/provinces from new ward names
-- **Cũ → Mới**: Look up new wards/provinces from old ward/district/province names
-- **Quick Search**: Type-ahead search with diacritic-insensitive matching and prefix omission (e.g. type `An Hoi Tay, Ho Chi Minh` instead of `Phường An Hội Tây, Thành phố Hồ Chí Minh`)
-- **Content Annotation**: Automatically highlights new ward names on web pages with dotted underlines and `[?]` hints. Hover to see the old district(s) and province(s) in a tooltip.
+Theo Hiến pháp và [Nghị quyết số 203/2025/QH15](https://xaydungchinhsach.chinhphu.vn/nghi-quyet-203-2025-qh15-sua-doi-bo-sung-mot-so-dieu-cua-hien-phap-nuoc-cong-hoa-xa-hoi-chu-nghia-viet-nam-119250616181735552.htm) sửa đổi, bổ sung của Quốc Hội nước Cộng hòa xã hội chủ nghĩa Việt Nam, [hệ thống phân cấp hành chính của Việt Nam](https://vi.wikipedia.org/wiki/Ph%C3%A2n_c%E1%BA%A5p_h%C3%A0nh_ch%C3%ADnh_Vi%E1%BB%87t_Nam) đã trải qua một đợt tái cấu trúc lớn vào năm 2025:
 
-## Tech Stack
+- **Hệ thống phân cấp hai cấp**: Cấp trung gian "Quận/Huyện" đã được bãi bỏ. Việt Nam hiện tại bao gồm **Tỉnh/Thành phố trực thuộc Trung ương** và **Phường/Xã/Thị trấn**.
+- **Hợp nhất**: Số lượng tỉnh thành giảm từ 63 xuống còn 34 thông qua việc sáp nhập.
+- **Sáp nhập Phường/Xã**: Các phường/xã nhỏ hoặc liền kề được sáp nhập thành các đơn vị lớn hơn, thường có tên gọi hoàn toàn mới không liên quan đến tên cũ (đặc biệt là các phường có tên bằng số).
 
-- [WXT](https://wxt.dev/) (Web eXTension Toolkit) — Manifest V3 (Chrome) / V2 (Firefox)
-- TypeScript (strict mode)
-- IndexedDB via [idb](https://github.com/nicolo-ribaudo/idb) for local data storage
-- [Choices.js](https://github.com/Choices-js/Choices) for searchable select inputs
-- [Vitest](https://vitest.dev/) + [fake-indexeddb](https://github.com/nicolo-ribaudo/fake-indexeddb) for testing
+Tiện ích này giúp người dùng dễ dàng chuyển đổi và thích nghi bằng cách kết nối thông tin giữa địa chỉ cũ và hệ thống mới.
 
-## Getting Started
+## Tính năng chính
+
+- **Mới → Cũ**: Tra cứu thông tin phường, quận và tỉnh cũ từ tên một phường mới.
+- **Cũ → Mới**: Tìm kiếm phường và tỉnh mới tương ứng với các đơn vị hành chính cũ.
+- **⚡ Tìm kiếm Nhanh**: Thanh tìm kiếm hợp nhất, hỗ trợ:
+    - **Tìm kiếm theo cụm**: Có thể tìm theo `phường, tỉnh` hoặc `phường, quận, tỉnh`.
+    - **Bỏ qua tiền tố**: Chỉ cần gõ `An Hội Tây, HCM` thay vì `Phường An Hội Tây, Thành phố Hồ Chí Minh`.
+    - **Không cần dấu**: Hỗ trợ tìm kiếm không dấu (ví dụ: `tan binh` sẽ khớp với `Tân Bình`).
+- **🔍 Chú thích Nội dung**: Tự động quét các trang web để tìm tên phường mới và:
+    - Thêm gạch chân dấu chấm và biểu tượng gợi ý `[?]`.
+    - **Khớp thông minh**: Sử dụng logic dự phòng để xử lý các văn bản phức tạp và phân biệt các phường trùng tên dựa trên gợi ý tỉnh trong ngoặc đơn (ví dụ: `Phường Bảy Hiền (TP.HCM)`).
+    - **Tooltip**: Di chuột để xem thông tin quận và tỉnh cũ đã hình thành nên phường mới này.
+    - **Số lượng phát hiện**: Hiển thị số lượng phường được tìm thấy ngay trên biểu tượng của tiện ích.
+- **⚙️ Cài đặt**: Dễ dàng bật/tắt tính năng chú thích nội dung.
+
+## Công nghệ Sử dụng
+
+- [WXT](https://wxt.dev/) (Web eXTension Toolkit) — Manifest V3 (Chrome) / V2 (Firefox).
+- **TypeScript**: Sử dụng chế độ strict để đảm bảo an toàn kiểu dữ liệu.
+- **IndexedDB**: Lưu trữ dữ liệu cục bộ bằng thư viện [idb](https://github.com/nicolo-ribaudo/idb), kết hợp với các chỉ mục (index) đã chuẩn hóa để tìm fuzzy search cực nhanh.
+- **Choices.js**: Cải thiện trải nghiệm chọn (select) và tìm kiếm trong giao diện popup.
+- **Vitest**: Kiểm thử đơn vị (unit test) toàn diện với `fake-indexeddb`.
+
+## Getting start with development
 
 ```bash
 # Install dependencies
@@ -54,10 +73,10 @@ pnpm test:watch   # Watch mode
 ## Project Structure
 
 ```
-entrypoints/              # Extension entry points
-├── background.ts         # Data initialization on install/update
+entrypoints/                    # Extension entry points
+├── background.ts               # Data initialization on install/update
 ├── ward-annotation.content.ts  # Content script for page annotation
-└── popup/                # Browser action popup UI
+└── popup/                      # Browser action popup UI
     ├── index.html
     ├── main.ts
     └── style.css
@@ -67,19 +86,15 @@ utils/                    # Core utilities
 ├── ward-lookup.ts        # Ward lookup service layer
 ├── data-setup.ts         # CSV loading and DB population
 ├── csv-parser.ts         # CSV parsing
-├── normalizeStr.ts       # Vietnamese diacritic normalization
+├── strings.ts            # Vietnamese diacritic normalization
 └── settings.ts           # Extension settings management
 
-data/                 # Administrative unit CSV data
-├── old_wards.csv     # Pre-reform wards (ward/district/province)
-├── new_wards.csv     # Post-reform wards (ward/province)
-├── ward_mappings.csv # Old ↔ new ward code mappings
-├── old_provinces.csv # Pre-reform provinces (63)
-└── new_provinces.csv # Post-reform provinces (34)
+data/           # Administrative unit CSV data
+└── *.csv       # (CSV format is more compact than JSON)
 
 tests/                # Unit tests
 ```
 
-## License
+## Copyright
 
-MIT
+©️ 2026 Trần Trọng Thanh.

@@ -6,7 +6,7 @@ export default defineConfig({
   manifest: {
     name: 'Tra cứu Đơn Vị Hành Chính',
     description:
-      'Tra cứu và hiển thị thông tin đơn vị hành chính Việt Nam sau năm 2025. Tìm kiếm phường/xã mới theo tên cũ và ngược lại. Hiển thị gợi ý thông tin phường mới trực tiếp trên trang web.',
+      'Tra cứu ĐVHC sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại. Chú giải phường/xã mới trực tiếp trên trang web.',
     version: '1.0.0',
     permissions: ['storage', 'activeTab'],
     author: {
@@ -39,4 +39,9 @@ export default defineConfig({
   },
   // Explicitly include content scripts
   modules: [],
+  vite: () => ({
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+  }),
 });

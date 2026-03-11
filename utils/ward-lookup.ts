@@ -95,6 +95,52 @@ export class WardLookupService {
     return this.db!.getOldWardsByDistrictAndProvince(districtName, provinceName);
   }
 
+  async getOldProvincesFromNewProvince(newProvinceName: string): Promise<OldProvince[]> {
+    await this.init();
+    const newWards = await this.db!.getNewWardsByProvince(newProvinceName);
+
+    const oldProvinceNames = new Set<string>();
+
+    // Sample evenly across wards — new provinces typically merged 1–3 old ones
+    const SAMPLE = 20;
+    const step = Math.max(1, Math.floor(newWards.length / SAMPLE));
+    const sample = newWards.filter((_, i) => i % step === 0).slice(0, SAMPLE);
+
+    for (const newWard of sample) {
+      const mappings = await this.db!.getWardMappingsByNewCode(newWard.ward_code);
+      for (const mapping of mappings) {
+        const oldWard = await this.db!.getOldWard(mapping.old_ward_code);
+        if (oldWard) oldProvinceNames.add(oldWard.province_name);
+      }
+    }
+
+    if (oldProvinceNames.size === 0) return [];
+
+    const allOldProvinces = await this.db!.getAllOldProvinces();
+    return allOldProvinces.filter((p) => oldProvinceNames.has(p.name));
+  }
+
+  async getNewProvincesFromOldProvince(oldProvinceName: string): Promise<NewProvince[]> {
+    await this.init();
+    const oldWards = await this.db!.getOldWardsByProvince(oldProvinceName);
+
+    const newProvinceNames = new Set<string>();
+
+    for (const oldWard of oldWards) {
+      const mappings = await this.db!.getWardMappingsByOldCode(oldWard.ward_code);
+      for (const mapping of mappings) {
+        const newWard = await this.db!.getNewWard(mapping.new_ward_code);
+        if (newWard) newProvinceNames.add(newWard.province_name);
+      }
+      if (newProvinceNames.size > 0) break; // old provinces map 1-to-1 to new provinces
+    }
+
+    if (newProvinceNames.size === 0) return [];
+
+    const allNewProvinces = await this.db!.getAllNewProvinces();
+    return allNewProvinces.filter((p) => newProvinceNames.has(p.name));
+  }
+
   close(): void {
     if (this.db) {
       this.db.close();

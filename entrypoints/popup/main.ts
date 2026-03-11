@@ -59,6 +59,16 @@ function renderResultCard(
   `;
 }
 
+function renderProvinceCard(label: string, name: string): string {
+  return `
+    <div class="result-card">
+      <div class="result-label">${label}</div>
+      <div class="result-address">${name}</div>
+      <button class="copy-btn" data-copy="${name.replace(/"/g, '&quot;')}">Sao chép</button>
+    </div>
+  `;
+}
+
 function attachCopyHandlers(container: HTMLElement): void {
   container.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -151,6 +161,8 @@ async function initNewToOld(): Promise<void> {
   });
 
   wardChoices.disable();
+
+  let provinceResultHtml = '';
 
   // Load provinces
   const provinces = await lookup.getAllNewProvinces();
@@ -287,15 +299,32 @@ async function initNewToOld(): Promise<void> {
     }
   });
 
-  // Province change -> load wards
+  // Province change -> load wards and show province-level mapping
   provinceEl.addEventListener('change', async () => {
     const provinceName = provinceChoices.getValue(true) as string;
+    provinceResultHtml = '';
     resultEl.innerHTML = '';
 
     if (!provinceName) {
       wardChoices.disable();
       setChoicesOptions(wardChoices, [], '-- Chọn phường/xã --');
       return;
+    }
+
+    // Show province-level mapping result
+    const oldProvinces = await lookup.getOldProvincesFromNewProvince(provinceName);
+    if (oldProvinces.length > 0) {
+      let html = renderProvinceCard('Tỉnh/Thành mới', provinceName);
+      html += '<div class="result-arrow">&darr;</div>';
+      if (oldProvinces.length > 1) {
+        html += `<div class="result-group-title">Tỉnh/Thành cũ tương ứng (${oldProvinces.length})</div>`;
+      }
+      for (const op of oldProvinces) {
+        html += renderProvinceCard('Tỉnh/Thành cũ', op.name);
+      }
+      provinceResultHtml = html;
+      resultEl.innerHTML = html;
+      attachCopyHandlers(resultEl);
     }
 
     const wards = await lookup.findNewWardsByProvince(provinceName);
@@ -308,12 +337,16 @@ async function initNewToOld(): Promise<void> {
     wardChoices.enable();
   });
 
-  // Ward change -> show result
+  // Ward change -> show ward-level result
   wardEl.addEventListener('change', async () => {
     const wardCode = wardChoices.getValue(true) as string;
-    resultEl.innerHTML = '';
 
-    if (!wardCode) return;
+    if (!wardCode) {
+      // Restore province-level result when ward is deselected
+      resultEl.innerHTML = provinceResultHtml;
+      if (provinceResultHtml) attachCopyHandlers(resultEl);
+      return;
+    }
 
     const newWard = await lookup.findNewWard(wardCode);
     if (!newWard) return;
@@ -382,6 +415,8 @@ async function initOldToNew(): Promise<void> {
 
   districtChoices.disable();
   wardChoices.disable();
+
+  let provinceResultHtml = '';
 
   // Load provinces
   const provinces = await lookup.getAllOldProvinces();
@@ -533,9 +568,10 @@ async function initOldToNew(): Promise<void> {
     }
   });
 
-  // Province change -> load districts
+  // Province change -> load districts and show province-level mapping
   provinceEl.addEventListener('change', async () => {
     const provinceName = provinceChoices.getValue(true) as string;
+    provinceResultHtml = '';
     resultEl.innerHTML = '';
 
     if (!provinceName) {
@@ -544,6 +580,19 @@ async function initOldToNew(): Promise<void> {
       setChoicesOptions(districtChoices, [], '-- Chọn quận/huyện --');
       setChoicesOptions(wardChoices, [], '-- Chọn phường/xã --');
       return;
+    }
+
+    // Show province-level mapping result
+    const newProvinces = await lookup.getNewProvincesFromOldProvince(provinceName);
+    if (newProvinces.length > 0) {
+      let html = renderProvinceCard('Tỉnh/Thành cũ', provinceName);
+      html += '<div class="result-arrow">&darr;</div>';
+      for (const np of newProvinces) {
+        html += renderProvinceCard('Tỉnh/Thành mới', np.name);
+      }
+      provinceResultHtml = html;
+      resultEl.innerHTML = html;
+      attachCopyHandlers(resultEl);
     }
 
     const districts = await lookup.getDistrictsByProvince(provinceName);
@@ -558,11 +607,10 @@ async function initOldToNew(): Promise<void> {
     wardChoices.disable();
   });
 
-  // District change -> load wards
+  // District change -> load wards, keep province-level result
   districtEl.addEventListener('change', async () => {
     const provinceName = provinceChoices.getValue(true) as string;
     const districtName = districtChoices.getValue(true) as string;
-    resultEl.innerHTML = '';
 
     if (!districtName) {
       wardChoices.disable();
@@ -582,12 +630,16 @@ async function initOldToNew(): Promise<void> {
     wardChoices.enable();
   });
 
-  // Ward change -> show result
+  // Ward change -> show ward-level result
   wardEl.addEventListener('change', async () => {
     const wardCode = wardChoices.getValue(true) as string;
-    resultEl.innerHTML = '';
 
-    if (!wardCode) return;
+    if (!wardCode) {
+      // Restore province-level result when ward is deselected
+      resultEl.innerHTML = provinceResultHtml;
+      if (provinceResultHtml) attachCopyHandlers(resultEl);
+      return;
+    }
 
     const oldWard = await lookup.findOldWard(wardCode);
     if (!oldWard) return;

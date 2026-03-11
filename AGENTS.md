@@ -61,10 +61,10 @@ components/           # Reusable components
 assets/              # Static assets
 ├── typescript.svg   # TypeScript logo
 
-public/              # Public assets
+public/             # Public assets
 ├── icon/           # Extension icons
 ├── data/           # Web-accessible data files
-└── wxt.svg         # WXT logo
+└── app-icon.png    # Store logo
 ```
 
 ### WXT development guide

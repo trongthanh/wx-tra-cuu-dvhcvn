@@ -283,7 +283,7 @@
 - `vitest` and `fake-indexeddb` as dev dependencies
 - `vitest.config.ts` — config pointing to setup file
 - `tests/setup.ts` — loads `fake-indexeddb/auto`
-- `tests/normalizeStr.test.ts` — 7 tests for pure normalization function
+- `tests/strings.test.ts` — 7 tests for pure normalization function
 - `tests/csv-parser.test.ts` — 9 tests (quoting, escaping, column mismatch, real CSV formats)
 - `tests/indexeddb.test.ts` — 18 tests (CRUD + index queries on all stores)
 - `tests/ward-lookup.test.ts` — 22 tests (all `WardLookupService` methods)

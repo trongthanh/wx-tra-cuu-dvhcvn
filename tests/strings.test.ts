@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { normalizeStr } from '../utils/normalizeStr';
+import { normalizeStr } from '../utils/strings';
 
 describe('normalizeStr', () => {
   it('lowercases ASCII strings', () => {

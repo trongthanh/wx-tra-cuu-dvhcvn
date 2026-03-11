@@ -1,4 +1,4 @@
-import { normalizeStr } from '@/utils/normalizeStr';
+import { normalizeStr } from '@/utils/strings';
 import { getSettings, type Settings } from '@/utils/settings';
 import type { NewWard, OldWard } from '@/utils/indexeddb';
 

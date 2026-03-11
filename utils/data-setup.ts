@@ -1,6 +1,6 @@
 import { VietnamAdminDB, OldWard, NewWard, WardMapping, NewProvince, OldProvince } from './indexeddb';
 import { parseCSV } from './csv-parser';
-import { normalizeStr } from './normalizeStr';
+import { normalizeStr } from './strings';
 
 /**
  * Data version when csv files change

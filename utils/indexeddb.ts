@@ -1,5 +1,5 @@
 import { openDB, DBSchema, IDBPDatabase } from 'idb';
-import { normalizeStr } from './normalizeStr';
+import { normalizeStr } from './strings';
 
 export interface OldWard {
   ward_code: string;

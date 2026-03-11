@@ -47,7 +47,7 @@ utils/               # Core utilities
 ├── indexeddb.ts     # IndexedDB wrapper for local data storage
 ├── ward-lookup.ts   # Ward lookup service with search functionality
 ├── csv-parser.ts    # CSV parsing utilities
-└── normalizeStr.ts  # String normalization for Vietnamese text
+└── strings.ts       # String normalization for Vietnamese text
 
 data/                # Administrative unit data
 ├── old_wards.csv    # Pre-reform ward data

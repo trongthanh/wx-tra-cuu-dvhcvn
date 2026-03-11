@@ -122,26 +122,6 @@ describe('WardLookupService', () => {
     });
   });
 
-  describe('getAllMappingsForOldWard', () => {
-    it('returns all mappings for an old ward code', async () => {
-      await db.insertWardMappings([mapping('101', '001'), mapping('102', '001')]);
-      const results = await service.getAllMappingsForOldWard('001');
-      expect(results).toHaveLength(2);
-    });
-
-    it('returns empty array when no mappings', async () => {
-      expect(await service.getAllMappingsForOldWard('001')).toEqual([]);
-    });
-  });
-
-  describe('getAllMappingsForNewWard', () => {
-    it('returns all mappings for a new ward code', async () => {
-      await db.insertWardMappings([mapping('101', '001'), mapping('101', '002')]);
-      const results = await service.getAllMappingsForNewWard('101');
-      expect(results).toHaveLength(2);
-    });
-  });
-
   describe('findNewWardsByName', () => {
     it('finds new wards by Vietnamese name', async () => {
       await db.insertNewWards([
@@ -170,42 +150,6 @@ describe('WardLookupService', () => {
     });
   });
 
-  describe('findOldWardsByName', () => {
-    it('finds old wards by Vietnamese name', async () => {
-      await db.insertOldWards([
-        oldWard({ ward_code: '001', ward_name: 'Phường 1', ward_index: 'phuong 1' }),
-        oldWard({ ward_code: '002', ward_name: 'Phường 2', ward_index: 'phuong 2' }),
-      ]);
-      const results = await service.findOldWardsByName('Phường 1');
-      expect(results).toHaveLength(1);
-      expect(results[0].ward_code).toBe('001');
-    });
-  });
-
-  describe('findOldWardsByDistrict', () => {
-    it('finds old wards by district name', async () => {
-      await db.insertOldWards([
-        oldWard({ ward_code: '001', district_name: 'Quận 1', district_index: 'quan 1' }),
-        oldWard({ ward_code: '002', ward_name: 'Phường 2', ward_index: 'phuong 2', district_name: 'Quận 1', district_index: 'quan 1' }),
-        oldWard({ ward_code: '003', ward_name: 'Phường 3', ward_index: 'phuong 3', district_name: 'Quận 2', district_index: 'quan 2' }),
-      ]);
-      const results = await service.findOldWardsByDistrict('Quận 1');
-      expect(results).toHaveLength(2);
-    });
-  });
-
-  describe('findOldWardsByProvince', () => {
-    it('finds old wards by province name', async () => {
-      await db.insertOldWards([
-        oldWard({ ward_code: '001', province_name: 'Thành phố Hồ Chí Minh', province_index: 'thanh pho ho chi minh' }),
-        oldWard({ ward_code: '002', ward_name: 'Phường 2', ward_index: 'phuong 2', province_name: 'Hà Nội', province_index: 'ha noi' }),
-      ]);
-      const results = await service.findOldWardsByProvince('Thành phố Hồ Chí Minh');
-      expect(results).toHaveLength(1);
-      expect(results[0].ward_code).toBe('001');
-    });
-  });
-
   describe('findNewWardsByProvince', () => {
     it('finds new wards by province name', async () => {
       await db.insertNewWards([
@@ -218,21 +162,4 @@ describe('WardLookupService', () => {
     });
   });
 
-  describe('findOldWardsByFullAddress', () => {
-    it('finds wards matching ward + district + province', async () => {
-      await db.insertOldWards([
-        oldWard({ ward_code: '001', ward_name: 'Phường 1', ward_index: 'phuong 1', district_name: 'Quận 1', district_index: 'quan 1', province_name: 'Thành phố Hồ Chí Minh', province_index: 'thanh pho ho chi minh' }),
-        // same ward + district name but different province
-        oldWard({ ward_code: '002', ward_name: 'Phường 1', ward_index: 'phuong 1', district_name: 'Quận 1', district_index: 'quan 1', province_name: 'Hà Nội', province_index: 'ha noi' }),
-      ]);
-      const results = await service.findOldWardsByFullAddress('Phường 1', 'Quận 1', 'Thành phố Hồ Chí Minh');
-      expect(results).toHaveLength(1);
-      expect(results[0].ward_code).toBe('001');
-    });
-
-    it('returns empty array when no match', async () => {
-      const results = await service.findOldWardsByFullAddress('Phường X', 'Quận X', 'Tỉnh X');
-      expect(results).toEqual([]);
-    });
-  });
 });

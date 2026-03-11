@@ -350,20 +350,6 @@ export class VietnamAdminDB {
     return result || [];
   }
 
-  async getNewProvince(code: string): Promise<NewProvince | null> {
-    if (!this.db) throw new Error('Database not initialized');
-
-    const result = await this.db.get('new_provinces', code);
-    return result || null;
-  }
-
-  async getOldProvince(code: string): Promise<OldProvince | null> {
-    if (!this.db) throw new Error('Database not initialized');
-
-    const result = await this.db.get('old_provinces', code);
-    return result || null;
-  }
-
   async searchNewWards(query: string, provinceQuery?: string): Promise<NewWard[]> {
     if (!this.db) throw new Error('Database not initialized');
 
@@ -482,26 +468,6 @@ export class VietnamAdminDB {
     }
 
     return results;
-  }
-
-  async getNewProvincesByName(name: string): Promise<NewProvince[]> {
-    if (!this.db) throw new Error('Database not initialized');
-
-    const normalizedName = normalizeStr(name);
-    const result = await this.db.getAllFromIndex('new_provinces', 'name_index', normalizedName);
-    return result || [];
-  }
-
-  async getOldProvincesByName(name: string): Promise<OldProvince[]> {
-    if (!this.db) throw new Error('Database not initialized');
-
-    const normalizedName = normalizeStr(name);
-    const result = await this.db.getAllFromIndex('old_provinces', 'name_index', normalizedName);
-    return result || [];
-  }
-
-  get database(): IDBPDatabase<VietnamAdminSchema> | null {
-    return this.db;
   }
 
   close(): void {

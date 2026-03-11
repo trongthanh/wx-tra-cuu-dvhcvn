@@ -35,14 +35,6 @@ export async function saveSettings(settings: Partial<Settings>): Promise<void> {
 }
 
 /**
- * Get a single setting value
- */
-export async function getSetting<K extends keyof Settings>(key: K): Promise<Settings[K]> {
-  const settings = await getSettings();
-  return settings[key];
-}
-
-/**
  * Set a single setting value
  */
 export async function setSetting<K extends keyof Settings>(

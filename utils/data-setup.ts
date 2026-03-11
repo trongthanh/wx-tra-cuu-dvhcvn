@@ -1,4 +1,3 @@
-import { deleteDB } from 'idb';
 import { VietnamAdminDB, OldWard, NewWard, WardMapping, NewProvince, OldProvince } from './indexeddb';
 import { parseCSV } from './csv-parser';
 import { normalizeStr } from './normalizeStr';
@@ -120,20 +119,6 @@ export class DataSetup {
       return parseCSV(csvText);
     } catch (error) {
       console.error(`Error loading CSV file ${path}:`, error);
-      throw error;
-    }
-  }
-
-  getDatabase(): VietnamAdminDB {
-    return this.db;
-  }
-
-  private async deleteDatabase(): Promise<void> {
-    try {
-      await deleteDB('vietnam_admin_units');
-      console.log('Database deleted successfully');
-    } catch (error) {
-      console.error('Error deleting database:', error);
       throw error;
     }
   }

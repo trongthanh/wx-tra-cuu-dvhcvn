@@ -78,7 +78,9 @@ body {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
   font-family: inherit;
 }
 
@@ -182,11 +184,11 @@ body {
   opacity: 1 !important;
 }
 
-.choices[data-type*="select-one"] .choices__inner {
+.choices[data-type*='select-one'] .choices__inner {
   padding-bottom: 6px !important;
 }
 
-.choices[data-type*="select-one"]::after {
+.choices[data-type*='select-one']::after {
   border-color: var(--text-secondary) transparent transparent !important;
   right: 12px;
 }
@@ -249,7 +251,9 @@ body {
   cursor: pointer;
   position: relative;
   text-transform: none;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
 
 .help-btn:hover {
@@ -322,7 +326,9 @@ body {
   font-size: 13px;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 
 .quick-search-wrapper input:focus {
@@ -513,6 +519,8 @@ body {
 /* About */
 .about-section {
   color: var(--text);
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
 }
 
 .about-section h2 {
@@ -557,8 +565,6 @@ body {
 /* Settings section */
 .settings-section {
   margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
 }
 
 .settings-section h3 {
@@ -579,7 +585,7 @@ body {
   cursor: pointer;
 }
 
-.setting-label input[type="checkbox"] {
+.setting-label input[type='checkbox'] {
   margin-top: 2px;
   width: 16px;
   height: 16px;
@@ -614,6 +620,15 @@ body {
   color: var(--text);
 }
 
+.version-section p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
 .version-text {
-  font-family: monospace;
+  font-family:
+    SF Mono,
+    Liberation Mono,
+    Cascadia Mono,
+    monospace;
 }

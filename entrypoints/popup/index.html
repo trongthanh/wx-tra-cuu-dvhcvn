@@ -9,19 +9,21 @@
   <body>
     <div id="app">
       <header class="header">
-        <h1>Tra cứu Đơn Vị Hành Chính</h1>
+        <h1>Tra cứu Đơn Vị Hành Chính 🇻🇳</h1>
       </header>
 
       <nav class="tabs">
         <button class="tab active" data-tab="new-to-old">Mới &rarr; Cũ</button>
         <button class="tab" data-tab="old-to-new">Cũ &rarr; Mới</button>
-        <button class="tab" data-tab="about">Giới thiệu</button>
+        <button class="tab" data-tab="about">Cài Đặt</button>
       </nav>
 
       <!-- Tab 1: New to Old -->
       <div class="tab-content active" id="tab-new-to-old">
         <div class="quick-search-group">
-          <label for="quick-search">Tìm nhanh <button type="button" class="help-btn" data-help="new">?</button></label>
+          <label for="quick-search"
+            >Tìm nhanh <button type="button" class="help-btn" data-help="new">?</button></label
+          >
           <div class="quick-search-wrapper">
             <input
               type="text"
@@ -51,7 +53,9 @@
       <!-- Tab 2: Old to New -->
       <div class="tab-content" id="tab-old-to-new">
         <div class="quick-search-group">
-          <label for="old-quick-search">Tìm nhanh <button type="button" class="help-btn" data-help="old">?</button></label>
+          <label for="old-quick-search"
+            >Tìm nhanh <button type="button" class="help-btn" data-help="old">?</button></label
+          >
           <div class="quick-search-wrapper">
             <input
               type="text"
@@ -86,32 +90,41 @@
 
       <!-- Tab 3: About -->
       <div class="tab-content" id="tab-about">
-        <div class="about-section">
-          <h2>Tra cứu Đơn vị Hành chính</h2>
-          <p>
-            Tiện ích giúp tra cứu tên đơn vị hành chính (phường, xã, quận, huyện) sau cải cách hành
-            chính 2025.
-          </p>
-          <h3>Tính năng</h3>
-          <ul>
-            <li><strong>Mới &rarr; Cũ:</strong> Tra cứu tên cũ từ tên mới (sau cải cách)</li>
-            <li><strong>Cũ &rarr; Mới:</strong> Tra cứu tên mới từ tên cũ (trước cải cách)</li>
-            <li><strong>Tự động nhận diện:</strong> Tô sáng tên đơn vị cũ trên trang web</li>
-          </ul>
-        </div>
         <div class="settings-section">
           <h3>Cài đặt</h3>
           <div class="setting-item">
             <label class="setting-label">
               <input type="checkbox" id="setting-enable-annotation" />
-              <span>Tự động đánh dấu tên phường/xã trên trang web</span>
+              <span>Tự động ghi chú tên phường/xã mới trên trang web</span>
             </label>
-            <p class="setting-description">Tự động nhận diện và đánh dấu tên phường/xã mới trên các trang web, hiển thị thông tin quận/huyện cũ khi di chuột.</p>
+            <p class="setting-description">
+              Tự động nhận diện và đánh dấu tên phường/xã mới trên các trang web, hiển thị thông tin
+              quận/huyện cũ khi di chuột.
+            </p>
           </div>
         </div>
+        <div class="about-section">
+          <h3>Giới thiệu</h3>
+          <p>
+            Tiện ích giúp tra cứu tên đơn vị hành chính (phường, xã, quận, huyện) sau cải cách hành
+            chính 2025. Các tính năng hiện tại:
+          </p>
+          <ul>
+            <li><strong>Mới &rarr; Cũ:</strong> Tra cứu tên cũ từ tên mới (sau cải cách)</li>
+            <li><strong>Cũ &rarr; Mới:</strong> Tra cứu tên mới từ tên cũ (trước cải cách)</li>
+            <li>
+              <strong>Tự động ghi chú:</strong> Đánh dấu và ghi chú tên mới sang tên cũ trên trang
+              web
+            </li>
+          </ul>
+        </div>
         <div class="version-section">
-          <h3>Phiên bản</h3>
-          <p class="version-text">v0.1.0</p>
+          <h3>Tác giả</h3>
+          <p>
+            Phát triển bởi <a href="https://github.com/trongthanh" target="_blank">Thanh Tran</a>.
+            Phiên bản:
+            <span id="version" class="version-text">v1.0.0</span>
+          </p>
         </div>
       </div>
     </div>

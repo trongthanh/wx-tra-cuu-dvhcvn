@@ -101,7 +101,7 @@ function initHelpPopovers(): void {
     btn.parentElement!.appendChild(popover);
 
     // Append to the .quick-search-group so it's not inside the <label>
-    const group = btn.closest('.quick-search-group')!;
+    const group = btn.closest<HTMLElement>('.quick-search-group')!;
     group.style.position = 'relative';
     group.appendChild(popover);
 

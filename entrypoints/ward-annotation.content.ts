@@ -355,9 +355,13 @@ async function processDocument() {
 }
 
 function updateBadgeCount(count: number): void {
-  browser.runtime.sendMessage({ type: 'ANNOTATION_COUNT', count }).catch(() => {
-    // Ignore errors if background script is not ready
-  });
+  try {
+    browser.runtime.sendMessage({ type: 'ANNOTATION_COUNT', count }).catch(() => {
+      // Ignore errors if background script is not ready
+    });
+  } catch {
+    // Ignore if extension context is invalidated (e.g. after extension reload)
+  }
 }
 
 function collectTextNodes(): Text[] {

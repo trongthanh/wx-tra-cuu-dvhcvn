@@ -2,9 +2,9 @@
 
 ## Background:
 
-Before June 2025, Vietnam administrative hierachy has three levels which are simply put: provinces > districts > wards or communes.
+Before July 2025, Vietnam administrative hierachy has three levels which are simply put: provinces > districts > wards or communes.
 
-But since June 2025, pursuant to the constitution, there are now only two levels of administrative divisions in Vietnam: provinces and communes:
+But since July 2025, pursuant to the constitution, there are now only two levels of administrative divisions in Vietnam: provinces and communes:
 
 - Provincial level: autonomous municipality (thành phố trực thuộc trung ương, literally city subordinate to central authority) and province (tỉnh)
 - Commune level: ward (phường) in major urban areas, commune (xã) for rural areas, and special zone (đặc khu) for considerable island formations.
@@ -27,14 +27,14 @@ So, here the web extension I'm building to ease the transition as well as a guid
 
 ## Non-function tasks
 
-- [ ] Create the extension logos
-- [ ] Update manifest
-- [ ] Prepare screenshot
-- [ ] Write up about tab
-- [ ] Implement settings?
+- [x] Create the extension logos
+- [x] Update manifest
+- [x] Prepare screenshot
+- [x] Write up about tab
+- [x] Implement settings
+- [ ] Upload to chrome web store and firefox extension marketplace
 - [ ] Create project landing page, with workable lookup tabs
 - [ ] i18n? Do we need English?
-- [ ] Upload to chrome web store and firefox extension marketplace
 
 ## Feature specification
 

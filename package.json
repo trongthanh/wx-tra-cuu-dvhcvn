@@ -1,10 +1,10 @@
 {
-  "name": "wxt-thong-tin-dvhcvn",
+  "name": "wxt-tra-cuu-dvhcvn",
   "description": "Cẩm nang đơn vị hành chính Việt Nam sau năm 2025 - Tra cứu phường/xã mới và cũ",
   "version": "1.0.0",
   "type": "module",
   "author": "Trần Trọng Thanh<trongthanh@gmail.com> (https://thanh.im)",
-  "homepage": "https://github.com/trongthanh/wx-thong-tin-dvhcvn.git",
+  "homepage": "https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git",
   "keywords": [
     "vietnam",
     "administrative",

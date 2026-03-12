@@ -3,16 +3,16 @@ import { defineConfig } from 'wxt';
 // See https://wxt.dev/api/config.html
 export default defineConfig({
   publicDir: 'public',
-  manifest: {
+  manifest: ({ browser }) => ({
     name: 'Tra cứu Đơn Vị Hành Chính',
     description:
       'Tra cứu ĐVHC sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại. Chú giải phường/xã mới trực tiếp trên trang web.',
     version: '1.0.0',
     permissions: ['storage', 'activeTab'],
-    author: {
-      email: 'trongthanh@gmail.com',
-    },
-    homepage_url: 'https://github.com/trongthanh/wx-thong-tin-dvhcvn.git',
+    ...(browser === 'firefox'
+      ? { developer: { name: 'Thanh Tran', url: 'https://thanh.im' } }
+      : { author: { email: 'trongthanh@gmail.com' } }),
+    homepage_url: 'https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git',
     icons: {
       '16': 'icon/16.png',
       '32': 'icon/32.png',
@@ -36,7 +36,7 @@ export default defineConfig({
         matches: ['<all_urls>'],
       },
     ],
-  },
+  }),
   // Explicitly include content scripts
   modules: [],
   vite: () => ({

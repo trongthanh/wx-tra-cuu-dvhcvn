@@ -37,7 +37,7 @@
 }
 
 body {
-  width: 400px;
+  width: min(400px, 100vw);
   min-height: 300px;
   max-height: 560px;
   overflow-y: auto;

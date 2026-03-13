@@ -4,7 +4,7 @@ import type { NewWard, OldWard } from '@/utils/indexeddb';
 
 let mutationObserver: MutationObserver | null = null;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
-let tooltipListeners: { type: string; handler: EventListener }[] = [];
+let tooltipListeners: { type: string; handler: EventListener; options?: boolean | AddEventListenerOptions }[] = [];
 
 export default defineContentScript({
   matches: ['<all_urls>'],
@@ -66,8 +66,8 @@ function cleanupAnnotations(): void {
   });
 
   // Remove tooltip event listeners
-  for (const { type, handler } of tooltipListeners) {
-    document.removeEventListener(type, handler);
+  for (const { type, handler, options } of tooltipListeners) {
+    document.removeEventListener(type, handler, options);
   }
   tooltipListeners = [];
 
@@ -192,7 +192,7 @@ function injectStyles() {
       display: none;
       box-shadow: 0 4px 16px rgba(124,58,237,0.35);
       font-family: system-ui, -apple-system, sans-serif;
-      max-width: 320px;
+      max-width: min(320px, calc(100vw - 16px));
       border: 1px solid rgba(167,139,250,0.4);
     }
   `;
@@ -205,53 +205,121 @@ function createTooltip() {
   tooltip.id = TOOLTIP_ID;
   document.body.appendChild(tooltip);
 
-  const onMouseOver = ((e: MouseEvent) => {
-    const target = (e.target as Element).closest(`.${ANNOTATION_CLASS}`);
-    if (!target) return;
+  // Track whether the tooltip is pinned by a tap (touch/click) so scroll can dismiss it
+  let pinnedByTap = false;
+
+  const showTooltip = (target: Element, positionFn: () => void) => {
     const text = target.getAttribute('data-tooltip');
     if (!text) return;
     tooltip.textContent = text;
     tooltip.style.display = 'block';
-    positionTooltip(tooltip, e);
+    positionFn();
+  };
+
+  // Desktop: hover-based tooltip
+  const onMouseOver = ((e: MouseEvent) => {
+    if (pinnedByTap) return;
+    const target = (e.target as Element).closest(`.${ANNOTATION_CLASS}`);
+    if (!target) return;
+    showTooltip(target, () => positionTooltip(tooltip, e));
   }) as EventListener;
 
   const onMouseMove = ((e: MouseEvent) => {
+    if (pinnedByTap) return;
     if (tooltip.style.display === 'block') {
       positionTooltip(tooltip, e);
     }
   }) as EventListener;
 
   const onMouseOut = ((e: MouseEvent) => {
+    if (pinnedByTap) return;
     const target = (e.target as Element).closest(`.${ANNOTATION_CLASS}`);
     if (target) {
       tooltip.style.display = 'none';
     }
   }) as EventListener;
 
+  // Mobile: tap-based toggle
+  const onClick = ((e: MouseEvent) => {
+    const target = (e.target as Element).closest(`.${ANNOTATION_CLASS}`);
+    if (target) {
+      if (pinnedByTap && tooltip.style.display === 'block') {
+        // Tap again to dismiss
+        tooltip.style.display = 'none';
+        pinnedByTap = false;
+      } else {
+        pinnedByTap = true;
+        showTooltip(target, () => positionTooltipNearElement(tooltip, target));
+      }
+    } else if (pinnedByTap) {
+      tooltip.style.display = 'none';
+      pinnedByTap = false;
+    }
+  }) as EventListener;
+
+  // Hide tooltip when page is scrolled (fixes tooltip staying fixed on mobile)
+  const onScroll = (() => {
+    tooltip.style.display = 'none';
+    pinnedByTap = false;
+  }) as EventListener;
+
   document.addEventListener('mouseover', onMouseOver);
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseout', onMouseOut);
+  document.addEventListener('click', onClick);
+  document.addEventListener('scroll', onScroll, { capture: true, passive: true });
 
   tooltipListeners = [
     { type: 'mouseover', handler: onMouseOver },
     { type: 'mousemove', handler: onMouseMove },
     { type: 'mouseout', handler: onMouseOut },
+    { type: 'click', handler: onClick },
+    { type: 'scroll', handler: onScroll, options: { capture: true, passive: true } },
   ];
 }
 
 function positionTooltip(tooltip: HTMLElement, e: MouseEvent) {
-  const tw = tooltip.offsetWidth;
-  const th = tooltip.offsetHeight;
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const x = e.clientX;
   const y = e.clientY;
 
+  // Use getBoundingClientRect after display:block to get actual rendered dimensions
+  const rect = tooltip.getBoundingClientRect();
+  const tw = rect.width || 240; // fallback if not yet laid out
+  const th = rect.height || 60;
+
   let left = x + 14;
   let top = y - th - 10;
 
   if (left + tw > vw - 8) left = x - tw - 14;
+  if (left < 8) left = 8;
   if (top < 8) top = y + 22;
+  if (top + th > vh - 8) top = vh - th - 8;
+
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+}
+
+// Position tooltip relative to element rect — used for touch/tap on mobile
+function positionTooltipNearElement(tooltip: HTMLElement, element: Element) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const elRect = element.getBoundingClientRect();
+
+  const rect = tooltip.getBoundingClientRect();
+  const tw = rect.width || 240;
+  const th = rect.height || 60;
+
+  // Prefer above the element, fall back to below
+  let top = elRect.top - th - 8;
+  if (top < 8) top = elRect.bottom + 8;
+  if (top + th > vh - 8) top = Math.max(8, vh - th - 8);
+
+  // Align to element left, clamped to viewport
+  let left = elRect.left;
+  if (left + tw > vw - 8) left = vw - tw - 8;
+  if (left < 8) left = 8;
 
   tooltip.style.left = `${left}px`;
   tooltip.style.top = `${top}px`;

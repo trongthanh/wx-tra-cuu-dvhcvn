@@ -111,8 +111,13 @@ async function updateBadge(count: number): Promise<void> {
   const color = count > 0 ? '#7c3aed' : '#9ca3af'; // Purple for active, gray for none
 
   try {
-    await browser.action.setBadgeText({ text });
-    await browser.action.setBadgeBackgroundColor({ color });
+    // Firefox MV2 uses browserAction; Chrome MV3 uses action
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const actionApi = browser.action ?? (browser as any).browserAction;
+    if (actionApi) {
+      await actionApi.setBadgeText({ text });
+      await actionApi.setBadgeBackgroundColor({ color });
+    }
   } catch {
     // Ignore errors (e.g., if action API is not available)
   }

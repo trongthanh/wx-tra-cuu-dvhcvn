@@ -10,7 +10,18 @@ export default defineConfig({
     version: '1.0.0',
     permissions: ['storage', 'activeTab'],
     ...(browser === 'firefox'
-      ? { developer: { name: 'Thanh Tran', url: 'https://thanh.im' } }
+      ? {
+          developer: { name: 'Thanh Tran', url: 'https://thanh.im' },
+          browser_specific_settings: {
+            gecko: {
+              id: 'tra-cuu-dvhcvn@thanh.im',
+              data_collection_permissions: {
+                required: ['none'],
+                optional: [],
+              },
+            },
+          },
+        }
       : { author: { email: 'trongthanh@gmail.com' } }),
     homepage_url: 'https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git',
     icons: {

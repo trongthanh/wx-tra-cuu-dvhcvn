@@ -3,6 +3,13 @@
 
 Browser extension giúp tra cứu tên các đơn vị hành chính mới và cũ của Việt Nam sau sáp nhập và tổ chức lại các đơn vị hành chính năm 2025.
 
+
+Đã có tại:
+
+[![Available in the Chrome Web Store](assets/chrome-web-store.svg)](https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=item-share-cb)
+
+Firefox Add-on đang chờ review.
+
 ## Bối cảnh:
 
 Theo Hiến pháp và [Nghị quyết số 203/2025/QH15](https://xaydungchinhsach.chinhphu.vn/nghi-quyet-203-2025-qh15-sua-doi-bo-sung-mot-so-dieu-cua-hien-phap-nuoc-cong-hoa-xa-hoi-chu-nghia-viet-nam-119250616181735552.htm) sửa đổi, bổ sung của Quốc Hội nước Cộng hòa xã hội chủ nghĩa Việt Nam, [hệ thống phân cấp hành chính của Việt Nam](https://vi.wikipedia.org/wiki/Ph%C3%A2n_c%E1%BA%A5p_h%C3%A0nh_ch%C3%ADnh_Vi%E1%BB%87t_Nam) đã trải qua một đợt tái cấu trúc lớn vào năm 2025:
@@ -13,7 +20,13 @@ Theo Hiến pháp và [Nghị quyết số 203/2025/QH15](https://xaydungchinhsa
 
 Tiện ích này giúp người dùng dễ dàng chuyển đổi và thích nghi bằng cách kết nối thông tin giữa địa chỉ cũ và hệ thống mới.
 
-## Tính năng chính
+## Giới thiệu
+
+Điểm đặc biệt của **Web extension Tra Cứu ĐVHCVN** so với các trang web tra cứu ĐVHC sau sáp nhập hiện tại đó là nó hoạt động hoàn toàn offline.
+
+Dữ liệu đơn vị hành chính cũ và mới đã được đóng gói kèm theo extension này và được đánh chỉ mục (indexing) ngay tại cơ sở dữ liệu cục bộ cho phép truy vấn tên phường/xã, quận/huyện, tỉnh/thành tức thời.
+
+### Các tính năng hiện tại:
 
 - **Mới → Cũ**: Tra cứu thông tin phường, quận và tỉnh cũ từ tên một phường mới.
 - **Cũ → Mới**: Tìm kiếm phường và tỉnh mới tương ứng với các đơn vị hành chính cũ.
@@ -30,10 +43,9 @@ Tiện ích này giúp người dùng dễ dàng chuyển đổi và thích nghi
 
 ## Công nghệ Sử dụng
 
-- [WXT](https://wxt.dev/) (Web eXTension Toolkit) — Manifest V3 (Chrome) / V2 (Firefox).
-- **TypeScript**: Sử dụng chế độ strict để đảm bảo an toàn kiểu dữ liệu.
 - **IndexedDB**: Lưu trữ dữ liệu cục bộ bằng thư viện [idb](https://github.com/nicolo-ribaudo/idb), kết hợp với các chỉ mục (index) đã chuẩn hóa để tìm fuzzy search cực nhanh.
 - **Choices.js**: Cải thiện trải nghiệm chọn (select) và tìm kiếm trong giao diện popup.
+- [WXT](https://wxt.dev/) (Web eXTension Toolkit) — Manifest V3 (Chrome) / V2 (Firefox).
 - **Vitest**: Kiểm thử đơn vị (unit test) toàn diện với `fake-indexeddb`.
 
 ## Getting start with development
@@ -89,12 +101,14 @@ utils/                    # Core utilities
 ├── strings.ts            # Vietnamese diacritic normalization
 └── settings.ts           # Extension settings management
 
-data/           # Administrative unit CSV data
-└── *.csv       # (CSV format is more compact than JSON)
+public/
+├── *               # Static assets bundled with the extension
+└── data/           # Administrative unit CSV data
+    └── *.csv       # (CSV format is more compact than JSON)
 
 tests/                # Unit tests
 ```
 
-## Copyright
+---
 
-©️ 2026 Trần Trọng Thanh.
+License ISC. ©️ 2026 Trần Trọng Thanh.

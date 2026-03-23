@@ -81,6 +81,23 @@ pnpm test         # Single run
 pnpm test:watch   # Watch mode
 ```
 
+## Website (Landing Page)
+
+The `website/` directory contains a standalone landing page built with Vite, deployed to GitHub Pages via `.github/workflows/deploy-website.yml`.
+
+```bash
+# Dev server (accessible on local network)
+pnpm website:dev
+
+# Production build → website/dist/
+pnpm website:build
+
+# Preview production build
+pnpm website:preview
+```
+
+The website reuses `utils/` and `public/data/` from the extension and includes a live lookup widget and an interactive annotation demo.
+
 ## Project Structure
 
 ```
@@ -104,6 +121,16 @@ public/
 ├── *               # Static assets bundled with the extension
 └── data/           # Administrative unit CSV data
     └── *.csv       # (CSV format is more compact than JSON)
+
+website/                  # Landing page (deployed to GitHub Pages)
+├── index.html
+├── vite.config.ts
+├── public/           # Website-only static assets (SVG store badges)
+└── src/
+    ├── main.ts
+    ├── style.css
+    ├── lookup-widget.ts
+    └── web-data-setup.ts
 
 tests/                # Unit tests
 ```

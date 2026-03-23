@@ -2,6 +2,7 @@
 data/
 .agents/
 .claude/
+website/dist
 
 
 # Logs

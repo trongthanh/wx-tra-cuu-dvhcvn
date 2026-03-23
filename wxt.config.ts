@@ -1,4 +1,5 @@
 import { defineConfig } from 'wxt';
+import pkg from './package.json';
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -7,7 +8,7 @@ export default defineConfig({
     name: 'Tra cứu Đơn Vị Hành Chính',
     description:
       'Tra cứu ĐVHC sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại. Chú giải phường/xã mới trực tiếp trên trang web.',
-    version: '1.0.0',
+    version: pkg.version,
     permissions: ['storage', 'activeTab'],
     ...(browser === 'firefox'
       ? {

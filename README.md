@@ -1,8 +1,10 @@
 # Web Extension Tra Cứu Đơn Vị Hành Chính Việt Nam
-[![license | ISC](https://img.shields.io/badge/License-ISC-7c3aed?labelColor=black)](https://github.com/trongthanh/wx-tra-cuu-dvhcvn/blob/main/LICENSE)
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/trongthanh/wx-tra-cuu-dvhcvn)
+ [![license | ISC](https://img.shields.io/badge/License-ISC-7c3aed)](https://github.com/trongthanh/wx-tra-cuu-dvhcvn/blob/main/LICENSE)
+
 
 Browser extension giúp tra cứu tên các đơn vị hành chính mới và cũ của Việt Nam sau sáp nhập và tổ chức lại các đơn vị hành chính năm 2025.
-
 
 Đã có tại:
 

@@ -1,7 +1,7 @@
 {
   "name": "wxt-tra-cuu-dvhcvn",
   "description": "Cẩm nang đơn vị hành chính Việt Nam sau năm 2025 - Tra cứu phường/xã mới và cũ",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "author": "Trần Trọng Thanh<trongthanh@gmail.com> (https://thanh.im)",
   "homepage": "https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git",
@@ -37,6 +37,7 @@
     "fake-indexeddb": "^6.2.5",
     "typescript": "^5.9.2",
     "vite": "^8.0.1",
+    "vite-plugin-devtools-json": "^1.0.0",
     "vitest": "^4.0.18",
     "wxt": "^0.20.6"
   },

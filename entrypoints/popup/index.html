@@ -12,17 +12,59 @@
         <h1>Tra cứu Đơn Vị Hành Chính 🇻🇳</h1>
       </header>
 
-      <nav class="tabs">
-        <button class="tab active" data-tab="new-to-old">Mới &rarr; Cũ</button>
-        <button class="tab" data-tab="old-to-new">Cũ &rarr; Mới</button>
-        <button class="tab" data-tab="about">Cài Đặt</button>
+      <nav class="tabs" role="tablist" aria-label="Chức năng">
+        <button
+          class="tab active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-new-to-old"
+          id="tab-btn-new-to-old"
+          data-tab="new-to-old"
+        >
+          Mới &rarr; Cũ
+        </button>
+        <button
+          class="tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-old-to-new"
+          id="tab-btn-old-to-new"
+          data-tab="old-to-new"
+        >
+          Cũ &rarr; Mới
+        </button>
+        <button
+          class="tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-about"
+          id="tab-btn-about"
+          data-tab="about"
+        >
+          Cài Đặt
+        </button>
       </nav>
 
       <!-- Tab 1: New to Old -->
-      <div class="tab-content active" id="tab-new-to-old">
+      <div
+        class="tab-content active"
+        id="tab-new-to-old"
+        role="tabpanel"
+        aria-labelledby="tab-btn-new-to-old"
+      >
         <div class="quick-search-group">
           <label for="quick-search"
-            >Tìm nhanh <button type="button" class="help-btn" data-help="new">?</button></label
+            >Tìm nhanh
+            <button
+              type="button"
+              class="help-btn"
+              data-help="new"
+              aria-label="Hướng dẫn tìm nhanh"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              ?
+            </button></label
           >
           <div class="quick-search-wrapper">
             <input
@@ -30,8 +72,17 @@
               id="quick-search"
               placeholder="Nhập tên phường/xã, tỉnh/thành..."
               autocomplete="off"
+              role="combobox"
+              aria-expanded="false"
+              aria-autocomplete="list"
+              aria-controls="quick-search-results"
             />
-            <div id="quick-search-results" class="quick-search-dropdown"></div>
+            <div
+              id="quick-search-results"
+              class="quick-search-dropdown"
+              role="listbox"
+              aria-label="Kết quả tìm kiếm"
+            ></div>
           </div>
         </div>
         <div class="form-divider"><span>hoặc chọn thủ công</span></div>
@@ -51,10 +102,26 @@
       </div>
 
       <!-- Tab 2: Old to New -->
-      <div class="tab-content" id="tab-old-to-new">
+      <div
+        class="tab-content"
+        id="tab-old-to-new"
+        role="tabpanel"
+        aria-labelledby="tab-btn-old-to-new"
+        aria-hidden="true"
+      >
         <div class="quick-search-group">
           <label for="old-quick-search"
-            >Tìm nhanh <button type="button" class="help-btn" data-help="old">?</button></label
+            >Tìm nhanh
+            <button
+              type="button"
+              class="help-btn"
+              data-help="old"
+              aria-label="Hướng dẫn tìm nhanh"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              ?
+            </button></label
           >
           <div class="quick-search-wrapper">
             <input
@@ -62,8 +129,17 @@
               id="old-quick-search"
               placeholder="Nhập tên phường/xã, quận/huyện, tỉnh/thành..."
               autocomplete="off"
+              role="combobox"
+              aria-expanded="false"
+              aria-autocomplete="list"
+              aria-controls="old-quick-search-results"
             />
-            <div id="old-quick-search-results" class="quick-search-dropdown"></div>
+            <div
+              id="old-quick-search-results"
+              class="quick-search-dropdown"
+              role="listbox"
+              aria-label="Kết quả tìm kiếm"
+            ></div>
           </div>
         </div>
         <div class="form-divider"><span>hoặc chọn thủ công</span></div>
@@ -88,8 +164,14 @@
         <div id="old-to-new-result" class="result-area"></div>
       </div>
 
-      <!-- Tab 3: About -->
-      <div class="tab-content" id="tab-about">
+      <!-- Tab 3: About / Settings -->
+      <div
+        class="tab-content"
+        id="tab-about"
+        role="tabpanel"
+        aria-labelledby="tab-btn-about"
+        aria-hidden="true"
+      >
         <div class="settings-section">
           <h3>Cài đặt</h3>
           <div class="setting-item">
@@ -98,16 +180,51 @@
               <span>Tự động ghi chú tên phường/xã mới trên trang web</span>
             </label>
             <p class="setting-description">
-              Tự động nhận diện và đánh dấu tên phường/xã mới trên các trang web, hiển thị thông tin
-              quận/huyện cũ khi di chuột.
+              Tự động nhận diện và đánh dấu tên phường/xã mới trên các trang web, hiển thị thông
+              tin quận/huyện cũ khi di chuột.
             </p>
+          </div>
+          <div class="setting-item">
+            <div class="setting-theme-label">Giao diện màu</div>
+            <div
+              class="theme-btn-group"
+              id="theme-btn-group"
+              role="group"
+              aria-label="Chọn giao diện màu"
+            >
+              <button
+                type="button"
+                class="theme-btn"
+                data-theme="light"
+                aria-pressed="false"
+              >
+                ☀ Sáng
+              </button>
+              <button
+                type="button"
+                class="theme-btn active"
+                data-theme="auto"
+                aria-pressed="true"
+              >
+                ⊙ Tự động
+              </button>
+              <button
+                type="button"
+                class="theme-btn"
+                data-theme="dark"
+                aria-pressed="false"
+              >
+                ☽ Tối
+              </button>
+            </div>
+            <p class="setting-theme-description">Giao diện màu cho tiện ích.</p>
           </div>
         </div>
         <div class="about-section">
           <h3>Giới thiệu</h3>
           <p>
-            Tiện ích giúp tra cứu tên đơn vị hành chính (phường, xã, quận, huyện) sau cải cách hành
-            chính 2025. Các tính năng hiện tại:
+            Tiện ích giúp tra cứu tên đơn vị hành chính (phường, xã, quận, huyện) sau cải cách
+            hành chính 2025. Các tính năng hiện tại:
           </p>
           <ul>
             <li><strong>Mới &rarr; Cũ:</strong> Tra cứu tên cũ từ tên mới (sau cải cách)</li>

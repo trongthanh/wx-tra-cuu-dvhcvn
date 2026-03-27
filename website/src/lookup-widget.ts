@@ -96,7 +96,11 @@ function initHelpPopovers(): void {
       document.querySelectorAll('.help-popover.open').forEach((p) => {
         if (p !== popover) p.classList.remove('open');
       });
-      popover.classList.toggle('open');
+      document.querySelectorAll<HTMLButtonElement>('.help-btn').forEach((b) => {
+        if (b !== btn) b.setAttribute('aria-expanded', 'false');
+      });
+      const isOpen = popover.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
     });
 
     popover.addEventListener('click', (e) => {
@@ -106,6 +110,9 @@ function initHelpPopovers(): void {
 
   document.addEventListener('click', () => {
     document.querySelectorAll('.help-popover.open').forEach((p) => p.classList.remove('open'));
+    document.querySelectorAll<HTMLButtonElement>('.help-btn').forEach((b) =>
+      b.setAttribute('aria-expanded', 'false')
+    );
   });
 }
 
@@ -154,6 +161,7 @@ async function initNewToOld(lookup: WardLookupService): Promise<void> {
     searchDropdown.classList.remove('open');
     searchDropdown.innerHTML = '';
     activeIndex = -1;
+    searchInput.setAttribute('aria-expanded', 'false');
   }
 
   function highlightItem(index: number): void {
@@ -215,14 +223,15 @@ async function initNewToOld(lookup: WardLookupService): Promise<void> {
         searchDropdown.innerHTML =
           '<div class="quick-search-no-result">Không tìm thấy kết quả</div>';
         searchDropdown.classList.add('open');
+        searchInput.setAttribute('aria-expanded', 'true');
         activeIndex = -1;
         return;
       }
 
       searchDropdown.innerHTML = shown
         .map(
-          (w) =>
-            `<div class="quick-search-item" data-ward-code="${w.ward_code}" data-province="${w.province_name.replace(/"/g, '&quot;')}">
+          (w, i) =>
+            `<div class="quick-search-item" role="option" id="qs-new-${i}" data-ward-code="${w.ward_code}" data-province="${w.province_name.replace(/"/g, '&quot;')}">
               <span class="qs-ward">${w.ward_name}</span>
               <span class="qs-province"> &mdash; ${w.province_name}</span>
             </div>`
@@ -230,6 +239,7 @@ async function initNewToOld(lookup: WardLookupService): Promise<void> {
         .join('');
 
       searchDropdown.classList.add('open');
+      searchInput.setAttribute('aria-expanded', 'true');
       activeIndex = -1;
 
       searchDropdown.querySelectorAll<HTMLDivElement>('.quick-search-item').forEach((el) => {
@@ -388,6 +398,7 @@ async function initOldToNew(lookup: WardLookupService): Promise<void> {
     searchDropdown.classList.remove('open');
     searchDropdown.innerHTML = '';
     activeIndex = -1;
+    searchInput.setAttribute('aria-expanded', 'false');
   }
 
   function highlightItem(index: number): void {
@@ -466,14 +477,15 @@ async function initOldToNew(lookup: WardLookupService): Promise<void> {
         searchDropdown.innerHTML =
           '<div class="quick-search-no-result">Không tìm thấy kết quả</div>';
         searchDropdown.classList.add('open');
+        searchInput.setAttribute('aria-expanded', 'true');
         activeIndex = -1;
         return;
       }
 
       searchDropdown.innerHTML = shown
         .map(
-          (w) =>
-            `<div class="quick-search-item" data-ward-code="${w.ward_code}" data-province="${w.province_name.replace(/"/g, '&quot;')}" data-district="${w.district_name.replace(/"/g, '&quot;')}">
+          (w, i) =>
+            `<div class="quick-search-item" role="option" id="qs-old-${i}" data-ward-code="${w.ward_code}" data-province="${w.province_name.replace(/"/g, '&quot;')}" data-district="${w.district_name.replace(/"/g, '&quot;')}">
               <span class="qs-ward">${w.ward_name}</span>
               <span class="qs-province"> &mdash; ${w.district_name}, ${w.province_name}</span>
             </div>`
@@ -481,6 +493,7 @@ async function initOldToNew(lookup: WardLookupService): Promise<void> {
         .join('');
 
       searchDropdown.classList.add('open');
+      searchInput.setAttribute('aria-expanded', 'true');
       activeIndex = -1;
 
       searchDropdown.querySelectorAll<HTMLDivElement>('.quick-search-item').forEach((el) => {
@@ -612,11 +625,20 @@ export async function initLookupWidget(lookup: WardLookupService): Promise<void>
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      tabs.forEach((t) => t.classList.remove('active'));
-      tabContents.forEach((tc) => tc.classList.remove('active'));
+      tabs.forEach((t) => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tabContents.forEach((tc) => {
+        tc.classList.remove('active');
+        tc.setAttribute('aria-hidden', 'true');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       const target = tab.dataset.tab!;
-      document.getElementById(`tab-${target}`)!.classList.add('active');
+      const panel = document.getElementById(`tab-${target}`)!;
+      panel.classList.add('active');
+      panel.removeAttribute('aria-hidden');
     });
   });
 

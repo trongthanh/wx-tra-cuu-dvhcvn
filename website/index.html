@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tra cứu Đơn Vị Hành Chính Việt Nam</title>
-    <meta name="description" content="Tra cứu đơn vị hành chính Việt Nam sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại." />
+    <meta
+      name="description"
+      content="Tra cứu đơn vị hành chính Việt Nam sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại."
+    />
     <link rel="icon" type="image/png" href="/icon/48.png" />
+    <script>
+      (function () {
+        var t = localStorage.getItem('vw_website_theme');
+        if (t && t !== 'auto') document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
   </head>
   <body>
     <!-- Header -->
@@ -15,9 +24,27 @@
           <img src="/icon/128.png" alt="" class="header-logo" />
           <span class="header-title">Tra cứu ĐVHC Việt Nam</span>
         </a>
-        <a href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git" target="_blank" rel="noopener" class="header-github" aria-label="Xem mã nguồn trên GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Giao diện: Tự động"
+          ></button>
+          <a
+            href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git"
+            target="_blank"
+            rel="noopener"
+            class="header-github"
+            aria-label="Xem mã nguồn trên GitHub"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -26,9 +53,9 @@
       <div class="container">
         <h1>Tra cứu Đơn Vị Hành Chính Việt Nam</h1>
         <p class="intro-desc">
-          Từ tháng 7/2025, Việt Nam thực hiện cải cách hành chính lớn: giảm từ 63 tỉnh thành xuống còn 34,
-          bỏ cấp quận/huyện, sáp nhập nhiều phường/xã thành đơn vị mới.
-          Công cụ này giúp bạn tra cứu nhanh mối liên hệ giữa địa chỉ cũ và mới.
+          Từ tháng 7/2025, Việt Nam thực hiện cải cách hành chính lớn: giảm từ 63 tỉnh thành xuống
+          còn 34, bỏ cấp quận/huyện, sáp nhập nhiều phường/xã thành đơn vị mới. Công cụ này giúp bạn
+          tra cứu nhanh mối liên hệ giữa địa chỉ cũ và mới.
         </p>
       </div>
     </section>
@@ -38,23 +65,61 @@
       <div class="container">
         <div class="widget" id="lookup-widget">
           <!-- Loading state -->
-          <div id="loading-state" class="loading-state">
-            <div class="spinner"></div>
+          <div
+            id="loading-state"
+            class="loading-state"
+            role="status"
+            aria-label="Đang tải dữ liệu"
+          >
+            <div class="spinner" aria-hidden="true"></div>
             <p>Đang tải dữ liệu...</p>
           </div>
 
           <!-- Widget content (hidden until loaded) -->
-          <div id="widget-content" class="widget-content" style="display: none;">
-            <nav class="tabs">
-              <button class="tab active" data-tab="new-to-old">Mới &rarr; Cũ</button>
-              <button class="tab" data-tab="old-to-new">Cũ &rarr; Mới</button>
+          <div id="widget-content" class="widget-content" style="display: none">
+            <nav class="tabs" role="tablist" aria-label="Chế độ tra cứu">
+              <button
+                class="tab active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tab-new-to-old"
+                id="tab-btn-new-to-old"
+                data-tab="new-to-old"
+              >
+                Mới &rarr; Cũ
+              </button>
+              <button
+                class="tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tab-old-to-new"
+                id="tab-btn-old-to-new"
+                data-tab="old-to-new"
+              >
+                Cũ &rarr; Mới
+              </button>
             </nav>
 
             <!-- Tab 1: New to Old -->
-            <div class="tab-content active" id="tab-new-to-old">
+            <div
+              class="tab-content active"
+              id="tab-new-to-old"
+              role="tabpanel"
+              aria-labelledby="tab-btn-new-to-old"
+            >
               <div class="quick-search-group">
                 <label for="quick-search"
-                  >Tìm nhanh <button type="button" class="help-btn" data-help="new">?</button></label
+                  >Tìm nhanh
+                  <button
+                    type="button"
+                    class="help-btn"
+                    data-help="new"
+                    aria-label="Hướng dẫn tìm nhanh"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ?
+                  </button></label
                 >
                 <div class="quick-search-wrapper">
                   <input
@@ -62,8 +127,17 @@
                     id="quick-search"
                     placeholder="Nhập tên phường/xã, tỉnh/thành..."
                     autocomplete="off"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-autocomplete="list"
+                    aria-controls="quick-search-results"
                   />
-                  <div id="quick-search-results" class="quick-search-dropdown"></div>
+                  <div
+                    id="quick-search-results"
+                    class="quick-search-dropdown"
+                    role="listbox"
+                    aria-label="Kết quả tìm kiếm"
+                  ></div>
                 </div>
               </div>
               <div class="form-divider"><span>hoặc chọn thủ công</span></div>
@@ -83,10 +157,26 @@
             </div>
 
             <!-- Tab 2: Old to New -->
-            <div class="tab-content" id="tab-old-to-new">
+            <div
+              class="tab-content"
+              id="tab-old-to-new"
+              role="tabpanel"
+              aria-labelledby="tab-btn-old-to-new"
+              aria-hidden="true"
+            >
               <div class="quick-search-group">
                 <label for="old-quick-search"
-                  >Tìm nhanh <button type="button" class="help-btn" data-help="old">?</button></label
+                  >Tìm nhanh
+                  <button
+                    type="button"
+                    class="help-btn"
+                    data-help="old"
+                    aria-label="Hướng dẫn tìm nhanh"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ?
+                  </button></label
                 >
                 <div class="quick-search-wrapper">
                   <input
@@ -94,8 +184,17 @@
                     id="old-quick-search"
                     placeholder="Nhập tên phường/xã, quận/huyện, tỉnh/thành..."
                     autocomplete="off"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-autocomplete="list"
+                    aria-controls="old-quick-search-results"
                   />
-                  <div id="old-quick-search-results" class="quick-search-dropdown"></div>
+                  <div
+                    id="old-quick-search-results"
+                    class="quick-search-dropdown"
+                    role="listbox"
+                    aria-label="Kết quả tìm kiếm"
+                  ></div>
                 </div>
               </div>
               <div class="form-divider"><span>hoặc chọn thủ công</span></div>
@@ -127,17 +226,35 @@
     <!-- Extension -->
     <section class="extension-section">
       <div class="container">
-        <h2>Tiện ích trình duyệt</h2>
+        <h2>Web Extension</h2>
         <p class="extension-desc">
-          Cài đặt tiện ích để tra cứu ngay trong trình duyệt và nhận chú giải tự động
-          trên các trang web &mdash; hoàn toàn ngoại tuyến, không theo dõi.
+          Cài đặt tiện ích để tra cứu ngay trong trình duyệt và nhận chú giải tự động trên các trang
+          web &mdash; hoàn toàn ngoại tuyến, không theo dõi.
         </p>
         <div class="store-badges">
-          <a href="https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=landing" target="_blank" rel="noopener" class="store-badge">
-            <img src="./public/chrome-web-store.svg" alt="Available in the Chrome Web Store" class="store-badge-img" />
+          <a
+            href="https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=landing"
+            target="_blank"
+            rel="noopener"
+            class="store-badge"
+          >
+            <img
+              src="./public/chrome-web-store.svg"
+              alt="Available in the Chrome Web Store"
+              class="store-badge-img"
+            />
           </a>
-          <a href="https://addons.mozilla.org/en-US/firefox/addon/tra-cuu-dvhcvn/" target="_blank" rel="noopener" class="store-badge">
-            <img src="./public/mozilla-add-ons.svg" alt="Available in the Mozilla Add-ons Store" class="store-badge-img" />
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/tra-cuu-dvhcvn/"
+            target="_blank"
+            rel="noopener"
+            class="store-badge"
+          >
+            <img
+              src="./public/mozilla-add-ons.svg"
+              alt="Available in the Mozilla Add-ons Store"
+              class="store-badge-img"
+            />
           </a>
         </div>
         <div class="extension-benefits">
@@ -166,7 +283,10 @@
             <div class="feature-icon">&#x1F50D;</div>
             <div class="feature-body">
               <h3>Tra cứu Mới &rarr; Cũ</h3>
-              <p>Nhập tên phường/xã mới (sau cải cách) để xem tên quận/huyện và phường/xã cũ tương ứng.</p>
+              <p>
+                Nhập tên phường/xã mới (sau cải cách) để xem tên quận/huyện và phường/xã cũ tương
+                ứng.
+              </p>
             </div>
           </div>
           <div class="feature-card">
@@ -180,10 +300,25 @@
             <div class="feature-icon">&#x1F4DD;</div>
             <div class="feature-body">
               <h3>Chú giải trên trang web</h3>
-              <p>Tiện ích tự động nhận diện tên phường/xã mới trên trang web và hiển thị tên cũ khi di chuột.</p>
+              <p>
+                Tiện ích tự động nhận diện tên phường/xã mới trên trang web và hiển thị tên cũ khi
+                di chuột.
+              </p>
               <div class="annotation-demo">
                 <p class="demo-label">Thử nghiệm &mdash; di chuột vào tên phường được gạch chân:</p>
-                <p class="demo-text">Người dân sinh sống tại <span class="vw-annotation" data-tooltip="Quận Tân Bình, Thành phố Hồ Chí Minh (cũ)">phường Bảy Hiền<span class="vw-hint">[?]</span></span> và <span class="vw-annotation" data-tooltip="Quận Cầu Giấy, Thành phố Hà Nội (cũ)">phường Cầu Giấy<span class="vw-hint">[?]</span></span> cần cập nhật địa chỉ hành chính mới trước ngày 01/8/2025.</p>
+                <p class="demo-text">
+                  Người dân sinh sống tại
+                  <span
+                    class="vw-annotation"
+                    data-tooltip="Quận Tân Bình, Thành phố Hồ Chí Minh (cũ)"
+                    >phường Bảy Hiền<span class="vw-hint">[?]</span></span
+                  >
+                  và
+                  <span class="vw-annotation" data-tooltip="Quận Cầu Giấy, Thành phố Hà Nội (cũ)"
+                    >phường Cầu Giấy<span class="vw-hint">[?]</span></span
+                  >
+                  cần cập nhật địa chỉ hành chính mới trước ngày 01/8/2025.
+                </p>
               </div>
             </div>
           </div>
@@ -194,7 +329,16 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Thanh Trần</a>. Mã nguồn trên <a href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>
+          &copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Thanh Trần</a>. Mã
+          nguồn trên
+          <a
+            href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >.
+        </p>
       </div>
     </footer>
 

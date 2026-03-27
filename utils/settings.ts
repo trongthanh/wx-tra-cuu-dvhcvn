@@ -5,10 +5,13 @@
 export interface Settings {
   /** Enable page content annotation */
   enableAnnotation: boolean;
+  /** Color theme preference */
+  theme: 'light' | 'dark' | 'auto';
 }
 
 const DEFAULT_SETTINGS: Settings = {
   enableAnnotation: true,
+  theme: 'auto',
 };
 
 const STORAGE_KEY = 'vw_settings';

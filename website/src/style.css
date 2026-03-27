@@ -13,6 +13,7 @@
   --radius: 6px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --focus-ring: rgba(124, 58, 237, 0.2);
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
@@ -33,7 +34,36 @@
     --accent-subtle: rgba(167, 139, 250, 0.1);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --focus-ring: rgba(167, 139, 250, 0.3);
   }
+}
+
+:root[data-theme='dark'] {
+  --bg: #18181b;
+  --bg-secondary: #27272a;
+  --text: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --border: #3f3f46;
+  --accent: #a78bfa;
+  --accent-hover: #8b5cf6;
+  --accent-subtle: rgba(167, 139, 250, 0.1);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --focus-ring: rgba(167, 139, 250, 0.3);
+}
+
+:root[data-theme='light'] {
+  --bg: #ffffff;
+  --bg-secondary: #f7f7f8;
+  --text: #1a1a1a;
+  --text-secondary: #5c5c66;
+  --border: #e0e0e5;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-subtle: rgba(124, 58, 237, 0.08);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --focus-ring: rgba(124, 58, 237, 0.2);
 }
 
 * {
@@ -130,6 +160,32 @@ a:hover {
   color: var(--text);
   background: var(--accent-subtle);
   text-decoration: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--accent-subtle);
 }
 
 /* --- Intro --- */
@@ -274,7 +330,7 @@ a:hover {
 
 .choices.is-open .choices__inner {
   border-color: var(--accent) !important;
-  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 0 2px var(--focus-ring);
 }
 
 .choices__input {
@@ -342,16 +398,19 @@ a:hover {
 }
 
 @media (prefers-color-scheme: dark) {
-  .choices.is-open .choices__inner {
-    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.3);
-  }
-
   .choices__list--dropdown,
   .choices__list[aria-expanded] {
     background: var(--bg-secondary) !important;
     border-color: var(--border) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
   }
+}
+
+:root[data-theme='dark'] .choices__list--dropdown,
+:root[data-theme='dark'] .choices__list[aria-expanded] {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* --- Quick search --- */
@@ -448,6 +507,15 @@ a:hover {
   }
 }
 
+:root[data-theme='dark'] .help-popover {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme='dark'] .help-popover code {
+  background: var(--bg);
+}
+
 .quick-search-wrapper {
   position: relative;
 }
@@ -467,17 +535,11 @@ a:hover {
 
 .quick-search-wrapper input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 0 2px var(--focus-ring);
 }
 
 .quick-search-wrapper input::placeholder {
   color: var(--text-secondary);
-}
-
-@media (prefers-color-scheme: dark) {
-  .quick-search-wrapper input:focus {
-    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.3);
-  }
 }
 
 .quick-search-dropdown {
@@ -540,6 +602,11 @@ a:hover {
     background: var(--bg-secondary);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
+}
+
+:root[data-theme='dark'] .quick-search-dropdown {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Divider --- */
@@ -652,7 +719,6 @@ a:hover {
 
 .features {
   padding: 48px 0;
-  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
@@ -707,7 +773,7 @@ a:hover {
 /* --- Annotation demo --- */
 
 .vw-annotation {
-  text-decoration: underline dotted #7c3aed;
+  text-decoration: underline dotted var(--accent);
   text-underline-offset: 2px;
   cursor: help;
   color: inherit;
@@ -718,15 +784,10 @@ a:hover {
   margin-left: 2px;
   font-size: 0.7em;
   font-weight: 600;
-  color: #7c3aed;
+  color: var(--accent);
   vertical-align: super;
   line-height: 1;
   font-style: normal;
-}
-
-@media (prefers-color-scheme: dark) {
-  .vw-annotation { text-decoration-color: #a78bfa; }
-  .vw-hint { color: #a78bfa; }
 }
 
 #vw-tooltip {
@@ -773,6 +834,7 @@ a:hover {
 .extension-section {
   padding: 48px 0;
   text-align: center;
+  border-top: 1px solid var(--border);
 }
 
 .extension-section h2 {

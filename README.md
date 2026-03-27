@@ -85,7 +85,7 @@ pnpm test:watch   # Watch mode
 
 ## Website (Landing Page)
 
-The `website/` directory contains a standalone landing page built with Vite, deployed to GitHub Pages via `.github/workflows/deploy-website.yml`.
+The `website/` directory contains a standalone landing page built with Vite, deployed to **Cloudflare Pages** (configured via `wrangler.toml`).
 
 ```bash
 # Dev server (accessible on local network)

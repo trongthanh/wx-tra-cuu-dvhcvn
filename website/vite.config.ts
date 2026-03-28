@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import devtoolsJson from 'vite-plugin-devtools-json';
 
 export default defineConfig({
   root: __dirname,
   publicDir: resolve(__dirname, '../public'),
-  plugins: [devtoolsJson()],
+  plugins: [],
   resolve: {
     alias: {
       '@': resolve(__dirname, '..'),

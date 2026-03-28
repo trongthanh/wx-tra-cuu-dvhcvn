@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tra cứu Đơn Vị Hành Chính Việt Nam</title>
+    <title>Tra cứu Đơn Vị Hành Chính Việt Nam - bởi Thanh Trần</title>
     <meta
       name="description"
       content="Tra cứu đơn vị hành chính Việt Nam sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại."
@@ -65,12 +65,7 @@
       <div class="container">
         <div class="widget" id="lookup-widget">
           <!-- Loading state -->
-          <div
-            id="loading-state"
-            class="loading-state"
-            role="status"
-            aria-label="Đang tải dữ liệu"
-          >
+          <div id="loading-state" class="loading-state" role="status" aria-label="Đang tải dữ liệu">
             <div class="spinner" aria-hidden="true"></div>
             <p>Đang tải dữ liệu...</p>
           </div>
@@ -223,14 +218,117 @@
       </div>
     </section>
 
+    <section class="features">
+      <div class="container">
+        <h2>Công cụ tra cứu sáp nhập ĐVHC duy nhất không cần server!</h2>
+        <p class="section-sub">
+          Khác với các công cụ tra cứu trực tuyến khác cần server để hoạt động &mdash; 
+          toàn bộ dữ liệu ĐVHC và xử lý đều diễn ra ngay trên trình duyệt của bạn.
+        </p>
+        <div class="feature-list feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-body">
+              <h3>Tức thì, không độ trễ mạng</h3>
+              <p>
+                Kết quả trả về ngay lập tức nhờ công nghệ IndexedDB ngay trên trình duyệt. 
+                
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <div class="feature-body">
+              <h3>Dữ liệu và xử lý ngay tại trình duyệt</h3>
+              <p>
+                Toàn bộ dữ liệu ĐVHC được tải về một lần và lưu ngay tại trình duyệt. Không cần gọi
+                API từ server. 
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛜</div>
+            <div class="feature-body">
+              <h3>Hoạt động hoàn toàn offline sau lần đầu tải</h3>
+              <p>
+                Tất cả dữ liệu và xử lý đều diễn ra ngay tại trình duyệt, công cụ tiếp tục hoạt động đầy đủ
+                ngay cả khi mất kết nối internet.
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-body">
+              <h3>Riêng tư tuyệt đối, không thu thập dữ liệu</h3>
+              <p>
+                Chúng tôi cam kết chỉ ghi nhận lượt ghé thăm ẩn danh trang web này. Ngoài ra không có bất kỳ
+                tracking hay thu thập truy vấn của bạn.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Extension -->
     <section class="extension-section">
       <div class="container">
-        <h2>Web Extension</h2>
+        <h2>Chrome Extension & Firefox Add-on</h2>
         <p class="extension-desc">
-          Cài đặt tiện ích để tra cứu ngay trong trình duyệt và nhận chú giải tự động trên các trang
-          web &mdash; hoàn toàn ngoại tuyến, không theo dõi.
+          Công cụ tra cứu này vốn ban đầu được viết như là một phần mở rộng trình duyệt (Web Extension).
+          
         </p>
+        <div class="ext-features">
+          <div class="ext-feature-item">
+            <div class="ext-feature-icon">📝</div>
+            <div class="ext-feature-body">
+              <strong>Chú giải tự động trên mọi trang web</strong>
+              <p>
+                Extension quét nội dung trang và tự động gạch chân tên phường/xã mới,
+                hiển thị tên phường/quận cũ khi di chuột vào.
+              </p>
+              <div class="annotation-demo">
+                <p class="demo-label">Thử nghiệm &mdash; di chuột vào tên phường được gạch chân:</p>
+                <p class="demo-text">
+                  Người dân sinh sống tại
+                  <span
+                    class="vw-annotation"
+                    data-tooltip="Quận Tân Bình, Thành phố Hồ Chí Minh (cũ)"
+                    >phường Bảy Hiền<span class="vw-hint">[?]</span></span
+                  >
+                  và
+                  <span class="vw-annotation" data-tooltip="Quận Cầu Giấy, Thành phố Hà Nội (cũ)"
+                    >phường Cầu Giấy<span class="vw-hint">[?]</span></span
+                  >
+                  cần cập nhật địa chỉ hành chính mới trước ngày 01/8/2025.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="ext-feature-item">
+            <div class="ext-feature-icon">🔍</div>
+            <div class="ext-feature-body">
+              <strong>Popup tra cứu &mdash; truy cập từ mọi trang</strong>
+              <p>
+                Không cần mở tab mới. Click vào biểu tượng extension để tra cứu nhanh
+                phường/xã ngay trong popup trong khi đang đọc bài viết.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="extension-benefits">
+          <div class="benefit">
+            <strong>Gọn nhẹ &amp; nhanh</strong>
+            <span>Chỉ vài trăm KB, khởi động tức thì, không ảnh hưởng hiệu suất trình duyệt</span>
+          </div>
+          <div class="benefit">
+            <strong>Hoàn toàn offline</strong>
+            <span>Dữ liệu tải về máy một lần, tra cứu vĩnh viễn không cần mạng</span>
+          </div>
+          <div class="benefit">
+            <strong>Zero tracking</strong>
+            <span>Không analytics, không thu thập dữ liệu người dùng, mã nguồn mở</span>
+          </div>
+        </div>
         <div class="store-badges">
           <a
             href="https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=landing"
@@ -257,70 +355,70 @@
             />
           </a>
         </div>
-        <div class="extension-benefits">
-          <div class="benefit">
-            <strong>Ngoại tuyến</strong>
-            <span>Dữ liệu tải về máy, tra cứu không cần mạng</span>
-          </div>
-          <div class="benefit">
-            <strong>Riêng tư</strong>
-            <span>Không analytics, không thu thập dữ liệu</span>
-          </div>
-          <div class="benefit">
-            <strong>Tức thì</strong>
-            <span>Tra cứu IndexedDB cục bộ, không độ trễ mạng</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
+    <!-- Under the Hood -->
+    <section class="tech-section">
       <div class="container">
-        <h2>Tính năng</h2>
-        <div class="feature-list">
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F50D;</div>
-            <div class="feature-body">
-              <h3>Tra cứu Mới &rarr; Cũ</h3>
-              <p>
-                Nhập tên phường/xã mới (sau cải cách) để xem tên quận/huyện và phường/xã cũ tương
-                ứng.
-              </p>
-            </div>
+        <h2>Bên dưới nắp ca-pô</h2>
+        <p class="section-sub">
+          Kiến trúc kỹ thuật giúp extension nhỏ gọn, tra cứu nhanh và hoạt động
+          hoàn toàn ngoại tuyến.
+        </p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-icon">🗄️</div>
+            <h3>IndexedDB với chỉ mục tối ưu</h3>
+            <p>
+              Dữ liệu lưu trong IndexedDB với composite index theo từng chiều tra cứu. Truy vấn
+              theo chỉ mục đạt O(log&nbsp;n), nhanh hơn hẳn so với quét tuần tự toàn bảng.
+            </p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F504;</div>
-            <div class="feature-body">
-              <h3>Tra cứu Cũ &rarr; Mới</h3>
-              <p>Nhập tên phường/xã cũ (trước cải cách) để tìm tên phường/xã và tỉnh/thành mới.</p>
-            </div>
+          <div class="tech-card">
+            <div class="tech-icon">🔤</div>
+            <h3>Chuẩn hóa tiếng Việt để tìm kiếm linh hoạt</h3>
+            <p>
+              Hàm <code>normalizeStr()</code> bỏ dấu thanh và chuyển về chữ thường, lưu vào cột
+              <code>_index</code> riêng. Nhờ vậy <em>"phuong bay hien"</em> khớp được với
+              <em>"Phường Bảy Hiền"</em> mà không cần gõ đúng dấu.
+            </p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F4DD;</div>
-            <div class="feature-body">
-              <h3>Chú giải trên trang web</h3>
-              <p>
-                Tiện ích tự động nhận diện tên phường/xã mới trên trang web và hiển thị tên cũ khi
-                di chuột.
-              </p>
-              <div class="annotation-demo">
-                <p class="demo-label">Thử nghiệm &mdash; di chuột vào tên phường được gạch chân:</p>
-                <p class="demo-text">
-                  Người dân sinh sống tại
-                  <span
-                    class="vw-annotation"
-                    data-tooltip="Quận Tân Bình, Thành phố Hồ Chí Minh (cũ)"
-                    >phường Bảy Hiền<span class="vw-hint">[?]</span></span
-                  >
-                  và
-                  <span class="vw-annotation" data-tooltip="Quận Cầu Giấy, Thành phố Hà Nội (cũ)"
-                    >phường Cầu Giấy<span class="vw-hint">[?]</span></span
-                  >
-                  cần cập nhật địa chỉ hành chính mới trước ngày 01/8/2025.
-                </p>
-              </div>
-            </div>
+          <div class="tech-card">
+            <div class="tech-icon">🔗</div>
+            <h3>Quan hệ nhiều-nhiều giữa phường cũ và mới</h3>
+            <p>
+              Bảng <code>ward_mappings</code> lưu quan hệ nhiều-nhiều giữa mã phường cũ và mới,
+              phản ánh thực tế sáp nhập: 2–3 phường cũ gộp thành 1 phường mới mà không trùng
+              lặp dữ liệu.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">↔️</div>
+            <h3>Tra cứu hai chiều từ một kho dữ liệu</h3>
+            <p>
+              Bảng <code>old_wards</code> và <code>new_wards</code> được index độc lập; bảng ánh
+              xạ có index theo cả hai chiều, cho phép tra cứu cũ&rarr;mới lẫn mới&rarr;cũ mà
+              không lưu dữ liệu dư thừa.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">🎯</div>
+            <h3>Nhận diện phường bằng regex có fallback</h3>
+            <p>
+              Content script dùng TreeWalker duyệt text node trong DOM, khớp regex
+              <code>phường|xã</code> + tối đa 6 từ. Nếu kết quả khớp quá dài, hệ thống thử lại
+              với tên ngắn dần cho đến khi tìm được kết quả chính xác.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">📦</div>
+            <h3>Đóng gói gọn, nạp một lần duy nhất</h3>
+            <p>
+              Dữ liệu CSV đóng gói cùng extension, nạp vào IndexedDB khi cài đặt lần đầu. Từ
+              lần dùng thứ hai trở đi, mọi truy vấn đều local &mdash; không download thêm,
+              không request nào ra ngoài.
+            </p>
           </div>
         </div>
       </div>

@@ -440,6 +440,7 @@ function collectTextNodes(): Text[] {
       if (SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
       if (parent.classList.contains(ANNOTATION_CLASS)) return NodeFilter.FILTER_REJECT;
       if (parent.closest(`#${TOOLTIP_ID}`)) return NodeFilter.FILTER_REJECT;
+      if (parent.closest('[data-no-dvhcvn]')) return NodeFilter.FILTER_REJECT;
       const text = node.textContent?.trim();
       if (!text || text.length < 10) return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;

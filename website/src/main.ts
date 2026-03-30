@@ -73,7 +73,10 @@ async function main(): Promise<void> {
 
     await initLookupWidget(lookup);
   } catch (error) {
-    loadingEl.innerHTML = `<p style="color: var(--text-secondary);">Lỗi tải dữ liệu. Vui lòng tải lại trang.</p>`;
+    const msg = navigator.onLine
+      ? 'Lỗi tải dữ liệu. Vui lòng tải lại trang.'
+      : 'Đang offline. Vui lòng kết nối mạng để tải dữ liệu lần đầu tiên.';
+    loadingEl.innerHTML = `<p style="color: var(--text-secondary);">${msg}</p>`;
     console.error('Failed to initialize:', error);
   }
 }

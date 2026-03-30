@@ -9,6 +9,12 @@
       content="Tra cứu đơn vị hành chính Việt Nam sau sáp nhập 2025. Tìm phường/xã mới theo tên cũ và ngược lại."
     />
     <link rel="icon" type="image/png" href="/icon/48.png" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Tra cứu ĐVHC" />
+    <link rel="apple-touch-icon" href="/icon/192.png" />
     <script>
       (function () {
         var t = localStorage.getItem('vw_website_theme');
@@ -16,7 +22,7 @@
       })();
     </script>
   </head>
-  <body>
+  <body data-no-dvhcvn>
     <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
@@ -251,7 +257,7 @@
             <div class="feature-body">
               <h3>Hoạt động hoàn toàn offline sau lần đầu tải</h3>
               <p>
-                Tất cả dữ liệu và xử lý đều diễn ra ngay tại trình duyệt, công cụ tiếp tục hoạt động đầy đủ
+                Tất cả xử lý truy vấn đều diễn ra ngay tại trình duyệt, công cụ tiếp tục hoạt động đầy đủ
                 ngay cả khi mất kết nối internet.
               </p>
             </div>
@@ -428,14 +434,14 @@
     <footer class="footer">
       <div class="container">
         <p>
-          &copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Thanh Trần</a>. Mã
-          nguồn trên
+          &copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Trần Trọng Thanh</a>.
+          Source code tại
           <a
             href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git"
             target="_blank"
             rel="noopener"
             >GitHub</a
-          >.
+          >. License ISC.
         </p>
       </div>
     </footer>

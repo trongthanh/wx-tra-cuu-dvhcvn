@@ -747,6 +747,10 @@ async function initSettings(): Promise<void> {
 
 async function main(): Promise<void> {
   await lookup.init();
+  const versionEl = document.getElementById('version');
+  if (versionEl) {
+    versionEl.textContent = `v${browser.runtime.getManifest().version}`;
+  }
   initHelpPopovers();
   await Promise.all([initNewToOld(), initOldToNew(), initSettings()]);
 }

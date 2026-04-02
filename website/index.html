@@ -57,18 +57,54 @@
     <!-- Intro -->
     <section class="intro">
       <div class="container">
-        <h1>Tra cứu Đơn Vị Hành Chính Việt Nam</h1>
-        <p class="intro-desc">
-          Từ tháng 7/2025, Việt Nam thực hiện cải cách hành chính lớn: giảm từ 63 tỉnh thành xuống
-          còn 34, bỏ cấp quận/huyện, sáp nhập nhiều phường/xã thành đơn vị mới. Công cụ này giúp bạn
-          tra cứu nhanh mối liên hệ giữa địa chỉ cũ và mới.
+        <h1>Extension:<br />Tra cứu Đơn Vị Hành Chính Việt Nam</h1>
+        <p class="extension-desc">
+          Browser extension
+          <a href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn">nguồn mở</a> giúp tra cứu đơn vị
+          hành chính cũ và mới
+          <a
+            href="https://vi.wikipedia.org/wiki/Ph%C3%A2n_c%E1%BA%A5p_h%C3%A0nh_ch%C3%ADnh_Vi%E1%BB%87t_Nam"
+            >sau sáp nhập 2025</a
+          >
+          và chú giải tự động tên phường xã mới trên các trang web — hoàn toàn offline, không theo
+          dõi.
         </p>
+        <div class="store-badges">
+          <a
+            href="https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=landing"
+            target="_blank"
+            rel="noopener"
+            class="store-pill"
+          >
+            <img src="./public/icon-chrome.svg" alt="" class="store-pill-icon" aria-hidden="true" />
+            <span><strong>Tra cứu ĐVHCVN</strong> trên Chrome</span>
+          </a>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/tra-cuu-dvhcvn/"
+            target="_blank"
+            rel="noopener"
+            class="store-pill"
+          >
+            <img
+              src="./public/icon-firefox.svg"
+              alt=""
+              class="store-pill-icon"
+              aria-hidden="true"
+            />
+            <span><strong>Tra cứu ĐVHCVN</strong> trên Firefox*</span>
+          </a>
+        </div>
+        <p><small>* Có cả trên Firefox Android</small></p>
       </div>
     </section>
 
     <!-- Lookup Tool (main) -->
-    <section class="tool-section">
+    <section class="features tool-section">
       <div class="container">
+        <h2>Tính năng</h2>
+        <p class="brief">
+          Tính năng tra cứu bên dưới không phải screenshot. Bạn có thể thử trực tiếp.
+        </p>
         <div class="widget" id="lookup-widget">
           <!-- Loading state -->
           <div id="loading-state" class="loading-state" role="status" aria-label="Đang tải dữ liệu">
@@ -221,79 +257,20 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <h2>Công cụ tra cứu sáp nhập ĐVHC duy nhất không cần server!</h2>
-        <p class="section-sub">
-          Khác với các công cụ tra cứu trực tuyến khác cần server để hoạt động &mdash; 
-          toàn bộ dữ liệu ĐVHC và xử lý đều diễn ra ngay trên trình duyệt của bạn.
-        </p>
-        <div class="feature-list feature-grid">
+        <hr />
+        <div class="feature-list">
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon">&#x1F4DD;</div>
             <div class="feature-body">
-              <h3>Tức thì, không độ trễ mạng</h3>
+              <h3>Tính năng chú giải trên trang web</h3>
               <p>
-                Kết quả trả về ngay lập tức nhờ công nghệ IndexedDB ngay trên trình duyệt. 
-                
+                Tiện ích tự động nhận diện tên phường/xã mới trên trang web và hiển thị tên cũ khi
+                rê chuột.
               </p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📦</div>
-            <div class="feature-body">
-              <h3>Dữ liệu và xử lý ngay tại trình duyệt</h3>
               <p>
-                Toàn bộ dữ liệu ĐVHC được tải về một lần và lưu ngay tại trình duyệt. Không cần gọi
-                API từ server. 
-              </p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛜</div>
-            <div class="feature-body">
-              <h3>Hoạt động hoàn toàn offline sau lần đầu tải</h3>
-              <p>
-                Tất cả xử lý truy vấn đều diễn ra ngay tại trình duyệt, công cụ tiếp tục hoạt động đầy đủ
-                ngay cả khi mất kết nối internet.
-              </p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <div class="feature-body">
-              <h3>Riêng tư tuyệt đối, không thu thập dữ liệu</h3>
-              <p>
-                Chúng tôi cam kết chỉ ghi nhận lượt ghé thăm ẩn danh trang web này. Ngoài ra không có bất kỳ
-                tracking hay thu thập truy vấn của bạn.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Extension -->
-    <section class="extension-section">
-      <div class="container">
-        <h2>Chrome Extension & Firefox Add-on</h2>
-        <p class="extension-desc">
-          Công cụ tra cứu này vốn ban đầu được viết như là một phần mở rộng trình duyệt (Web Extension).
-          
-        </p>
-        <div class="ext-features">
-          <div class="ext-feature-item">
-            <div class="ext-feature-icon">📝</div>
-            <div class="ext-feature-body">
-              <strong>Chú giải tự động trên mọi trang web</strong>
-              <p>
-                Extension quét nội dung trang và tự động gạch chân tên phường/xã mới,
-                hiển thị tên phường/quận cũ khi di chuột vào.
+                Demo: rê chuột (desktop) hoặc tap (mobile) vào tên phường được gạch chân bên dưới:
               </p>
               <div class="annotation-demo">
-                <p class="demo-label">Thử nghiệm &mdash; di chuột vào tên phường được gạch chân:</p>
                 <p class="demo-text">
                   Người dân sinh sống tại
                   <span
@@ -310,122 +287,90 @@
               </div>
             </div>
           </div>
-          <div class="ext-feature-item">
-            <div class="ext-feature-icon">🔍</div>
-            <div class="ext-feature-body">
-              <strong>Popup tra cứu &mdash; truy cập từ mọi trang</strong>
-              <p>
-                Không cần mở tab mới. Click vào biểu tượng extension để tra cứu nhanh
-                phường/xã ngay trong popup trong khi đang đọc bài viết.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="extension-benefits">
-          <div class="benefit">
-            <strong>Gọn nhẹ &amp; nhanh</strong>
-            <span>Chỉ vài trăm KB, khởi động tức thì, không ảnh hưởng hiệu suất trình duyệt</span>
-          </div>
-          <div class="benefit">
-            <strong>Hoàn toàn offline</strong>
-            <span>Dữ liệu tải về máy một lần, tra cứu vĩnh viễn không cần mạng</span>
-          </div>
-          <div class="benefit">
-            <strong>Zero tracking</strong>
-            <span>Không analytics, không thu thập dữ liệu người dùng, mã nguồn mở</span>
-          </div>
-        </div>
-        <div class="store-badges">
-          <a
-            href="https://chromewebstore.google.com/detail/kandeagnnilmlpbdlkadajdiempibkdd?utm_source=landing"
-            target="_blank"
-            rel="noopener"
-            class="store-badge"
-          >
-            <img
-              src="./public/chrome-web-store.svg"
-              alt="Available in the Chrome Web Store"
-              class="store-badge-img"
-            />
-          </a>
-          <a
-            href="https://addons.mozilla.org/en-US/firefox/addon/tra-cuu-dvhcvn/"
-            target="_blank"
-            rel="noopener"
-            class="store-badge"
-          >
-            <img
-              src="./public/mozilla-add-ons.svg"
-              alt="Available in the Mozilla Add-ons Store"
-              class="store-badge-img"
-            />
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- Under the Hood -->
-    <section class="tech-section">
+    <!-- FAQ -->
+    <section class="faq">
       <div class="container">
-        <h2>Bên dưới nắp ca-pô</h2>
-        <p class="section-sub">
-          Kiến trúc kỹ thuật giúp extension nhỏ gọn, tra cứu nhanh và hoạt động
-          hoàn toàn ngoại tuyến.
-        </p>
-        <div class="tech-grid">
-          <div class="tech-card">
-            <div class="tech-icon">🗄️</div>
-            <h3>IndexedDB với chỉ mục tối ưu</h3>
-            <p>
-              Dữ liệu lưu trong IndexedDB với composite index theo từng chiều tra cứu. Truy vấn
-              theo chỉ mục đạt O(log&nbsp;n), nhanh hơn hẳn so với quét tuần tự toàn bảng.
-            </p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon">🔤</div>
-            <h3>Chuẩn hóa tiếng Việt để tìm kiếm linh hoạt</h3>
-            <p>
-              Hàm <code>normalizeStr()</code> bỏ dấu thanh và chuyển về chữ thường, lưu vào cột
-              <code>_index</code> riêng. Nhờ vậy <em>"phuong bay hien"</em> khớp được với
-              <em>"Phường Bảy Hiền"</em> mà không cần gõ đúng dấu.
-            </p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon">🔗</div>
-            <h3>Quan hệ nhiều-nhiều giữa phường cũ và mới</h3>
-            <p>
-              Bảng <code>ward_mappings</code> lưu quan hệ nhiều-nhiều giữa mã phường cũ và mới,
-              phản ánh thực tế sáp nhập: 2–3 phường cũ gộp thành 1 phường mới mà không trùng
-              lặp dữ liệu.
-            </p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon">↔️</div>
-            <h3>Tra cứu hai chiều từ một kho dữ liệu</h3>
-            <p>
-              Bảng <code>old_wards</code> và <code>new_wards</code> được index độc lập; bảng ánh
-              xạ có index theo cả hai chiều, cho phép tra cứu cũ&rarr;mới lẫn mới&rarr;cũ mà
-              không lưu dữ liệu dư thừa.
-            </p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon">🎯</div>
-            <h3>Nhận diện phường bằng regex có fallback</h3>
-            <p>
-              Content script dùng TreeWalker duyệt text node trong DOM, khớp regex
-              <code>phường|xã</code> + tối đa 6 từ. Nếu kết quả khớp quá dài, hệ thống thử lại
-              với tên ngắn dần cho đến khi tìm được kết quả chính xác.
-            </p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon">📦</div>
-            <h3>Đóng gói gọn, nạp một lần duy nhất</h3>
-            <p>
-              Dữ liệu CSV đóng gói cùng extension, nạp vào IndexedDB khi cài đặt lần đầu. Từ
-              lần dùng thứ hai trở đi, mọi truy vấn đều local &mdash; không download thêm,
-              không request nào ra ngoài.
-            </p>
-          </div>
+        <h2>Câu Hỏi Thường Gặp</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="feature-icon" aria-hidden="true">&#x1F50C;</span>
+              <span class="faq-question">Extension này thật sự offline?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <div class="faq-body">
+                <p>
+                  Đúng vậy. Extension và cả trang web này sử dụng công nghệ
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB"
+                    >IndexedDB</a
+                  >
+                  để lưu và đánh chỉ mục toàn bộ ĐVHC cùng với quan hệ giữa cũ và mới.
+                </p>
+              </div>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="feature-icon" aria-hidden="true">&#x1F4F1;</span>
+              <span class="faq-question"
+                >Extension này có cài được trên trình duyệt điện thoại?</span
+              >
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <div class="faq-body">
+                <p>
+                  Hiện tại extension này chỉ hỗ trợ trình duyệt
+                  <a
+                    href="https://addons.mozilla.org/en-US/firefox/addon/tra-cuu-dvhcvn/"
+                    target="_blank"
+                    rel="noopener"
+                    >Firefox trên Android</a
+                  >. Các trình duyệt di động phổ biến khác như Chrome, Edge, Samsung Internet trên
+                  Android hiện không hỗ trợ cài extension.
+                </p>
+                <p>
+                  Trên iOS, Safari có hỗ trợ extension được cài từ App Store. Tuy nhiên, hiện tại
+                  tác giả chưa có kinh phí để đóng phí thường niên cho chương trình Apple developer.
+                </p>
+                <p>
+                  Nếu bạn dùng điện thoại, bạn vẫn có thể sử dụng tính năng
+                  <a href="#lookup-widget">tra cứu trực tiếp trên trang web này</a>.
+                </p>
+              </div>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="feature-icon" aria-hidden="true">&#x1F4DD;</span>
+              <span class="faq-question">Cách chú giải trên trang web hoạt động?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <div class="faq-body">
+                <p>
+                  Sau khi cài extension, tiện ích sẽ tự động quét nội dung các trang web để tìm tên
+                  phường/xã mới. Khi tìm thấy, tên phường xã sẽ được đánh dấu như thế này:
+                  <span
+                    class="vw-annotation"
+                    data-tooltip="Quận Bình Thạnh, Thành phố Hồ Chí Minh (cũ)"
+                    >phường Bình Lợi Trung<span class="vw-hint">[?]</span></span
+                  >
+                  .
+                </p>
+                <p>
+                  Tính năng này hoạt động trên hầu hết các trang web và hoàn toàn offline — dữ liệu
+                  tra cứu được lưu ngay tại trình duyệt, không gửi thông tin ra ngoài.
+                </p>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -434,14 +379,16 @@
     <footer class="footer">
       <div class="container">
         <p>
-          &copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Trần Trọng Thanh</a>.
-          Source code tại
+          &copy; 2026 <a href="https://thanh.im" target="_blank" rel="noopener">Thanh Trần</a>. ISC
+          License. Mã nguồn tại
           <a
             href="https://github.com/trongthanh/wx-tra-cuu-dvhcvn.git"
             target="_blank"
             rel="noopener"
             >GitHub</a
-          >. License ISC.
+          >. Hỗ trợ tác giả:
+          <a href="https://me.momo.vn/trongthanh" target="_blank" rel="noopener">Momo</a>,
+          <a href="https://paypal.me/trongthanhtran" target="_blank" rel="noopener">PayPal</a>.
         </p>
       </div>
     </footer>

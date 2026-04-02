@@ -139,4 +139,4 @@ tests/                # Unit tests
 
 ---
 
-License ISC. ©️ 2026 Trần Trọng Thanh.
+©️ 2026 Thanh Trần. ISC License.

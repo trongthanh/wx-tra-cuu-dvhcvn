@@ -973,26 +973,27 @@ a:hover {
 .store-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 100px;
+  gap: 10px;
+  padding: 12px 22px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
   color: var(--text);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
   transition:
-    background 0.15s,
-    border-color 0.15s,
+    border-color 0.2s,
+    box-shadow 0.2s,
     transform 0.15s;
 }
 
 .store-pill:hover {
-  background: var(--accent-subtle);
   border-color: var(--accent);
+  box-shadow: 0 4px 20px var(--focus-ring), var(--shadow);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(-3px);
 }
 
 .store-pill-icon {

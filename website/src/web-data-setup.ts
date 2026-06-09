@@ -2,7 +2,7 @@ import { VietnamAdminDB, OldWard, NewWard, WardMapping, NewProvince, OldProvince
 import { parseCSV } from '@/utils/csv-parser';
 import { normalizeStr } from '@/utils/strings';
 
-const DATA_VERSION = '1.0.0';
+const DATA_VERSION = '1.1.0';
 
 export class WebDataSetup {
   private db: VietnamAdminDB;

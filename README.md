@@ -139,4 +139,20 @@ tests/                # Unit tests
 
 ---
 
+## Lịch sử cập nhật
+
+### v1.1.0 (2026-06-08)
+
+- **Cập nhật dữ liệu:** Tỉnh Đồng Nai nâng cấp thành **Thành phố Đồng Nai** trực thuộc Trung ương (hiệu lực từ 30/4/2026, theo Nghị quyết số 30/2026/QH16 ngày 24/4/2026). Cùng với đó, 10 đơn vị cấp xã được chuyển lên phường: Dầu Giây, Long Thành, Lộc Ninh, Nhơn Trạch, Trảng Bom, Trị An, Tân Khai, Tân Phú, Xuân Lộc, Đồng Phú. Nguồn dữ liệu: [sapnhap.bando.com.vn](https://sapnhap.bando.com.vn/).
+
+### v1.0.0 (2026-03-15)
+
+- Phát hành lần đầu trên Chrome Web Store và Firefox Add-ons.
+- Tra cứu mới → cũ và cũ → mới cho ~3.200 phường/xã (34 tỉnh/thành phố sau sáp nhập 2025).
+- Tính năng chú giải tự động trên trang web với tooltip hiển thị quận/huyện cũ.
+- Tìm kiếm nhanh không dấu, hỗ trợ tìm theo cụm (`phường, tỉnh` hoặc `phường, quận, tỉnh`).
+- Hoạt động hoàn toàn offline với IndexedDB.
+
+---
+
 ©️ 2026 Thanh Trần. ISC License.

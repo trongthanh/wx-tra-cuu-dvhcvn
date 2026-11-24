@@ -455,25 +455,6 @@ function collectTextNodes(): Text[] {
   return nodes;
 }
 
-function findParenRanges(text: string): Array<[number, number]> {
-  const ranges: Array<[number, number]> = [];
-  let depth = 0;
-  let start = -1;
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === '(') {
-      if (depth === 0) start = i;
-      depth++;
-    } else if (text[i] === ')' && depth > 0) {
-      depth--;
-      if (depth === 0) {
-        ranges.push([start, i]);
-        start = -1;
-      }
-    }
-  }
-  return ranges;
-}
-
 async function processTextNode(
   textNode: Text,
 ): Promise<{ found: number; annotated: number } | null> {
@@ -490,12 +471,8 @@ async function processTextNode(
     index: number;
   }> = [];
 
-  const parenRanges = findParenRanges(text);
-
   let match;
   while ((match = WARD_PATTERN.exec(text)) !== null) {
-    // Skip matches that start inside parentheses — those are publisher annotations of old ward names
-    if (parenRanges.some(([s, e]) => match!.index > s && match!.index < e)) continue;
     matches.push({
       fullMatch: match[0],
       wardType: match[1],

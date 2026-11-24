@@ -13,6 +13,7 @@
   - Bổ sung **25 phường/xã mới** và **82 đơn vị cấp xã cũ** từng bị thiếu do tên chứa dấu nháy (Ea H'Leo, B'Lao, D'Ran, Ia Đal, Đạ M'ri, Ch'ơm…), nay đủ 3.316 phường/xã mới và 10.033 đơn vị cũ.
 
 ### Cải tiến
+- Chú giải trên trang web không còn bỏ qua tên phường/xã nằm trong ngoặc đơn: trước đây phần trong ngoặc thường là tên cũ do tòa soạn chú thích, nay hầu như không còn và tên mới mới là trường hợp phổ biến.
 - Tìm kiếm bỏ qua dấu nháy (`'`, `’`, `‘`, `ʼ`, `` ` ``): `B'Lao`, `B’Lao`, `Blao` đều khớp.
 - Chú giải trên trang web nhận diện được tên phường/xã có dấu nháy (vd. "Phường B'Lao").
 

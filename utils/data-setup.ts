@@ -5,7 +5,7 @@ import { normalizeStr } from './strings';
 /**
  * Data version when csv files change
  */
-export const DATA_VERSION = '1.1.0';
+export const DATA_VERSION = '1.2.0';
 
 export class DataSetup {
   private db: VietnamAdminDB;

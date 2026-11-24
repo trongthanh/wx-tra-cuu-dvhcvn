@@ -24,6 +24,14 @@ describe('normalizeStr', () => {
     expect(normalizeStr('Phú Quốc')).toBe('phu quoc');
   });
 
+  it('strips apostrophe variants', () => {
+    expect(normalizeStr("Phường B'Lao")).toBe('phuong blao');
+    expect(normalizeStr('Phường B’Lao')).toBe('phuong blao');
+    expect(normalizeStr('Phường BLao')).toBe('phuong blao');
+    expect(normalizeStr("Xã D'Ran")).toBe('xa dran');
+    expect(normalizeStr('Xã Ea H’Leo')).toBe('xa ea hleo');
+  });
+
   it('preserves spaces and numbers', () => {
     expect(normalizeStr('Phường 12')).toBe('phuong 12');
     expect(normalizeStr('Quận 1')).toBe('quan 1');

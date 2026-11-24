@@ -102,7 +102,7 @@ let provinceAliasMap: Map<string, string> | null = null;
 // Province hint only matched when wrapped in parentheses, e.g. "phường Bảy Hiền (TP.HCM)".
 // Commas are NOT used as province-hint delimiters to avoid capturing surrounding sentence text.
 const WARD_PATTERN =
-  /\b(phường|xã|thị trấn)\s+([A-Za-zÀ-ỹ0-9]+(?:[\s-]+[A-Za-zÀ-ỹ0-9]+){0,5})(?:\s*\(\s*([^)\n]{1,40})\))?/gi;
+  /\b(phường|xã|thị trấn)\s+([A-Za-zÀ-ỹ0-9]+(?:['\u2018\u2019\u02bc][A-Za-zÀ-ỹ0-9]+)*(?:[\s-]+[A-Za-zÀ-ỹ0-9]+(?:['\u2018\u2019\u02bc][A-Za-zÀ-ỹ0-9]+)*){0,5})(?:\s*\(\s*([^)\n]{1,40})\))?/gi;
 
 const SKIP_TAGS = new Set([
   'SCRIPT',

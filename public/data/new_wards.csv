@@ -48,7 +48,7 @@ ward_code,ward_name,province_name
 23602,Phường An Phú,Gia Lai
 25975,Phường An Phú,Thành phố Hồ Chí Minh
 26767,Phường An Phú Đông,Thành phố Hồ Chí Minh
-07090,Phường An Sinh,Quảng Ninh
+07090,Phường An Sinh,Thành phố Quảng Ninh
 20575,Phường An Thắng,Thành phố Đà Nẵng
 02512,Phường An Tường,Tuyên Quang
 25732,Phường An Tịnh,Tây Ninh
@@ -66,11 +66,11 @@ ward_code,ward_name,province_name
 20335,Phường Bàn Thạch,Thành phố Đà Nẵng
 05533,Phường Bá Xuyên,Thái Nguyên
 05528,Phường Bách Quang,Thái Nguyên
-06673,Phường Bãi Cháy,Quảng Ninh
+06673,Phường Bãi Cháy,Thành phố Quảng Ninh
 25915,Phường Bình Cơ,Thành phố Hồ Chí Minh
 25760,Phường Bình Dương,Thành phố Hồ Chí Minh
 25987,Phường Bình Hòa,Thành phố Hồ Chí Minh
-07081,Phường Bình Khê,Quảng Ninh
+07081,Phường Bình Khê,Thành phố Quảng Ninh
 22045,Phường Bình Kiến,Đắk Lắk
 25326,Phường Bình Long,Thành phố Đồng Nai
 26089,Phường Bình Lộc,Thành phố Đồng Nai
@@ -100,7 +100,7 @@ ward_code,ward_name,province_name
 10678,Phường Bắc An Phụ,Thành phố Hải Phòng
 22411,Phường Bắc Cam Ranh,Khánh Hòa
 24611,Phường Bắc Gia Nghĩa,Lâm Đồng
-07210,Phường Bắc Giang,Bắc Ninh
+07210,Phường Bắc Giang,Thành phố Bắc Ninh
 19066,Phường Bắc Gianh,Quảng Trị
 18115,Phường Bắc Hồng Lĩnh,Hà Tĩnh
 01843,Phường Bắc Kạn,Thái Nguyên
@@ -110,7 +110,7 @@ ward_code,ward_name,province_name
 28789,Phường Bến Tre,Vĩnh Long
 14812,Phường Bỉm Sơn,Thanh Hóa
 00118,Phường Bồ Đề,Thành phố Hà Nội
-09295,Phường Bồng Lai,Bắc Ninh
+09295,Phường Bồng Lai,Thành phố Bắc Ninh
 21640,Phường Bồng Sơn,Gia Lai
 28439,Phường Cai Lậy,Đồng Tháp
 22432,Phường Cam Linh,Khánh Hòa
@@ -118,7 +118,7 @@ ward_code,ward_name,province_name
 22420,Phường Cam Ranh,Khánh Hòa
 02671,Phường Cam Đường,Lào Cai
 29869,Phường Cao Lãnh,Đồng Tháp
-06658,Phường Cao Xanh,Quảng Ninh
+06658,Phường Cao Xanh,Thành phố Quảng Ninh
 30505,Phường Chi Lăng,An Giang
 03664,Phường Chiềng An,Sơn La
 03670,Phường Chiềng Cơi,Sơn La
@@ -130,7 +130,7 @@ ward_code,ward_name,province_name
 13318,Phường Châu Sơn,Ninh Bình
 30316,Phường Châu Đốc,An Giang
 10546,Phường Chí Linh,Thành phố Hải Phòng
-07525,Phường Chũ,Bắc Ninh
+07525,Phường Chũ,Thành phố Bắc Ninh
 25432,Phường Chơn Thành,Thành phố Đồng Nai
 10015,Phường Chương Mỹ,Thành phố Hà Nội
 27343,Phường Chợ Lớn,Thành phố Hồ Chí Minh
@@ -140,17 +140,17 @@ ward_code,ward_name,province_name
 29770,Phường Cái Vồn,Vĩnh Long
 27112,Phường Cát Lái,Thành phố Hồ Chí Minh
 24340,Phường Cư Bao,Đắk Lắk
-07738,Phường Cảnh Thụy,Bắc Ninh
+07738,Phường Cảnh Thụy,Thành phố Bắc Ninh
 00166,Phường Cầu Giấy,Thành phố Hà Nội
 27058,Phường Cầu Kiệu,Thành phố Hồ Chí Minh
 04681,Phường Cầu Thia,Lào Cai
 26758,Phường Cầu Ông Lãnh,Thành phố Hồ Chí Minh
 20260,Phường Cẩm Lệ,Thành phố Đà Nẵng
-06793,Phường Cẩm Phả,Quảng Ninh
+06793,Phường Cẩm Phả,Thành phố Quảng Ninh
 21025,Phường Cẩm Thành,Quảng Ngãi
 16732,Phường Cửa Lò,Nghệ An
 00082,Phường Cửa Nam,Thành phố Hà Nội
-06781,Phường Cửa Ông,Quảng Ninh
+06781,Phường Cửa Ông,Thành phố Quảng Ninh
 23563,Phường Diên Hồng,Gia Lai
 27169,Phường Diên Hồng,Thành phố Hồ Chí Minh
 13336,Phường Duy Hà,Ninh Bình
@@ -172,7 +172,7 @@ ward_code,ward_name,province_name
 25654,Phường Gò Dầu,Tây Ninh
 00256,Phường Hai Bà Trưng,Thành phố Hà Nội
 26809,Phường Hiệp Bình,Thành phố Hồ Chí Minh
-07147,Phường Hiệp Hòa,Quảng Ninh
+07147,Phường Hiệp Hòa,Thành phố Quảng Ninh
 31840,Phường Hiệp Thành,Cà Mau
 14329,Phường Hoa Lư,Ninh Bình
 21664,Phường Hoài Nhơn,Gia Lai
@@ -184,17 +184,17 @@ ward_code,ward_name,province_name
 00337,Phường Hoàng Liệt,Thành phố Hà Nội
 17110,Phường Hoàng Mai,Nghệ An
 00331,Phường Hoàng Mai,Thành phố Hà Nội
-07114,Phường Hoàng Quế,Quảng Ninh
-07030,Phường Hoành Bồ,Quảng Ninh
+07114,Phường Hoàng Quế,Thành phố Quảng Ninh
+07030,Phường Hoành Bồ,Thành phố Quảng Ninh
 18832,Phường Hoành Sơn,Hà Tĩnh
-07168,Phường Hà An,Quảng Ninh
+07168,Phường Hà An,Thành phố Quảng Ninh
 00694,Phường Hà Giang 1,Tuyên Quang
 00691,Phường Hà Giang 2,Tuyên Quang
 18652,Phường Hà Huy Tập,Hà Tĩnh
-06676,Phường Hà Lầm,Quảng Ninh
+06676,Phường Hà Lầm,Thành phố Quảng Ninh
 13366,Phường Hà Nam,Ninh Bình
 30769,Phường Hà Tiên,An Giang
-06652,Phường Hà Tu,Quảng Ninh
+06652,Phường Hà Tu,Thành phố Quảng Ninh
 09556,Phường Hà Đông,Thành phố Hà Nội
 14758,Phường Hàm Rồng,Thanh Hóa
 22933,Phường Hàm Thắng,Lâm Đồng
@@ -218,9 +218,9 @@ ward_code,ward_name,province_name
 19975,Phường Hương Thủy,Thành phố Huế
 19996,Phường Hương Trà,Thành phố Huế
 20350,Phường Hương Trà,Thành phố Đà Nẵng
-06688,Phường Hạ Long,Quảng Ninh
+06688,Phường Hạ Long,Thành phố Quảng Ninh
 14797,Phường Hạc Thành,Thanh Hóa
-09325,Phường Hạp Lĩnh,Bắc Ninh
+09325,Phường Hạp Lĩnh,Thành phố Bắc Ninh
 11413,Phường Hải An,Thành phố Hải Phòng
 16645,Phường Hải Bình,Thanh Hóa
 20242,Phường Hải Châu,Thành phố Đà Nẵng
@@ -232,7 +232,7 @@ ward_code,ward_name,province_name
 11602,Phường Hồng An,Thành phố Hải Phòng
 11311,Phường Hồng Bàng,Thành phố Hải Phòng
 11980,Phường Hồng Châu,Hưng Yên
-06685,Phường Hồng Gai,Quảng Ninh
+06685,Phường Hồng Gai,Thành phố Quảng Ninh
 00097,Phường Hồng Hà,Thành phố Hà Nội
 29955,Phường Hồng Ngự,Đồng Tháp
 13984,Phường Hồng Quang,Ninh Bình
@@ -248,7 +248,7 @@ ward_code,ward_name,province_name
 19774,Phường Kim Long,Thành phố Huế
 13402,Phường Kim Thanh,Ninh Bình
 20017,Phường Kim Trà,Thành phố Huế
-09187,Phường Kinh Bắc,Bắc Ninh
+09187,Phường Kinh Bắc,Thành phố Bắc Ninh
 10675,Phường Kinh Môn,Thành phố Hải Phòng
 11443,Phường Kiến An,Thành phố Hải Phòng
 09552,Phường Kiến Hưng,Thành phố Hà Nội
@@ -262,7 +262,7 @@ ward_code,ward_name,province_name
 26800,Phường Linh Xuân,Thành phố Hồ Chí Minh
 13444,Phường Liêm Tuyền,Ninh Bình
 20197,Phường Liên Chiểu,Thành phố Đà Nẵng
-07180,Phường Liên Hòa,Quảng Ninh
+07180,Phường Liên Hòa,Thành phố Quảng Ninh
 27694,Phường Long An,Tây Ninh
 00145,Phường Long Biên,Thành phố Hà Nội
 31473,Phường Long Bình,Thành phố Cần Thơ
@@ -300,15 +300,15 @@ ward_code,ward_name,province_name
 25441,Phường Minh Hưng,Thành phố Đồng Nai
 27238,Phường Minh Phụng,Thành phố Hồ Chí Minh
 02215,Phường Minh Xuân,Tuyên Quang
-09409,Phường Mão Điền,Bắc Ninh
-06712,Phường Móng Cái 1,Quảng Ninh
-06709,Phường Móng Cái 2,Quảng Ninh
-06736,Phường Móng Cái 3,Quảng Ninh
-06760,Phường Mông Dương,Quảng Ninh
+09409,Phường Mão Điền,Thành phố Bắc Ninh
+06712,Phường Móng Cái 1,Thành phố Quảng Ninh
+06709,Phường Móng Cái 2,Thành phố Quảng Ninh
+06736,Phường Móng Cái 3,Thành phố Quảng Ninh
+06760,Phường Mông Dương,Thành phố Quảng Ninh
 22918,Phường Mũi Né,Lâm Đồng
 03151,Phường Mường Lay,Điện Biên
 03334,Phường Mường Thanh,Điện Biên
-07069,Phường Mạo Khê,Quảng Ninh
+07069,Phường Mạo Khê,Thành phố Quảng Ninh
 03980,Phường Mộc Châu,Sơn La
 03979,Phường Mộc Sơn,Sơn La
 12103,Phường Mỹ Hào,Hưng Yên
@@ -328,7 +328,7 @@ ward_code,ward_name,province_name
 14359,Phường Nam Hoa Lư,Ninh Bình
 18118,Phường Nam Hồng Lĩnh,Hà Tĩnh
 22402,Phường Nam Nha Trang,Khánh Hòa
-09286,Phường Nam Sơn,Bắc Ninh
+09286,Phường Nam Sơn,Thành phố Bắc Ninh
 16516,Phường Nam Sầm Sơn,Thanh Hóa
 11542,Phường Nam Triệu,Thành phố Hải Phòng
 19351,Phường Nam Đông Hà,Quảng Trị
@@ -352,29 +352,29 @@ ward_code,ward_name,province_name
 16576,Phường Ngọc Sơn,Thanh Hóa
 22366,Phường Nha Trang,Khánh Hòa
 27142,Phường Nhiêu Lộc,Thành phố Hồ Chí Minh
-09253,Phường Nhân Hòa,Bắc Ninh
+09253,Phường Nhân Hòa,Thành phố Bắc Ninh
 10714,Phường Nhị Chiểu,Thành phố Hải Phòng
 28477,Phường Nhị Quý,Đồng Tháp
 22834,Phường Ninh Chử,Khánh Hòa
 22528,Phường Ninh Hòa,Khánh Hòa
 31135,Phường Ninh Kiều,Thành phố Cần Thơ
 25567,Phường Ninh Thạnh,Tây Ninh
-09445,Phường Ninh Xá,Bắc Ninh
+09445,Phường Ninh Xá,Thành phố Bắc Ninh
 02212,Phường Nông Tiến,Tuyên Quang
 07894,Phường Nông Trang,Phú Thọ
 01279,Phường Nùng Trí Cao,Cao Bằng
-07795,Phường Nếnh,Bắc Ninh
+07795,Phường Nếnh,Thành phố Bắc Ninh
 22759,Phường Phan Rang,Khánh Hòa
 22945,Phường Phan Thiết,Lâm Đồng
 05443,Phường Phan Đình Phùng,Thái Nguyên
 07954,Phường Phong Châu,Phú Thọ
-07183,Phường Phong Cốc,Quảng Ninh
+07183,Phường Phong Cốc,Thành phố Quảng Ninh
 19831,Phường Phong Dinh,Thành phố Huế
 19828,Phường Phong Phú,Thành phố Huế
 19873,Phường Phong Quảng,Thành phố Huế
 19858,Phường Phong Thái,Thành phố Huế
 19819,Phường Phong Điền,Thành phố Huế
-09379,Phường Phù Khê,Bắc Ninh
+09379,Phường Phù Khê,Thành phố Bắc Ninh
 11446,Phường Phù Liễn,Thành phố Hải Phòng
 13291,Phường Phù Vân,Ninh Bình
 25768,Phường Phú An,Thành phố Hồ Chí Minh
@@ -401,7 +401,7 @@ ward_code,ward_name,province_name
 00136,Phường Phúc Lợi,Thành phố Hà Nội
 05857,Phường Phúc Thuận,Thái Nguyên
 08740,Phường Phúc Yên,Phú Thọ
-09265,Phường Phương Liễu,Bắc Ninh
+09265,Phường Phương Liễu,Thành phố Bắc Ninh
 00352,Phường Phương Liệt,Thành phố Hà Nội
 25220,Phường Phước Bình,Thành phố Đồng Nai
 23231,Phường Phước Hội,Lâm Đồng
@@ -410,14 +410,14 @@ ward_code,ward_name,province_name
 26542,Phường Phước Thắng,Thành phố Hồ Chí Minh
 31162,Phường Phước Thới,Thành phố Cần Thơ
 26377,Phường Phước Tân,Thành phố Đồng Nai
-07612,Phường Phượng Sơn,Bắc Ninh
+07612,Phường Phượng Sơn,Thành phố Bắc Ninh
 10726,Phường Phạm Sư Mạnh,Thành phố Hải Phòng
 11953,Phường Phố Hiến,Hưng Yên
 05860,Phường Phổ Yên,Thái Nguyên
 13285,Phường Phủ Lý,Ninh Bình
 23575,Phường Pleiku,Gia Lai
 05482,Phường Quan Triều,Thái Nguyên
-06778,Phường Quang Hanh,Quảng Ninh
+06778,Phường Quang Hanh,Thành phố Quảng Ninh
 14818,Phường Quang Trung,Thanh Hóa
 21583,Phường Quy Nhơn,Gia Lai
 21553,Phường Quy Nhơn Bắc,Gia Lai
@@ -428,15 +428,15 @@ ward_code,ward_name,province_name
 16522,Phường Quảng Phú,Thanh Hóa
 20356,Phường Quảng Phú,Thành phố Đà Nẵng
 19360,Phường Quảng Trị,Quảng Trị
-07132,Phường Quảng Yên,Quảng Ninh
-09247,Phường Quế Võ,Bắc Ninh
+07132,Phường Quảng Yên,Thành phố Quảng Ninh
+09247,Phường Quế Võ,Thành phố Bắc Ninh
 17125,Phường Quỳnh Mai,Nghệ An
 26536,Phường Rạch Dừa,Thành phố Hồ Chí Minh
 30742,Phường Rạch Giá,An Giang
 21478,Phường Sa Huỳnh,Quảng Ngãi
 03006,Phường Sa Pa,Lào Cai
 29905,Phường Sa Đéc,Đồng Tháp
-09433,Phường Song Liễu,Bắc Ninh
+09433,Phường Song Liễu,Thành phố Bắc Ninh
 26740,Phường Sài Gòn,Thành phố Hồ Chí Minh
 31507,Phường Sóc Trăng,Thành phố Cần Thơ
 05518,Phường Sông Công,Thái Nguyên
@@ -455,7 +455,7 @@ ward_code,ward_name,province_name
 26572,Phường Tam Long,Thành phố Hồ Chí Minh
 26374,Phường Tam Phước,Thành phố Đồng Nai
 21637,Phường Tam Quan,Gia Lai
-09370,Phường Tam Sơn,Bắc Ninh
+09370,Phường Tam Sơn,Thành phố Bắc Ninh
 05986,Phường Tam Thanh,Lạng Sơn
 26526,Phường Tam Thắng,Thành phố Hồ Chí Minh
 14362,Phường Tam Điệp,Ninh Bình
@@ -473,7 +473,7 @@ ward_code,ward_name,province_name
 25969,Phường Thuận Giao,Thành phố Hồ Chí Minh
 19789,Phường Thuận Hóa,Thành phố Huế
 31228,Phường Thuận Hưng,Thành phố Cần Thơ
-09400,Phường Thuận Thành,Bắc Ninh
+09400,Phường Thuận Thành,Thành phố Bắc Ninh
 13699,Phường Thành Nam,Ninh Bình
 24154,Phường Thành Nhất,Đắk Lắk
 18073,Phường Thành Sen,Hà Tĩnh
@@ -503,7 +503,7 @@ ward_code,ward_name,province_name
 19813,Phường Thủy Xuân,Thành phố Huế
 13363,Phường Tiên Sơn,Ninh Bình
 22954,Phường Tiến Thành,Lâm Đồng
-07696,Phường Tiền Phong,Bắc Ninh
+07696,Phường Tiền Phong,Thành phố Bắc Ninh
 28285,Phường Trung An,Đồng Tháp
 26785,Phường Trung Mỹ Tây,Thành phố Hồ Chí Minh
 31217,Phường Trung Nhứt,Thành phố Cần Thơ
@@ -513,13 +513,13 @@ ward_code,ward_name,province_name
 21451,Phường Trà Câu,Quảng Ngãi
 12817,Phường Trà Lý,Hưng Yên
 29242,Phường Trà Vinh,Vĩnh Long
-09427,Phường Trí Quả,Bắc Ninh
+09427,Phường Trí Quả,Thành phố Bắc Ninh
 16624,Phường Trúc Lâm,Thanh Hóa
 21172,Phường Trương Quang Trọng,Quảng Ngãi
 29516,Phường Trường Long Hòa,Vĩnh Long
 13777,Phường Trường Thi,Ninh Bình
 16690,Phường Trường Vinh,Nghệ An
-09430,Phường Trạm Lộ,Bắc Ninh
+09430,Phường Trạm Lộ,Thành phố Bắc Ninh
 25708,Phường Trảng Bàng,Tây Ninh
 25993,Phường Trảng Dài,Thành phố Đồng Nai
 26041,Phường Trấn Biên,Thành phố Đồng Nai
@@ -530,11 +530,11 @@ ward_code,ward_name,province_name
 10573,Phường Trần Nhân Tông,Thành phố Hải Phòng
 18100,Phường Trần Phú,Hà Tĩnh
 22015,Phường Tuy Hòa,Đắk Lắk
-06706,Phường Tuần Châu,Quảng Ninh
+06706,Phường Tuần Châu,Thành phố Quảng Ninh
 24163,Phường Tân An,Đắk Lắk
 27712,Phường Tân An,Tây Ninh
 31147,Phường Tân An,Thành phố Cần Thơ
-07682,Phường Tân An,Bắc Ninh
+07682,Phường Tân An,Thành phố Bắc Ninh
 30376,Phường Tân Châu,An Giang
 16594,Phường Tân Dân,Thanh Hóa
 01288,Phường Tân Giang,Cao Bằng
@@ -559,7 +559,7 @@ ward_code,ward_name,province_name
 26725,Phường Tân Thành,Thành phố Hồ Chí Minh
 32025,Phường Tân Thành,Cà Mau
 26782,Phường Tân Thới Hiệp,Thành phố Hồ Chí Minh
-07699,Phường Tân Tiến,Bắc Ninh
+07699,Phường Tân Tiến,Thành phố Bắc Ninh
 26188,Phường Tân Triều,Thành phố Đồng Nai
 25888,Phường Tân Uyên,Thành phố Hồ Chí Minh
 25945,Phường Tân Đông Hiệp,Thành phố Hồ Chí Minh
@@ -582,22 +582,22 @@ ward_code,ward_name,province_name
 30520,Phường Tịnh Biên,An Giang
 10891,Phường Tứ Minh,Thành phố Hải Phòng
 00592,Phường Từ Liêm,Thành phố Hà Nội
-09367,Phường Từ Sơn,Bắc Ninh
-07774,Phường Tự Lạn,Bắc Ninh
-06811,Phường Uông Bí,Quảng Ninh
+09367,Phường Từ Sơn,Thành phố Bắc Ninh
+07774,Phường Tự Lạn,Thành phố Bắc Ninh
+06811,Phường Uông Bí,Thành phố Quảng Ninh
 17920,Phường Vinh Hưng,Nghệ An
 16708,Phường Vinh Lộc,Nghệ An
 16702,Phường Vinh Phú,Nghệ An
 10543,Phường Việt Hòa,Thành phố Hải Phòng
 00127,Phường Việt Hưng,Thành phố Hà Nội
-06661,Phường Việt Hưng,Quảng Ninh
+06661,Phường Việt Hưng,Thành phố Quảng Ninh
 07900,Phường Việt Trì,Phú Thọ
-07777,Phường Việt Yên,Bắc Ninh
-06820,Phường Vàng Danh,Quảng Ninh
-07798,Phường Vân Hà,Bắc Ninh
+07777,Phường Việt Yên,Thành phố Bắc Ninh
+06820,Phường Vàng Danh,Thành phố Quảng Ninh
+07798,Phường Vân Hà,Thành phố Bắc Ninh
 07918,Phường Vân Phú,Phú Thọ
 04033,Phường Vân Sơn,Sơn La
-09190,Phường Võ Cường,Bắc Ninh
+09190,Phường Võ Cường,Thành phố Bắc Ninh
 00226,Phường Văn Miếu - Quốc Tử Giám,Thành phố Hà Nội
 04279,Phường Văn Phú,Lào Cai
 31783,Phường Vĩnh Châu,Thành phố Cần Thơ
@@ -610,7 +610,7 @@ ward_code,ward_name,province_name
 25912,Phường Vĩnh Tân,Thành phố Hồ Chí Minh
 30325,Phường Vĩnh Tế,An Giang
 08707,Phường Vĩnh Yên,Phú Thọ
-09169,Phường Vũ Ninh,Bắc Ninh
+09169,Phường Vũ Ninh,Thành phố Bắc Ninh
 12466,Phường Vũ Phúc,Hưng Yên
 26506,Phường Vũng Tàu,Thành phố Hồ Chí Minh
 18823,Phường Vũng Áng,Hà Tĩnh
@@ -629,26 +629,26 @@ ward_code,ward_name,province_name
 22076,Phường Xuân Đài,Đắk Lắk
 00611,Phường Xuân Đỉnh,Thành phố Hà Nội
 04252,Phường Yên Bái,Lào Cai
-07681,Phường Yên Dũng,Bắc Ninh
+07681,Phường Yên Dũng,Thành phố Bắc Ninh
 00175,Phường Yên Hòa,Thành phố Hà Nội
 09562,Phường Yên Nghĩa,Thành phố Hà Nội
 14371,Phường Yên Sơn,Ninh Bình
 00340,Phường Yên Sở,Thành phố Hà Nội
 14725,Phường Yên Thắng,Ninh Bình
-06832,Phường Yên Tử,Quảng Ninh
+06832,Phường Yên Tử,Thành phố Quảng Ninh
 10660,Phường Ái Quốc,Thành phố Hải Phòng
 07948,Phường Âu Cơ,Phú Thọ
 04543,Phường Âu Lâu,Lào Cai
 00190,Phường Ô Chợ Dừa,Thành phố Hà Nội
 31153,Phường Ô Môn,Thành phố Cần Thơ
-07228,Phường Đa Mai,Bắc Ninh
+07228,Phường Đa Mai,Thành phố Bắc Ninh
 03127,Phường Điện Biên Phủ,Điện Biên
 20551,Phường Điện Bàn,Thành phố Đà Nẵng
 20557,Phường Điện Bàn Bắc,Thành phố Đà Nẵng
 20579,Phường Điện Bàn Đông,Thành phố Đà Nẵng
 03388,Phường Đoàn Kết,Lai Châu
 16609,Phường Đào Duy Từ,Thanh Hóa
-09301,Phường Đào Viên,Bắc Ninh
+09301,Phường Đào Viên,Thành phố Bắc Ninh
 22738,Phường Đô Vinh,Khánh Hòa
 13693,Phường Đông A,Ninh Bình
 24617,Phường Đông Gia Nghĩa,Lâm Đồng
@@ -660,13 +660,13 @@ ward_code,ward_name,province_name
 22780,Phường Đông Hải,Khánh Hòa
 11411,Phường Đông Hải,Thành phố Hải Phòng
 05977,Phường Đông Kinh,Lạng Sơn
-07135,Phường Đông Mai,Quảng Ninh
+07135,Phường Đông Mai,Thành phố Quảng Ninh
 00602,Phường Đông Ngạc,Thành phố Hà Nội
 16417,Phường Đông Quang,Thanh Hóa
 16378,Phường Đông Sơn,Thanh Hóa
 29812,Phường Đông Thành,Vĩnh Long
 15853,Phường Đông Tiến,Thanh Hóa
-07093,Phường Đông Triều,Quảng Ninh
+07093,Phường Đông Triều,Thành phố Quảng Ninh
 23302,Phường Đăk Bla,Quảng Ngãi
 23284,Phường Đăk Cấm,Quảng Ngãi
 12133,Phường Đường Hào,Hưng Yên
@@ -677,7 +677,7 @@ ward_code,ward_name,province_name
 00235,Phường Đống Đa,Thành phố Hà Nội
 11455,Phường Đồ Sơn,Thành phố Hải Phòng
 18880,Phường Đồng Hới,Quảng Trị
-09385,Phường Đồng Nguyên,Bắc Ninh
+09385,Phường Đồng Nguyên,Thành phố Bắc Ninh
 18871,Phường Đồng Sơn,Quảng Trị
 18859,Phường Đồng Thuận,Quảng Trị
 13348,Phường Đồng Văn,Ninh Bình
@@ -723,7 +723,7 @@ ward_code,ward_name,province_name
 21609,Xã An Lão,Gia Lai
 11629,Xã An Lão,Thành phố Hải Phòng
 21769,Xã An Lương,Gia Lai
-07654,Xã An Lạc,Bắc Ninh
+07654,Xã An Lạc,Thành phố Bắc Ninh
 31531,Xã An Lạc Thôn,Thành phố Cần Thơ
 28243,Xã An Lục Long,Tây Ninh
 31018,Xã An Minh,An Giang
@@ -760,7 +760,7 @@ ward_code,ward_name,province_name
 23798,Xã Ayun,Gia Lai
 01906,Xã Ba Bể,Thái Nguyên
 30547,Xã Ba Chúc,An Giang
-06970,Xã Ba Chẽ,Quảng Ninh
+06970,Xã Ba Chẽ,Thành phố Quảng Ninh
 21499,Xã Ba Dinh,Quảng Ngãi
 21205,Xã Ba Gia,Quảng Ngãi
 19567,Xã Ba Lòng,Quảng Trị
@@ -776,11 +776,11 @@ ward_code,ward_name,province_name
 16171,Xã Ba Đình,Thanh Hóa
 21496,Xã Ba Động,Quảng Ngãi
 05245,Xã Bao La,Phú Thọ
-07537,Xã Biên Sơn,Bắc Ninh
+07537,Xã Biên Sơn,Thành phố Bắc Ninh
 29638,Xã Bình Phước,Vĩnh Long
 32069,Xã Biển Bạch,Cà Mau
 23590,Xã Biển Hồ,Gia Lai
-07573,Xã Biển Động,Bắc Ninh
+07573,Xã Biển Động,Thành phố Bắc Ninh
 15382,Xã Biện Thượng,Thanh Hóa
 25405,Xã Bom Bo,Thành phố Đồng Nai
 03466,Xã Bum Nưa,Lai Châu
@@ -823,7 +823,7 @@ ward_code,ward_name,province_name
 27619,Xã Bình Hưng,Thành phố Hồ Chí Minh
 27667,Xã Bình Khánh,Thành phố Hồ Chí Minh
 21820,Xã Bình Khê,Gia Lai
-06838,Xã Bình Liêu,Quảng Ninh
+06838,Xã Bình Liêu,Thành phố Quảng Ninh
 03390,Xã Bình Lư,Lai Châu
 27610,Xã Bình Lợi,Thành phố Hồ Chí Minh
 13504,Xã Bình Lục,Ninh Bình
@@ -894,14 +894,14 @@ ward_code,ward_name,province_name
 02905,Xã Bảo Thắng,Lào Cai
 02947,Xã Bảo Yên,Lào Cai
 04750,Xã Bảo Ái,Lào Cai
-07462,Xã Bảo Đài,Bắc Ninh
+07462,Xã Bảo Đài,Thành phố Bắc Ninh
 09676,Xã Bất Bạt,Thành phố Hà Nội
 23005,Xã Bắc Bình,Lâm Đồng
 02839,Xã Bắc Hà,Lào Cai
 22615,Xã Bắc Khánh Vĩnh,Khánh Hòa
 16819,Xã Bắc Lý,Nghệ An
 13579,Xã Bắc Lý,Ninh Bình
-07498,Xã Bắc Lũng,Bắc Ninh
+07498,Xã Bắc Lũng,Thành phố Bắc Ninh
 00991,Xã Bắc Mê,Tuyên Quang
 22546,Xã Bắc Ninh Hòa,Khánh Hòa
 01153,Xã Bắc Quang,Tuyên Quang
@@ -929,7 +929,7 @@ ward_code,ward_name,province_name
 19501,Xã Bến Hải,Quảng Trị
 27991,Xã Bến Lức,Tây Ninh
 19366,Xã Bến Quan,Quảng Trị
-07294,Xã Bố Hạ,Bắc Ninh
+07294,Phường Bố Hạ,Thành phố Bắc Ninh
 19141,Xã Bố Trạch,Quảng Trị
 23947,Xã Bờ Ngoong,Gia Lai
 23377,Xã Bờ Y,Quảng Ngãi
@@ -952,8 +952,8 @@ ward_code,ward_name,province_name
 05089,Xã Cao Phong,Phú Thọ
 04876,Xã Cao Sơn,Phú Thọ
 02782,Xã Cao Sơn,Lào Cai
-09466,Xã Cao Đức,Bắc Ninh
-09313,Xã Chi Lăng,Bắc Ninh
+09466,Xã Cao Đức,Thành phố Bắc Ninh
+09313,Phường Chi Lăng,Thành phố Bắc Ninh
 06463,Xã Chi Lăng,Lạng Sơn
 02287,Xã Chiêm Hóa,Tuyên Quang
 20364,Xã Chiên Đàn,Thành phố Đà Nẵng
@@ -1027,7 +1027,7 @@ ward_code,ward_name,province_name
 29266,Xã Càng Long,Vĩnh Long
 16591,Xã Các Sơn,Thanh Hóa
 28360,Xã Cái Bè,Đồng Tháp
-06967,Xã Cái Chiên,Quảng Ninh
+06967,Xã Cái Chiên,Thành phố Quảng Ninh
 29728,Xã Cái Ngang,Vĩnh Long
 29641,Xã Cái Nhum,Vĩnh Long
 32128,Xã Cái Nước,Cà Mau
@@ -1071,7 +1071,7 @@ ward_code,ward_name,province_name
 10903,Xã Cẩm Giàng,Thành phố Hải Phòng
 18736,Xã Cẩm Hưng,Hà Tĩnh
 08341,Xã Cẩm Khê,Phú Thọ
-07519,Xã Cẩm Lý,Bắc Ninh
+07519,Xã Cẩm Lý,Thành phố Bắc Ninh
 18748,Xã Cẩm Lạc,Hà Tĩnh
 26341,Xã Cẩm Mỹ,Thành phố Đồng Nai
 15142,Xã Cẩm Thạch,Thanh Hóa
@@ -1118,7 +1118,7 @@ ward_code,ward_name,province_name
 05755,Xã Dân Tiến,Thái Nguyên
 05086,Xã Dũng Tiến,Phú Thọ
 09856,Xã Dương Hòa,Thành phố Hà Nội
-07672,Xã Dương Hưu,Bắc Ninh
+07672,Xã Dương Hưu,Thành phố Bắc Ninh
 25552,Xã Dương Minh Châu,Tây Ninh
 03106,Xã Dương Quỳ,Lào Cai
 26326,Phường Dầu Giây,Thành phố Đồng Nai
@@ -1143,7 +1143,7 @@ ward_code,ward_name,province_name
 24211,Xã Ea Súp,Đắk Lắk
 24241,Xã Ea Wer,Đắk Lắk
 24403,Xã Ea Ô,Đắk Lắk
-09454,Xã Gia Bình,Bắc Ninh
+09454,Phường Gia Bình,Thành phố Bắc Ninh
 18466,Xã Gia Hanh,Hà Tĩnh
 25015,Xã Gia Hiệp,Lâm Đồng
 31726,Xã Gia Hòa,Thành phố Cần Thơ
@@ -1191,7 +1191,7 @@ ward_code,ward_name,province_name
 08443,Xã Hiền Quan,Phú Thọ
 13753,Xã Hiển Khánh,Ninh Bình
 12322,Xã Hiệp Cường,Hưng Yên
-07840,Xã Hiệp Hòa,Bắc Ninh
+07840,Phường Hiệp Hòa,Thành phố Bắc Ninh
 27952,Xã Hiệp Hòa,Tây Ninh
 31396,Xã Hiệp Hưng,Thành phố Cần Thơ
 01960,Xã Hiệp Lực,Thái Nguyên
@@ -1212,9 +1212,9 @@ ward_code,ward_name,province_name
 08203,Xã Hoàng Cương,Phú Thọ
 12337,Xã Hoàng Hoa Thám,Hưng Yên
 01021,Xã Hoàng Su Phì,Tuyên Quang
-07822,Xã Hoàng Vân,Bắc Ninh
+07822,Xã Hoàng Vân,Thành phố Bắc Ninh
 06172,Xã Hoàng Văn Thụ,Lạng Sơn
-06841,Xã Hoành Mô,Quảng Ninh
+06841,Xã Hoành Mô,Thành phố Quảng Ninh
 15286,Xã Hoạt Giang,Thanh Hóa
 15976,Xã Hoằng Châu,Thanh Hóa
 15880,Xã Hoằng Giang,Thanh Hóa
@@ -1335,18 +1335,18 @@ ward_code,ward_name,province_name
 14281,Xã Hải An,Ninh Bình
 14236,Xã Hải Anh,Ninh Bình
 17419,Xã Hải Châu,Nghệ An
-06799,Xã Hải Hòa,Quảng Ninh
+06799,Xã Hải Hòa,Thành phố Quảng Ninh
 11257,Xã Hải Hưng,Thành phố Hải Phòng
 14248,Xã Hải Hưng,Ninh Bình
 14215,Xã Hải Hậu,Ninh Bình
 19702,Xã Hải Lăng,Quảng Trị
-06886,Xã Hải Lạng,Quảng Ninh
+06886,Xã Hải Lạng,Thành phố Quảng Ninh
 17833,Xã Hải Lộc,Nghệ An
 08782,Xã Hải Lựu,Phú Thọ
-06733,Xã Hải Ninh,Quảng Ninh
+06733,Xã Hải Ninh,Thành phố Quảng Ninh
 23020,Xã Hải Ninh,Lâm Đồng
 14287,Xã Hải Quang,Ninh Bình
-06724,Xã Hải Sơn,Quảng Ninh
+06724,Xã Hải Sơn,Thành phố Quảng Ninh
 14221,Xã Hải Thịnh,Ninh Bình
 14218,Xã Hải Tiến,Ninh Bình
 14308,Xã Hải Xuân,Ninh Bình
@@ -1387,7 +1387,7 @@ ward_code,ward_name,province_name
 17605,Xã Hợp Minh,Nghệ An
 05632,Xã Hợp Thành,Thái Nguyên
 02680,Xã Hợp Thành,Lào Cai
-07864,Xã Hợp Thịnh,Bắc Ninh
+07864,Xã Hợp Thịnh,Thành phố Bắc Ninh
 10615,Xã Hợp Tiến,Thành phố Hải Phòng
 15682,Xã Hợp Tiến,Thanh Hóa
 16885,Xã Hữu Khuông,Nghệ An
@@ -1480,7 +1480,7 @@ ward_code,ward_name,province_name
 18922,Xã Kim Điền,Quảng Trị
 14698,Xã Kim Đông,Ninh Bình
 01792,Xã Kim Đồng,Cao Bằng
-07552,Xã Kiên Lao,Bắc Ninh
+07552,Xã Kiên Lao,Thành phố Bắc Ninh
 30787,Xã Kiên Lương,An Giang
 06625,Xã Kiên Mộc,Lạng Sơn
 15112,Xã Kiên Thọ,Thanh Hóa
@@ -1505,7 +1505,7 @@ ward_code,ward_name,province_name
 24688,Xã Krông Nô,Lâm Đồng
 24343,Xã Krông Năng,Đắk Lắk
 24490,Xã Krông Pắc,Đắk Lắk
-07399,Xã Kép,Bắc Ninh
+07399,Phường Kép,Thành phố Bắc Ninh
 23674,Xã Kông Bơ La,Gia Lai
 23824,Xã Kông Chro,Gia Lai
 10945,Xã Kẻ Sặt,Thành phố Hải Phòng
@@ -1515,7 +1515,7 @@ ward_code,ward_name,province_name
 18790,Xã Kỳ Khang,Hà Tĩnh
 18838,Xã Kỳ Lạc,Hà Tĩnh
 18844,Xã Kỳ Thượng,Hà Tĩnh
-06979,Xã Kỳ Thượng,Quảng Ninh
+06979,Xã Kỳ Thượng,Thành phố Quảng Ninh
 18787,Xã Kỳ Văn,Hà Tĩnh
 18766,Xã Kỳ Xuân,Hà Tĩnh
 05818,Xã La Bằng,Thái Nguyên
@@ -1539,7 +1539,7 @@ ward_code,ward_name,province_name
 00970,Xã Linh Hồ,Tuyên Quang
 15055,Xã Linh Sơn,Thanh Hóa
 13456,Xã Liêm Hà,Ninh Bình
-09334,Xã Liên Bão,Bắc Ninh
+09334,Xã Liên Bão,Thành phố Bắc Ninh
 09064,Xã Liên Châu,Phú Thọ
 01192,Xã Liên Hiệp,Tuyên Quang
 08812,Xã Liên Hòa,Phú Thọ
@@ -1590,7 +1590,7 @@ ward_code,ward_name,province_name
 04381,Xã Lâm Giang,Lào Cai
 22813,Xã Lâm Sơn,Khánh Hòa
 08494,Xã Lâm Thao,Phú Thọ
-09529,Xã Lâm Thao,Bắc Ninh
+09529,Xã Lâm Thao,Thành phố Bắc Ninh
 04309,Xã Lâm Thượng,Lào Cai
 31759,Xã Lâm Tân,Thành phố Cần Thơ
 21433,Xã Lân Phong,Quảng Ngãi
@@ -1617,14 +1617,14 @@ ward_code,ward_name,province_name
 28987,Xã Lương Hòa,Vĩnh Long
 28003,Xã Lương Hòa,Tây Ninh
 28615,Xã Lương Hòa Lạc,Đồng Tháp
-06985,Xã Lương Minh,Quảng Ninh
+06985,Xã Lương Minh,Thành phố Quảng Ninh
 28993,Xã Lương Phú,Vĩnh Long
 23032,Xã Lương Sơn,Lâm Đồng
 15628,Xã Lương Sơn,Thanh Hóa
 04924,Xã Lương Sơn,Phú Thọ
 17641,Xã Lương Sơn,Nghệ An
 32134,Xã Lương Thế Trân,Cà Mau
-09496,Xã Lương Tài,Bắc Ninh
+09496,Phường Lương Tài,Thành phố Bắc Ninh
 31492,Xã Lương Tâm,Thành phố Cần Thơ
 16906,Xã Lượng Minh,Nghệ An
 24848,Xã Lạc Dương,Lâm Đồng
@@ -1633,7 +1633,7 @@ ward_code,ward_name,province_name
 05266,Xã Lạc Sơn,Phú Thọ
 05392,Xã Lạc Thủy,Phú Thọ
 11992,Xã Lạc Đạo,Hưng Yên
-07375,Xã Lạng Giang,Bắc Ninh
+07375,Phường Lạng Giang,Thành phố Bắc Ninh
 30169,Xã Lấp Vò,Đồng Tháp
 08761,Xã Lập Thạch,Phú Thọ
 19246,Xã Lệ Ninh,Quảng Trị
@@ -1651,11 +1651,11 @@ ward_code,ward_name,province_name
 25280,Xã Lộc Thạnh,Thành phố Đồng Nai
 25279,Xã Lộc Tấn,Thành phố Đồng Nai
 06601,Xã Lợi Bác,Lạng Sơn
-06856,Xã Lục Hồn,Quảng Ninh
-07444,Xã Lục Nam,Bắc Ninh
-07582,Xã Lục Ngạn,Bắc Ninh
+06856,Xã Lục Hồn,Thành phố Quảng Ninh
+07444,Phường Lục Nam,Thành phố Bắc Ninh
+07582,Xã Lục Ngạn,Thành phố Bắc Ninh
 29857,Xã Lục Sĩ Thành,Vĩnh Long
-07492,Xã Lục Sơn,Bắc Ninh
+07492,Xã Lục Sơn,Thành phố Bắc Ninh
 04303,Xã Lục Yên,Lào Cai
 02434,Xã Lực Hành,Tuyên Quang
 05200,Xã Mai Châu,Phú Thọ
@@ -1775,7 +1775,7 @@ ward_code,ward_name,province_name
 29788,Xã Mỹ Thuận,Vĩnh Long
 30838,Xã Mỹ Thuận,An Giang
 28456,Xã Mỹ Thành,Đồng Tháp
-07420,Xã Mỹ Thái,Bắc Ninh
+07420,Xã Mỹ Thái,Thành phố Bắc Ninh
 28051,Xã Mỹ Thạnh,Tây Ninh
 30076,Xã Mỹ Thọ,Đồng Tháp
 19741,Xã Mỹ Thủy,Quảng Trị
@@ -1802,7 +1802,7 @@ ward_code,ward_name,province_name
 13057,Xã Nam Cường,Hưng Yên
 19639,Xã Nam Cửa Việt,Quảng Trị
 24649,Xã Nam Dong,Lâm Đồng
-07603,Xã Nam Dương,Bắc Ninh
+07603,Xã Nam Dương,Thành phố Bắc Ninh
 20707,Xã Nam Giang,Thành phố Đà Nẵng
 19093,Xã Nam Gianh,Quảng Trị
 24883,Xã Nam Hà Lâm Hà,Lâm Đồng
@@ -1855,7 +1855,7 @@ ward_code,ward_name,province_name
 13957,Xã Nghĩa Lâm,Ninh Bình
 17029,Xã Nghĩa Lộc,Nghệ An
 16975,Xã Nghĩa Mai,Nghệ An
-07486,Xã Nghĩa Phương,Bắc Ninh
+07486,Xã Nghĩa Phương,Thành phố Bắc Ninh
 13918,Xã Nghĩa Sơn,Ninh Bình
 00889,Xã Nghĩa Thuận,Tuyên Quang
 26617,Xã Nghĩa Thành,Thành phố Hồ Chí Minh
@@ -1897,7 +1897,7 @@ ward_code,ward_name,province_name
 12517,Xã Ngọc Lâm,Hưng Yên
 15061,Xã Ngọc Lặc,Thanh Hóa
 05329,Xã Ngọc Sơn,Phú Thọ
-07351,Xã Ngọc Thiện,Bắc Ninh
+07351,Xã Ngọc Thiện,Thành phố Bắc Ninh
 15250,Xã Ngọc Trạo,Thanh Hóa
 31723,Xã Ngọc Tố,Thành phố Cần Thơ
 00700,Xã Ngọc Đường,Tuyên Quang
@@ -1916,8 +1916,8 @@ ward_code,ward_name,province_name
 17344,Xã Nhân Hòa,Nghệ An
 06496,Xã Nhân Lý,Lạng Sơn
 05290,Xã Nhân Nghĩa,Phú Thọ
-09475,Xã Nhân Thắng,Bắc Ninh
-07306,Xã Nhã Nam,Bắc Ninh
+09475,Phường Nhân Thắng,Thành phố Bắc Ninh
+07306,Xã Nhã Nam,Thành phố Bắc Ninh
 16882,Xã Nhôn Mai,Nghệ An
 21607,Xã Nhơn Châu,Gia Lai
 27838,Xã Nhơn Hòa Lập,Tây Ninh
@@ -2006,7 +2006,7 @@ ward_code,ward_name,province_name
 03382,Xã Phình Giàng,Điện Biên
 04609,Xã Phình Hồ,Lào Cai
 21853,Xã Phù Cát,Gia Lai
-09292,Xã Phù Lãng,Bắc Ninh
+09292,Phường Phù Lãng,Thành phố Bắc Ninh
 02392,Xã Phù Lưu,Tuyên Quang
 21730,Xã Phù Mỹ,Gia Lai
 21739,Xã Phù Mỹ Bắc,Gia Lai
@@ -2076,7 +2076,7 @@ ward_code,ward_name,province_name
 24364,Xã Phú Xuân,Đắk Lắk
 14890,Xã Phú Xuân,Thanh Hóa
 05602,Xã Phú Đình,Thái Nguyên
-07330,Xã Phúc Hòa,Bắc Ninh
+07330,Xã Phúc Hòa,Thành phố Bắc Ninh
 02998,Xã Phúc Khánh,Lào Cai
 17857,Xã Phúc Lộc,Nghệ An
 09739,Xã Phúc Lộc,Thành phố Hà Nội
@@ -2115,7 +2115,7 @@ ward_code,ward_name,province_name
 10279,Xã Phượng Dực,Thành phố Hà Nội
 05563,Xã Phượng Tiến,Thái Nguyên
 12148,Xã Phạm Ngũ Lão,Hưng Yên
-09349,Xã Phật Tích,Bắc Ninh
+09349,Xã Phật Tích,Thành phố Bắc Ninh
 00745,Xã Phố Bảng,Tuyên Quang
 12523,Xã Phụ Dực,Hưng Yên
 01648,Xã Phục Hòa,Cao Bằng
@@ -2149,7 +2149,7 @@ ward_code,ward_name,province_name
 08974,Xã Quang Minh,Thành phố Hà Nội
 05674,Xã Quang Sơn,Thái Nguyên
 14647,Xã Quang Thiện,Ninh Bình
-07333,Xã Quang Trung,Bắc Ninh
+07333,Xã Quang Trung,Thành phố Bắc Ninh
 01465,Xã Quang Trung,Cao Bằng
 17521,Xã Quang Đồng,Nghệ An
 04531,Xã Quy Mông,Lào Cai
@@ -2169,10 +2169,10 @@ ward_code,ward_name,province_name
 10072,Xã Quảng Bị,Thành phố Hà Nội
 17443,Xã Quảng Châu,Nghệ An
 16489,Xã Quảng Chính,Thanh Hóa
-06922,Xã Quảng Hà,Quảng Ninh
+06922,Xã Quảng Hà,Thành phố Quảng Ninh
 24620,Xã Quảng Hòa,Lâm Đồng
 24631,Xã Quảng Khê,Lâm Đồng
-07054,Xã Quảng La,Quảng Ninh
+07054,Xã Quảng La,Thành phố Quảng Ninh
 03164,Xã Quảng Lâm,Điện Biên
 01304,Xã Quảng Lâm,Cao Bằng
 24955,Xã Quảng Lập,Lâm Đồng
@@ -2186,12 +2186,12 @@ ward_code,ward_name,province_name
 19057,Xã Quảng Trạch,Quảng Trị
 24736,Xã Quảng Trực,Lâm Đồng
 24748,Xã Quảng Tân,Lâm Đồng
-06913,Xã Quảng Tân,Quảng Ninh
+06913,Xã Quảng Tân,Thành phố Quảng Ninh
 01576,Xã Quảng Uyên,Cao Bằng
 16480,Xã Quảng Yên,Thanh Hóa
 08173,Xã Quảng Yên,Phú Thọ
 19867,Xã Quảng Điền,Thành phố Huế
-06931,Xã Quảng Đức,Quảng Ninh
+06931,Xã Quảng Đức,Thành phố Quảng Ninh
 16738,Xã Quế Phong,Nghệ An
 20669,Xã Quế Phước,Thành phố Đà Nẵng
 20641,Xã Quế Sơn,Thành phố Đà Nẵng
@@ -2221,7 +2221,7 @@ ward_code,ward_name,province_name
 23839,Xã SRó,Gia Lai
 23534,Xã Sa Bình,Quảng Ngãi
 23392,Xã Sa Loong,Quảng Ngãi
-07534,Xã Sa Lý,Bắc Ninh
+07534,Xã Sa Lý,Thành phố Bắc Ninh
 23527,Xã Sa Thầy,Quảng Ngãi
 03356,Xã Sam Mứn,Điện Biên
 15553,Xã Sao Vàng,Thanh Hóa
@@ -2262,7 +2262,7 @@ ward_code,ward_name,province_name
 22165,Xã Sơn Hòa,Đắk Lắk
 21292,Xã Sơn Hạ,Quảng Ngãi
 30811,Xã Sơn Hải,An Giang
-07543,Xã Sơn Hải,Bắc Ninh
+07543,Xã Sơn Hải,Thành phố Bắc Ninh
 18160,Xã Sơn Hồng,Hà Tĩnh
 18196,Xã Sơn Kim 1,Hà Tĩnh
 18199,Xã Sơn Kim 2,Hà Tĩnh
@@ -2291,7 +2291,7 @@ ward_code,ward_name,province_name
 15022,Xã Sơn Điện,Thanh Hóa
 08866,Xã Sơn Đông,Phú Thọ
 09871,Xã Sơn Đồng,Thành phố Hà Nội
-07615,Xã Sơn Động,Bắc Ninh
+07615,Xã Sơn Động,Thành phố Bắc Ninh
 05719,Xã Sảng Mộc,Thái Nguyên
 04231,Xã Sốp Cộp,Sơn La
 00787,Xã Sủng Máng,Tuyên Quang
@@ -2302,7 +2302,7 @@ ward_code,ward_name,province_name
 08872,Xã Tam Dương Bắc,Phú Thọ
 24352,Xã Tam Giang,Đắk Lắk
 32206,Xã Tam Giang,Cà Mau
-09202,Xã Tam Giang,Bắc Ninh
+09202,Xã Tam Giang,Thành phố Bắc Ninh
 10144,Xã Tam Hưng,Thành phố Hà Nội
 20992,Xã Tam Hải,Thành phố Đà Nẵng
 09043,Xã Tam Hồng,Phú Thọ
@@ -2317,9 +2317,9 @@ ward_code,ward_name,province_name
 08824,Xã Tam Sơn,Phú Thọ
 15007,Xã Tam Thanh,Thanh Hóa
 16936,Xã Tam Thái,Nghệ An
-07264,Xã Tam Tiến,Bắc Ninh
+07264,Xã Tam Tiến,Thành phố Bắc Ninh
 20971,Xã Tam Xuân,Thành phố Đà Nẵng
-09208,Xã Tam Đa,Bắc Ninh
+09208,Xã Tam Đa,Thành phố Bắc Ninh
 08911,Xã Tam Đảo,Phú Thọ
 17743,Xã Tam Đồng,Nghệ An
 03595,Xã Than Uyên,Lai Châu
@@ -2482,7 +2482,7 @@ ward_code,ward_name,province_name
 15499,Xã Thọ Xuân,Thanh Hóa
 06577,Xã Thống Nhất,Lạng Sơn
 26299,Xã Thống Nhất,Thành phố Đồng Nai
-07060,Xã Thống Nhất,Quảng Ninh
+07060,Xã Thống Nhất,Thành phố Quảng Ninh
 09112,Xã Thổ Tang,Phú Thọ
 31540,Xã Thới An Hội,Thành phố Cần Thơ
 32065,Xã Thới Bình,Cà Mau
@@ -2492,14 +2492,14 @@ ward_code,ward_name,province_name
 12865,Xã Thụy Anh,Hưng Yên
 06148,Xã Thụy Hùng,Lạng Sơn
 28036,Xã Thủ Thừa,Tây Ninh
-09319,Xã Tiên Du,Bắc Ninh
+09319,Phường Tiên Du,Thành phố Bắc Ninh
 12361,Xã Tiên Hoa,Hưng Yên
 12754,Xã Tiên Hưng,Hưng Yên
 30781,Xã Tiên Hải,An Giang
 12634,Xã Tiên La,Hưng Yên
 11755,Xã Tiên Lãng,Thành phố Hải Phòng
 08344,Xã Tiên Lương,Phú Thọ
-07381,Xã Tiên Lục,Bắc Ninh
+07381,Xã Tiên Lục,Thành phố Bắc Ninh
 08842,Xã Tiên Lữ,Phú Thọ
 12364,Xã Tiên Lữ,Hưng Yên
 11791,Xã Tiên Minh,Thành phố Hải Phòng
@@ -2509,7 +2509,7 @@ ward_code,ward_name,province_name
 12424,Xã Tiên Tiến,Hưng Yên
 16549,Xã Tiên Trang,Thanh Hóa
 01261,Xã Tiên Yên,Tuyên Quang
-06862,Xã Tiên Yên,Quảng Ninh
+06862,Xã Tiên Yên,Thành phố Quảng Ninh
 18373,Xã Tiên Điền,Hà Tĩnh
 17287,Xã Tiên Đồng,Nghệ An
 08995,Xã Tiến Thắng,Thành phố Hà Nội
@@ -2529,7 +2529,7 @@ ward_code,ward_name,province_name
 19624,Xã Triệu Phong,Quảng Trị
 15664,Xã Triệu Sơn,Thanh Hóa
 12223,Xã Triệu Việt Vương,Hưng Yên
-09523,Xã Trung Chính,Bắc Ninh
+09523,Xã Trung Chính,Thành phố Bắc Ninh
 16297,Xã Trung Chính,Thanh Hóa
 00385,Xã Trung Giã,Thành phố Hà Nội
 29683,Xã Trung Hiệp,Vĩnh Long
@@ -2538,7 +2538,7 @@ ward_code,ward_name,province_name
 15001,Xã Trung Hạ,Thanh Hóa
 05581,Xã Trung Hội,Thái Nguyên
 22612,Xã Trung Khánh Vĩnh,Khánh Hòa
-09499,Xã Trung Kênh,Bắc Ninh
+09499,Xã Trung Kênh,Thành phố Bắc Ninh
 14857,Xã Trung Lý,Thanh Hóa
 17866,Xã Trung Lộc,Nghệ An
 29698,Xã Trung Ngãi,Vĩnh Long
@@ -2583,7 +2583,7 @@ ward_code,ward_name,province_name
 19237,Xã Trường Ninh,Quảng Trị
 19309,Xã Trường Phú,Quảng Trị
 02623,Xã Trường Sinh,Tuyên Quang
-07489,Xã Trường Sơn,Bắc Ninh
+07489,Xã Trường Sơn,Thành phố Bắc Ninh
 19204,Xã Trường Sơn,Quảng Trị
 31288,Xã Trường Thành,Thành phố Cần Thơ
 11065,Xã Trường Tân,Thành phố Hải Phòng
@@ -2629,7 +2629,7 @@ ward_code,ward_name,province_name
 18952,Xã Tuyên Sơn,Quảng Trị
 27817,Xã Tuyên Thạnh,Tây Ninh
 06457,Xã Tuấn Sơn,Lạng Sơn
-07663,Xã Tuấn Đạo,Bắc Ninh
+07663,Xã Tuấn Đạo,Thành phố Bắc Ninh
 03253,Xã Tuần Giáo,Điện Biên
 10909,Xã Tuệ Tĩnh,Thành phố Hải Phòng
 24991,Xã Tà Hine,Lâm Đồng
@@ -2653,11 +2653,11 @@ ward_code,ward_name,province_name
 27496,Xã Tân An Hội,Thành phố Hồ Chí Minh
 25486,Xã Tân Biên,Tây Ninh
 31399,Xã Tân Bình,Thành phố Cần Thơ
-09343,Xã Tân Chi,Bắc Ninh
+09343,Xã Tân Chi,Thành phố Bắc Ninh
 17488,Xã Tân Châu,Nghệ An
 25516,Xã Tân Châu,Tây Ninh
 05503,Xã Tân Cương,Thái Nguyên
-07432,Xã Tân Dĩnh,Bắc Ninh
+07432,Xã Tân Dĩnh,Thành phố Bắc Ninh
 30214,Xã Tân Dương,Đồng Tháp
 19051,Xã Tân Gianh,Quảng Trị
 20434,Xã Tân Hiệp,Thành phố Đà Nẵng
@@ -2726,7 +2726,7 @@ ward_code,ward_name,province_name
 01171,Xã Tân Quang,Tuyên Quang
 29800,Xã Tân Quới,Vĩnh Long
 08566,Xã Tân Sơn,Phú Thọ
-07531,Xã Tân Sơn,Bắc Ninh
+07531,Xã Tân Sơn,Thành phố Bắc Ninh
 02578,Xã Tân Thanh,Tuyên Quang
 13474,Xã Tân Thanh,Ninh Bình
 13246,Xã Tân Thuận,Hưng Yên
@@ -2763,7 +2763,7 @@ ward_code,ward_name,province_name
 06115,Xã Tân Văn,Lạng Sơn
 27604,Xã Tân Vĩnh Lộc,Thành phố Hồ Chí Minh
 29137,Xã Tân Xuân,Vĩnh Long
-07339,Xã Tân Yên,Bắc Ninh
+07339,Xã Tân Yên,Thành phố Bắc Ninh
 03997,Xã Tân Yên,Sơn La
 32236,Xã Tân Ân,Cà Mau
 28738,Xã Tân Điền,Đồng Tháp
@@ -2787,7 +2787,7 @@ ward_code,ward_name,province_name
 21154,Xã Tây Trà,Quảng Ngãi
 21157,Xã Tây Trà Bồng,Quảng Ngãi
 30988,Xã Tây Yên,An Giang
-07616,Xã Tây Yên Tử,Bắc Ninh
+07616,Xã Tây Yên Tử,Thành phố Bắc Ninh
 15361,Xã Tây Đô,Thanh Hóa
 03385,Xã Tìa Dình,Điện Biên
 04018,Xã Tô Múa,Sơn La
@@ -2844,7 +2844,7 @@ ward_code,ward_name,province_name
 04048,Xã Vân Hồ,Sơn La
 31042,Xã Vân Khánh,An Giang
 06415,Xã Vân Nham,Lạng Sơn
-07621,Xã Vân Sơn,Bắc Ninh
+07621,Xã Vân Sơn,Thành phố Bắc Ninh
 05152,Xã Vân Sơn,Phú Thọ
 17611,Xã Vân Tụ,Nghệ An
 10354,Xã Vân Đình,Thành phố Hà Nội
@@ -2863,7 +2863,7 @@ ward_code,ward_name,province_name
 06154,Xã Văn Lãng,Lạng Sơn
 05665,Xã Văn Lăng,Thái Nguyên
 08611,Xã Văn Miếu,Phú Thọ
-09238,Xã Văn Môn,Bắc Ninh
+09238,Xã Văn Môn,Thành phố Bắc Ninh
 14974,Xã Văn Nho,Thanh Hóa
 15049,Xã Văn Phú,Thanh Hóa
 06253,Xã Văn Quan,Lạng Sơn
@@ -2920,7 +2920,7 @@ ward_code,ward_name,province_name
 21796,Xã Vĩnh Thịnh,Gia Lai
 11836,Xã Vĩnh Thịnh,Thành phố Hải Phòng
 19405,Xã Vĩnh Thủy,Quảng Trị
-06757,Xã Vĩnh Thực,Quảng Ninh
+06757,Xã Vĩnh Thực,Thành phố Quảng Ninh
 31237,Xã Vĩnh Trinh,Thành phố Cần Thơ
 30697,Xã Vĩnh Trạch,An Giang
 13597,Xã Vĩnh Trụ,Ninh Bình
@@ -2968,7 +2968,7 @@ ward_code,ward_name,province_name
 26428,Xã Xuân Bắc,Thành phố Đồng Nai
 15658,Xã Xuân Chinh,Thanh Hóa
 22060,Xã Xuân Cảnh,Đắk Lắk
-07870,Xã Xuân Cẩm,Bắc Ninh
+07870,Xã Xuân Cẩm,Thành phố Bắc Ninh
 16234,Xã Xuân Du,Thanh Hóa
 02191,Xã Xuân Dương,Thái Nguyên
 06607,Xã Xuân Dương,Lạng Sơn
@@ -2984,7 +2984,7 @@ ward_code,ward_name,province_name
 08971,Xã Xuân Lãng,Phú Thọ
 22090,Xã Xuân Lãnh,Đắk Lắk
 08500,Xã Xuân Lũng,Phú Thọ
-07246,Xã Xuân Lương,Bắc Ninh
+07246,Xã Xuân Lương,Thành phố Bắc Ninh
 15592,Xã Xuân Lập,Thanh Hóa
 18481,Xã Xuân Lộc,Hà Tĩnh
 26425,Phường Xuân Lộc,Thành phố Đồng Nai
@@ -3046,7 +3046,7 @@ ward_code,ward_name,province_name
 02365,Xã Yên Nguyên,Tuyên Quang
 15610,Xã Yên Nhân,Thanh Hóa
 15442,Xã Yên Ninh,Thanh Hóa
-09193,Xã Yên Phong,Bắc Ninh
+09193,Phường Yên Phong,Thành phố Bắc Ninh
 02083,Xã Yên Phong,Thái Nguyên
 15409,Xã Yên Phú,Thanh Hóa
 05305,Xã Yên Phú,Phú Thọ
@@ -3059,13 +3059,13 @@ ward_code,ward_name,province_name
 17506,Xã Yên Thành,Nghệ An
 04744,Xã Yên Thành,Lào Cai
 15034,Xã Yên Thắng,Thanh Hóa
-07288,Xã Yên Thế,Bắc Ninh
+07288,Xã Yên Thế,Thành phố Bắc Ninh
 02044,Xã Yên Thịnh,Thái Nguyên
 16264,Xã Yên Thọ,Thanh Hóa
 01318,Xã Yên Thổ,Cao Bằng
 05353,Xã Yên Thủy,Phú Thọ
 18007,Xã Yên Trung,Nghệ An
-09205,Xã Yên Trung,Bắc Ninh
+09205,Xã Yên Trung,Thành phố Bắc Ninh
 15421,Xã Yên Trường,Thanh Hóa
 05620,Xã Yên Trạch,Thái Nguyên
 05386,Xã Yên Trị,Phú Thọ
@@ -3073,7 +3073,7 @@ ward_code,ward_name,province_name
 17380,Xã Yên Xuân,Nghệ An
 04930,Xã Yên Xuân,Thành phố Hà Nội
 15469,Xã Yên Định,Thanh Hóa
-07642,Xã Yên Định,Bắc Ninh
+07642,Xã Yên Định,Thành phố Bắc Ninh
 13879,Xã Yên Đồng,Ninh Bình
 11020,Xã Yết Kiêu,Thành phố Hải Phòng
 13021,Xã Ái Quốc,Hưng Yên
@@ -3109,7 +3109,7 @@ ward_code,ward_name,province_name
 05941,Xã Điềm Thụy,Thái Nguyên
 14950,Xã Điền Lư,Thanh Hóa
 14932,Xã Điền Quang,Thanh Hóa
-06874,Xã Điền Xá,Quảng Ninh
+06874,Xã Điền Xá,Thành phố Quảng Ninh
 20569,Xã Điện Bàn Tây,Thành phố Đà Nẵng
 07969,Xã Đoan Hùng,Phú Thọ
 01525,Xã Đoài Dương,Cao Bằng
@@ -3121,7 +3121,7 @@ ward_code,ward_name,province_name
 01501,Xã Đàm Thủy,Cao Bằng
 08662,Xã Đào Xá,Phú Thọ
 32104,Xã Đá Bạc,Cà Mau
-07594,Xã Đèo Gia,Bắc Ninh
+07594,Xã Đèo Gia,Thành phố Bắc Ninh
 21385,Xã Đình Cương,Quảng Ngãi
 06613,Xã Đình Lập,Lạng Sơn
 01489,Xã Đình Phong,Cao Bằng
@@ -3129,7 +3129,7 @@ ward_code,ward_name,province_name
 29497,Xã Đôn Châu,Vĩnh Long
 00454,Xã Đông Anh,Thành phố Hà Nội
 04399,Xã Đông Cuông,Lào Cai
-09487,Xã Đông Cứu,Bắc Ninh
+09487,Xã Đông Cứu,Thành phố Bắc Ninh
 23074,Xã Đông Giang,Lâm Đồng
 20467,Xã Đông Giang,Thành phố Đà Nẵng
 17017,Xã Đông Hiếu,Nghệ An
@@ -3143,8 +3143,8 @@ ward_code,ward_name,province_name
 01786,Xã Đông Khê,Cao Bằng
 18586,Xã Đông Kinh,Hà Tĩnh
 17878,Xã Đông Lộc,Nghệ An
-06877,Xã Đông Ngũ,Quảng Ninh
-07450,Xã Đông Phú,Bắc Ninh
+06877,Xã Đông Ngũ,Thành phố Quảng Ninh
+07450,Xã Đông Phú,Thành phố Bắc Ninh
 31369,Xã Đông Phước,Thành phố Cần Thơ
 12793,Xã Đông Quan,Hưng Yên
 21109,Xã Đông Sơn,Quảng Ngãi
@@ -3180,7 +3180,7 @@ ward_code,ward_name,province_name
 25225,Xã Đăk Ơ,Thành phố Đồng Nai
 24931,Xã Đơn Dương,Lâm Đồng
 10972,Xã Đường An,Thành phố Hải Phòng
-06946,Xã Đường Hoa,Quảng Ninh
+06946,Xã Đường Hoa,Thành phố Quảng Ninh
 01012,Xã Đường Hồng,Tuyên Quang
 00865,Xã Đường Thượng,Tuyên Quang
 25099,Xã Đạ Huoai,Lâm Đồng
@@ -3193,20 +3193,20 @@ ward_code,ward_name,province_name
 14500,Xã Đại Hoàng,Ninh Bình
 17944,Xã Đại Huệ,Nghệ An
 31561,Xã Đại Hải,Thành phố Cần Thơ
-09469,Xã Đại Lai,Bắc Ninh
+09469,Xã Đại Lai,Thành phố Bắc Ninh
 22504,Xã Đại Lãnh,Khánh Hòa
 20500,Xã Đại Lộc,Thành phố Đà Nẵng
 31645,Xã Đại Ngãi,Thành phố Cần Thơ
 05488,Xã Đại Phúc,Thái Nguyên
 26491,Xã Đại Phước,Thành phố Đồng Nai
 11086,Xã Đại Sơn,Thành phố Hải Phòng
-07627,Xã Đại Sơn,Bắc Ninh
+07627,Xã Đại Sơn,Thành phố Bắc Ninh
 00664,Xã Đại Thanh,Thành phố Hà Nội
 05830,Xã Đại Từ,Thái Nguyên
 10342,Xã Đại Xuyên,Thành phố Hà Nội
 29194,Xã Đại Điền,Vĩnh Long
 08923,Xã Đại Đình,Phú Thọ
-09340,Xã Đại Đồng,Bắc Ninh
+09340,Xã Đại Đồng,Thành phố Bắc Ninh
 17713,Xã Đại Đồng,Nghệ An
 05347,Xã Đại Đồng,Phú Thọ
 11995,Xã Đại Đồng,Hưng Yên
@@ -3215,7 +3215,7 @@ ward_code,ward_name,province_name
 32201,Xã Đất Mới,Cà Mau
 26680,Xã Đất Đỏ,Thành phố Hồ Chí Minh
 32152,Xã Đầm Dơi,Cà Mau
-06895,Xã Đầm Hà,Quảng Ninh
+06895,Xã Đầm Hà,Thành phố Quảng Ninh
 20716,Xã Đắc Pring,Thành phố Đà Nẵng
 24595,Xã Đắk Liêng,Đắk Lắk
 24670,Xã Đắk Mil,Lâm Đồng
@@ -3240,7 +3240,7 @@ ward_code,ward_name,province_name
 05692,Xã Đồng Hỷ,Thái Nguyên
 23173,Xã Đồng Kho,Lâm Đồng
 28945,Xã Đồng Khởi,Vĩnh Long
-07282,Xã Đồng Kỳ,Bắc Ninh
+07282,Xã Đồng Kỳ,Thành phố Bắc Ninh
 18949,Xã Đồng Lê,Quảng Trị
 15058,Xã Đồng Lương,Thanh Hóa
 08431,Xã Đồng Lương,Phú Thọ
@@ -3254,7 +3254,7 @@ ward_code,ward_name,province_name
 15724,Xã Đồng Tiến,Thanh Hóa
 25390,Xã Đồng Tâm,Thành phố Đồng Nai
 01165,Xã Đồng Tâm,Tuyên Quang
-07735,Xã Đồng Việt,Bắc Ninh
+07735,Xã Đồng Việt,Thành phố Bắc Ninh
 00721,Xã Đồng Văn,Tuyên Quang
 22081,Xã Đồng Xuân,Đắk Lắk
 01216,Xã Đồng Yên,Tuyên Quang
@@ -3283,10 +3283,35 @@ ward_code,ward_name,province_name
 10402,Xã Ứng Hòa,Thành phố Hà Nội
 10369,Xã Ứng Thiên,Thành phố Hà Nội
 11914,Đặc khu Cát Hải,Thành phố Hải Phòng
-07192,Đặc khu Cô Tô,Quảng Ninh
+07192,Đặc khu Cô Tô,Thành phố Quảng Ninh
 31108,Đặc khu Kiên Hải,An Giang
 23272,Đặc khu Phú Quý,Lâm Đồng
 31078,Đặc khu Phú Quốc,An Giang
 31105,Đặc khu Thổ Châu,An Giang
 22736,Đặc khu Trường Sa,Khánh Hòa
-06994,Đặc khu Vân Đồn,Quảng Ninh
+06994,Đặc khu Vân Đồn,Thành phố Quảng Ninh
+23535,Xã Ia Đal,Quảng Ngãi
+23538,Xã Ia Tơi,Quảng Ngãi
+23938,Xã Ia Mơ,Gia Lai
+24181,Xã Ea Drăng,Đắk Lắk
+24184,Xã Ea H'Leo,Đắk Lắk
+24187,Xã Ea Hiao,Đắk Lắk
+24193,Xã Ea Wy,Đắk Lắk
+24208,Xã Ea Khăl,Đắk Lắk
+24259,Xã Quảng Phú,Đắk Lắk
+24265,Xã Ea Kiết,Đắk Lắk
+24277,Xã Ea Tul,Đắk Lắk
+24280,Xã Cư M'gar,Đắk Lắk
+24286,Xã Ea M'Droh,Đắk Lắk
+24301,Xã Cuôr Đăng,Đắk Lắk
+24412,Xã M'Drắk,Đắk Lắk
+24415,Xã Cư Prao,Đắk Lắk
+24433,Xã Ea Riêng,Đắk Lắk
+24436,Xã Cư M'ta,Đắk Lắk
+24444,Xã Krông Á,Đắk Lắk
+24445,Xã Ea Trang,Đắk Lắk
+24733,Xã Kiến Đức,Lâm Đồng
+24751,Xã Nhân Cơ,Lâm Đồng
+24760,Xã Quảng Tín,Lâm Đồng
+24829,Phường B’Lao,Lâm Đồng
+24934,Xã D’Ran,Lâm Đồng

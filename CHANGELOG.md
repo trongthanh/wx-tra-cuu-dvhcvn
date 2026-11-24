@@ -17,6 +17,10 @@
 - Tìm kiếm bỏ qua dấu nháy (`'`, `’`, `‘`, `ʼ`, `` ` ``): `B'Lao`, `B’Lao`, `Blao` đều khớp.
 - Chú giải trên trang web nhận diện được tên phường/xã có dấu nháy (vd. "Phường B'Lao").
 
+### Sửa
+- Chú giải không còn khớp nhầm khi tên phường/xã được theo sau bởi từ thường trùng tên khi bỏ dấu, vd. "phường An Nhơn nằm" từng bị nhận thành "Phường An Nhơn Nam". Tên riêng viết hoa nay dừng ở từ viết thường đầu tiên.
+- Tên phường/xã trùng nhau giữa nhiều tỉnh (244 tên, vd. "phường An Nhơn") trước đây không được chú giải nếu thiếu tỉnh trong ngoặc. Nay tự nhận tỉnh viết ngay sau tên ("…, TP.HCM", "tỉnh Gia Lai", kể cả tên tỉnh cũ như "Bình Định"); nếu vẫn chưa rõ, tooltip liệt kê tất cả các khả năng.
+
 ### Chưa hỗ trợ
 - 5 đặc khu cấp huyện cũ (Lý Sơn, Côn Đảo, Hoàng Sa, Cồn Cỏ, Bạch Long Vĩ) chưa có trong dữ liệu vì không có đơn vị cấp xã cũ tương ứng.
 

@@ -1,10 +1,21 @@
 import { normalizeStr } from '@/utils/strings';
+import {
+  trimToProperNouns,
+  provinceHintCandidates,
+  stripProvinceType,
+  provinceAliasKeys,
+} from '@/utils/ward-text';
+import { WardArticleContext } from '@/utils/ward-context';
 import { getSettings, type Settings } from '@/utils/settings';
 import type { NewWard, OldWard } from '@/utils/indexeddb';
 
 let mutationObserver: MutationObserver | null = null;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
-let tooltipListeners: { type: string; handler: EventListener; options?: boolean | AddEventListenerOptions }[] = [];
+let tooltipListeners: {
+  type: string;
+  handler: EventListener;
+  options?: boolean | AddEventListenerOptions;
+}[] = [];
 
 export default defineContentScript({
   matches: ['<all_urls>'],
@@ -99,10 +110,9 @@ async function sendLookupMessage<T>(message: Record<string, unknown>): Promise<T
 let provinceAliasMap: Map<string, string> | null = null;
 
 // Ward name part has at most 6 word-tokens (e.g. "Văn Miếu - Quốc Tử Giám").
-// Province hint only matched when wrapped in parentheses, e.g. "phường Bảy Hiền (TP.HCM)".
-// Commas are NOT used as province-hint delimiters to avoid capturing surrounding sentence text.
+// Province hints are parsed separately so a parenthesized ward can still be a match.
 const WARD_PATTERN =
-  /\b(phường|xã|thị trấn)\s+([A-Za-zÀ-ỹ0-9]+(?:[\s-]+[A-Za-zÀ-ỹ0-9]+){0,5})(?:\s*\(\s*([^)\n]{1,40})\))?/gi;
+  /\b(phường|xã|thị trấn)\s+([A-Za-zÀ-ỹ0-9]+(?:['\u2018\u2019\u02bc][A-Za-zÀ-ỹ0-9]+)*(?:[\s-]+[A-Za-zÀ-ỹ0-9]+(?:['\u2018\u2019\u02bc][A-Za-zÀ-ỹ0-9]+)*){0,5})/gi;
 
 const SKIP_TAGS = new Set([
   'SCRIPT',
@@ -376,26 +386,84 @@ function addCommonAbbreviations() {
   }
 }
 
-function resolveProvinceName(hint: string | undefined): string | null {
+// Only exact aliases count as evidence for a province.
+function resolveProvinceNameExact(hint: string | undefined): string | null {
   if (!hint || !provinceAliasMap) return null;
-
-  const normalizedHint = normalizeStr(hint.trim());
-
-  if (provinceAliasMap.has(normalizedHint)) {
-    return provinceAliasMap.get(normalizedHint)!;
+  for (const key of provinceAliasKeys(hint)) {
+    const official = provinceAliasMap.get(key);
+    if (official) return official;
   }
+  return null;
+}
 
-  for (const [alias, official] of provinceAliasMap) {
-    if (alias.includes(normalizedHint) || normalizedHint.includes(alias)) {
-      return official;
+const ARTICLE_EXCLUSIONS = 'aside, nav, footer, [role="complementary"], [data-no-dvhcvn]';
+const ARTICLE_BLOCKS = 'p, h1, h2, h3, h4, h5, h6, li, figcaption, blockquote, div';
+
+interface ArticleTextLocation {
+  segment: { text: string };
+  offset: number;
+}
+
+function articleTextBlocks(): Map<Text, ArticleTextLocation> {
+  const main = document.querySelector('main, [role="main"]') ?? document.body;
+  const bodies = [...main.querySelectorAll('[itemprop~="articleBody"]')].filter(
+    (el) => !el.closest(ARTICLE_EXCLUSIONS),
+  );
+  const articles = [...main.querySelectorAll('article')].filter(
+    (el) => !el.closest(ARTICLE_EXCLUSIONS) && !el.parentElement?.closest('article'),
+  );
+  const body =
+    bodies.length === 1
+      ? bodies[0]
+      : bodies.length === 0 && articles.length === 1
+        ? articles[0]
+        : null;
+  const result = new Map<Text, ArticleTextLocation>();
+  if (!body) return result;
+
+  const owner = body.closest('article') ?? main;
+  const roots = [body];
+  // Some publishers put the headline and summary alongside the marked-up article body.
+  for (const selector of ['[itemprop~="headline"], h1', '[itemprop~="description"]']) {
+    const elements = [...owner.querySelectorAll(selector)].filter(
+      (el) => !el.closest(ARTICLE_EXCLUSIONS) && (el.closest('article') ?? main) === owner,
+    );
+    if (elements.length === 1 && !body.contains(elements[0]) && !elements[0].contains(body)) {
+      roots.push(elements[0]);
     }
   }
 
-  return null;
+  for (const root of roots) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let previousBlock: Element | null = null;
+    let segment = { text: '' };
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const parent = node.parentElement!;
+      if (parent.closest('.vw-hint')) continue;
+      if (
+        parent.closest(`${ARTICLE_EXCLUSIONS}, script, style, button`) ||
+        (parent.closest('article') ?? main) !== owner
+      ) {
+        previousBlock = null;
+        continue;
+      }
+      const block = parent.closest(ARTICLE_BLOCKS) ?? root;
+      if (block !== previousBlock) segment = { text: '' };
+      const offset = segment.text.length;
+      segment.text += (node as Text).data;
+      result.set(node as Text, { segment, offset });
+      previousBlock = block;
+    }
+  }
+  return result;
 }
 
 async function processDocument() {
   const textNodes = collectTextNodes();
+  const blocks = articleTextBlocks();
+  const lookup = new WardScan();
+  const segments = new Set([...blocks.values()].map(({ segment }) => segment));
+  const article = await lookup.collectContext([...segments].map(({ text }) => text));
   console.log('[Vietnam Wards] Scanning', textNodes.length, 'text nodes');
 
   let annotationCount = 0;
@@ -404,7 +472,8 @@ async function processDocument() {
   for (const node of textNodes) {
     if (annotationCount >= MAX_ANNOTATIONS) break;
 
-    const result = await processTextNode(node);
+    const block = blocks.get(node);
+    const result = await processTextNode(node, lookup, block, block ? article : undefined);
     if (result) {
       foundCount += result.found;
       annotationCount += result.annotated;
@@ -455,86 +524,53 @@ function collectTextNodes(): Text[] {
   return nodes;
 }
 
-function findParenRanges(text: string): Array<[number, number]> {
-  const ranges: Array<[number, number]> = [];
-  let depth = 0;
-  let start = -1;
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === '(') {
-      if (depth === 0) start = i;
-      depth++;
-    } else if (text[i] === ')' && depth > 0) {
-      depth--;
-      if (depth === 0) {
-        ranges.push([start, i]);
-        start = -1;
-      }
-    }
-  }
-  return ranges;
+interface WardMention {
+  wardType: string;
+  wardName: string;
+  index: number;
+  nameStart: number;
+}
+
+function findWardMentions(text: string): WardMention[] {
+  return [...text.matchAll(WARD_PATTERN)].map((match) => ({
+    wardType: match[1],
+    wardName: match[2],
+    index: match.index!,
+    nameStart: text.indexOf(match[2], match.index! + match[1].length),
+  }));
 }
 
 async function processTextNode(
   textNode: Text,
+  lookup: WardScan,
+  block: ArticleTextLocation | undefined,
+  article: WardArticleContext | undefined,
 ): Promise<{ found: number; annotated: number } | null> {
-  const text = textNode.textContent;
-  if (!text) return null;
-
-  WARD_PATTERN.lastIndex = 0;
-
-  const matches: Array<{
-    fullMatch: string;
-    wardType: string;
-    wardName: string;
-    provinceHint: string | undefined;
-    index: number;
-  }> = [];
-
-  const parenRanges = findParenRanges(text);
-
-  let match;
-  while ((match = WARD_PATTERN.exec(text)) !== null) {
-    // Skip matches that start inside parentheses — those are publisher annotations of old ward names
-    if (parenRanges.some(([s, e]) => match!.index > s && match!.index < e)) continue;
-    matches.push({
-      fullMatch: match[0],
-      wardType: match[1],
-      wardName: match[2].trim(),
-      provinceHint: match[3]?.trim(),
-      index: match.index,
-    });
-  }
-
+  const text = textNode.data;
+  const matches = findWardMentions(text);
   if (matches.length === 0) return null;
-
-  console.log(
-    '[Vietnam Wards] Found matches in text node:',
-    matches.map((m) => m.fullMatch),
-  );
 
   const replacements: Array<{ start: number; end: number; html: string }> = [];
 
   for (const m of matches) {
-    const lookupResult = await lookupWard(m.wardType, m.wardName, m.provinceHint);
-    console.log(
-      '[Vietnam Wards] Lookup result for',
-      m.wardName,
-      ':',
-      lookupResult ? 'found' : 'not found',
-    );
-
-    if (lookupResult) {
-      const tooltip = buildTooltip(lookupResult.newWard, lookupResult.oldWards);
-      if (tooltip) {
-        // Only wrap the matched portion (may be shorter than m.wardName due to fallback trimming)
-        const annotatedText = `${m.wardType} ${lookupResult.matchedName}`;
-        const annotationEnd = m.index + annotatedText.length;
-        replacements.push({
-          start: m.index,
-          end: annotationEnd,
-          html: createAnnotationHTML(annotatedText, tooltip),
-        });
-      }
+    const result = await lookup.find(m, block?.segment.text ?? text, block?.offset ?? 0);
+    if (!result) continue;
+    const picked =
+      result.explicit ??
+      (result.candidates.length === 1
+        ? result.candidates[0]
+        : !result.hasHint
+          ? article?.pick(result.name, result.candidates, provinceAliasMap ?? new Map())
+          : undefined);
+    const tooltip = picked
+      ? buildTooltip(picked.newWard, picked.oldWards)
+      : buildAmbiguousTooltip(result.candidates);
+    if (tooltip) {
+      replacements.push({
+        start: m.index,
+        end: result.end,
+        html: createAnnotationHTML(text.slice(m.index, result.end), tooltip),
+      });
     }
   }
 
@@ -563,88 +599,117 @@ async function processTextNode(
   return { found: matches.length, annotated: replacements.length };
 }
 
-async function lookupWardByNormalizedName(
-  normalizedWardName: string,
-  provinceHint: string | undefined,
-): Promise<{ newWard: NewWard; oldWards: OldWard[] } | null> {
-  if (provinceHint) {
-    const provinceName = resolveProvinceName(provinceHint);
-    if (provinceName) {
-      const wards = await sendLookupMessage<NewWard[]>({
-        type: 'LOOKUP_NEW_WARDS_BY_NAME_AND_PROVINCE',
-        wardName: normalizedWardName,
-        provinceName: normalizeStr(provinceName),
-      });
-      if (wards.length > 0) {
-        const oldWards = await sendLookupMessage<OldWard[]>({
-          type: 'LOOKUP_OLD_WARDS_FROM_NEW',
-          wardCode: wards[0].ward_code,
-        });
-        return { newWard: wards[0], oldWards };
-      }
-    }
+interface WardCandidate {
+  newWard: NewWard;
+  oldWards: OldWard[];
+}
+
+interface WardMatch {
+  name: string;
+  end: number;
+  candidates: WardCandidate[];
+  explicit: WardCandidate | undefined;
+  hasHint: boolean;
+}
+
+function provinceAfter(text: string, end: number): string | null {
+  const trailing = text.slice(end, end + 140);
+  const parenthetical = trailing.match(/^\s*\(\s*([^)\n]{1,40})\)/)?.[1];
+  const hints = parenthetical ? [parenthetical] : provinceHintCandidates(trailing);
+  for (const hint of hints) {
+    const official = resolveProvinceNameExact(hint);
+    if (official) return stripProvinceType(official);
   }
-
-  const wards = await sendLookupMessage<NewWard[]>({
-    type: 'LOOKUP_NEW_WARDS_BY_NAME',
-    wardName: normalizedWardName,
-  });
-
-  if (wards.length === 1) {
-    const oldWards = await sendLookupMessage<OldWard[]>({
-      type: 'LOOKUP_OLD_WARDS_FROM_NEW',
-      wardCode: wards[0].ward_code,
-    });
-    return { newWard: wards[0], oldWards };
-  }
-
-  if (wards.length > 1 && provinceHint) {
-    const provinceName = resolveProvinceName(provinceHint);
-    if (provinceName) {
-      const normalizedProvince = normalizeStr(provinceName);
-      const matched = wards.find((w) => normalizeStr(w.province_name) === normalizedProvince);
-      if (matched) {
-        const oldWards = await sendLookupMessage<OldWard[]>({
-          type: 'LOOKUP_OLD_WARDS_FROM_NEW',
-          wardCode: matched.ward_code,
-        });
-        return { newWard: matched, oldWards };
-      }
-    }
-  }
-
   return null;
 }
 
-async function lookupWard(
-  wardType: string,
-  wardName: string,
-  provinceHint: string | undefined,
-): Promise<{ newWard: NewWard; oldWards: OldWard[]; matchedName: string } | null> {
-  try {
-    // ward_index in DB stores the full normalized name including type (e.g. "phuong yen hoa").
-    // Try from longest match down to 1 token, to handle greedy regex over-capture.
-    const tokens = wardName.trim().split(/\s+/);
-    for (let len = tokens.length; len >= 1; len--) {
-      const candidate = tokens.slice(0, len).join(' ');
-      const normalizedWardName = normalizeStr(`${wardType} ${candidate}`);
-      const result = await lookupWardByNormalizedName(normalizedWardName, provinceHint);
-      if (result) {
-        return { ...result, matchedName: candidate };
+function* wardPrefixes(mention: WardMention) {
+  const words = [...mention.wardName.matchAll(/\S+/g)];
+  const tokens = trimToProperNouns(words.map(([word]) => word));
+  for (let len = tokens.length; len >= 1; len--) {
+    const last = words[len - 1];
+    yield {
+      name: normalizeStr(`${mention.wardType} ${tokens.slice(0, len).join(' ')}`),
+      end: mention.nameStart + last.index! + last[0].length,
+    };
+  }
+}
+
+class WardScan {
+  private readonly wards = new Map<string, Promise<NewWard[]>>();
+  private readonly oldWards = new Map<string, Promise<OldWard[]>>();
+
+  async collectContext(blocks: string[]): Promise<WardArticleContext | undefined> {
+    if (blocks.length === 0) return undefined;
+    const context = new WardArticleContext(blocks);
+    for (const text of blocks) {
+      for (const mention of findWardMentions(text)) {
+        // Don't query IndexedDB in the first pass unless a possible explicit hint follows.
+        if (![...wardPrefixes(mention)].some(({ end }) => provinceAfter(text, end))) continue;
+        const result = await this.find(mention, text);
+        if (result?.explicit) context.record(result.name, result.explicit.newWard.ward_code);
       }
     }
+    return context;
+  }
 
-    return null;
-  } catch (error) {
-    console.error('[Vietnam Wards] Lookup error:', error);
+  async find(mention: WardMention, text: string, offset = 0): Promise<WardMatch | null> {
+    try {
+      for (const { name, end } of wardPrefixes(mention)) {
+        if (!this.wards.has(name)) {
+          this.wards.set(
+            name,
+            sendLookupMessage<NewWard[]>({
+              type: 'LOOKUP_NEW_WARDS_BY_NAME',
+              wardName: name,
+            }),
+          );
+        }
+        const wards = await this.wards.get(name)!;
+        if (wards.length === 0) continue;
+        const candidates = await Promise.all(
+          wards.map(async (newWard) => {
+            const code = newWard.ward_code;
+            if (!this.oldWards.has(code)) {
+              this.oldWards.set(
+                code,
+                sendLookupMessage<OldWard[]>({
+                  type: 'LOOKUP_OLD_WARDS_FROM_NEW',
+                  wardCode: code,
+                }),
+              );
+            }
+            return { newWard, oldWards: await this.oldWards.get(code)! };
+          }),
+        );
+        const target = provinceAfter(text, offset + end);
+        // Prefer an exact current province before considering historical province names.
+        const current = target
+          ? candidates.filter(({ newWard }) => stripProvinceType(newWard.province_name) === target)
+          : [];
+        const matched =
+          target && current.length === 0
+            ? candidates.filter(({ oldWards }) =>
+                oldWards.some((ward) => stripProvinceType(ward.province_name) === target),
+              )
+            : current;
+        return {
+          name,
+          end,
+          candidates,
+          explicit: matched.length === 1 ? matched[0] : undefined,
+          hasHint: target !== null,
+        };
+      }
+    } catch (error) {
+      console.error('[Vietnam Wards] Lookup error:', error);
+    }
     return null;
   }
 }
 
-function buildTooltip(_newWard: NewWard, oldWards: OldWard[]): string | null {
-  if (oldWards.length === 0) return null;
-
-  // Group districts by province
+// "district, province (cũ)" lines, grouped by old province.
+function oldWardLines(oldWards: OldWard[]): string[] {
   const byProvince = new Map<string, Set<string>>();
   for (const old of oldWards) {
     if (!old.district_name || !old.province_name) continue;
@@ -652,13 +717,34 @@ function buildTooltip(_newWard: NewWard, oldWards: OldWard[]): string | null {
     byProvince.get(old.province_name)!.add(old.district_name);
   }
 
-  if (byProvince.size === 0) return null;
-
   const lines: string[] = [];
   for (const [province, districts] of byProvince) {
     lines.push(`${Array.from(districts).join(', ')}, ${province} (cũ)`);
   }
-  return lines.join('\n');
+  return lines;
+}
+
+function buildTooltip(_newWard: NewWard, oldWards: OldWard[]): string | null {
+  const lines = oldWardLines(oldWards);
+  return lines.length > 0 ? lines.join('\n') : null;
+}
+
+const MAX_AMBIGUOUS_SHOWN = 6;
+
+// Several wards share this name and the page gives no province: list every possibility.
+function buildAmbiguousTooltip(candidates: WardCandidate[]): string | null {
+  const shown = candidates.slice(0, MAX_AMBIGUOUS_SHOWN);
+  const entries: string[] = [];
+  for (const c of shown) {
+    const lines = oldWardLines(c.oldWards);
+    if (lines.length === 0) continue;
+    entries.push(`• ${c.newWard.province_name}: ${lines.join('; ')}`);
+  }
+  if (entries.length === 0) return null;
+  const header = `Có ${candidates.length} nơi trùng tên, chưa rõ là nơi nào:`;
+  const more =
+    candidates.length > shown.length ? [`… và ${candidates.length - shown.length} nơi khác`] : [];
+  return [header, ...entries, ...more].join('\n');
 }
 
 function createAnnotationHTML(text: string, tooltip: string): string {

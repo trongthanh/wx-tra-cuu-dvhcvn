@@ -26,9 +26,13 @@ Tự động nhận diện tên phường/xã mới trên các trang web bạn �
 
 ✅ Dữ liệu tra cứu được lưu cục bộ, hoạt động nhanh và không cần kết nối mạng sau khi cài đặt.
 ✅ Hoàn toàn miễn phí, mã nguồn mở.
-✅ Dữ liệu cập nhật thường xuyên theo các thay đổi hành chính mới nhất, bao gồm việc nâng cấp tỉnh Đồng Nai thành Thành phố Đồng Nai trực thuộc Trung ương (hiệu lực từ 30/4/2026).
+✅ Dữ liệu cập nhật thường xuyên theo các thay đổi hành chính mới nhất, bao gồm việc nâng cấp Đồng Nai (30/4/2026), Quảng Ninh (1/9/2026) và Bắc Ninh (20/9/2026) thành thành phố trực thuộc Trung ương.
 
 ## Release Notes
+
+### v1.2.0
+
+Cập nhật dữ liệu: Tỉnh Quảng Ninh (từ 1/9/2026, Nghị quyết 36/2026/QH16) và tỉnh Bắc Ninh (từ 20/9/2026, Nghị quyết 39/2026/QH16) chính thức trở thành thành phố trực thuộc Trung ương. 12 xã của Bắc Ninh được nâng cấp thành phường (Nghị quyết 388/NQ-UBTVQH16, hiệu lực 20/9/2026): Bố Hạ, Chi Lăng, Gia Bình, Hiệp Hòa, Kép, Lạng Giang, Lục Nam, Lương Tài, Nhân Thắng, Phù Lãng, Tiên Du, Yên Phong.
 
 ### v1.1.0
 

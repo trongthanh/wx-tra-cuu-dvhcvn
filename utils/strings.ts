@@ -8,6 +8,8 @@ export function normalizeStr(str: string): string {
   normalized = normalized.replace(/[\u0300-\u036f]/g, '');
   // chuyển chữ đ/Đ thành d/D
   normalized = normalized.replace(/[đĐ]/g, (m) => (m === 'đ' ? 'd' : 'D'));
+  // bỏ các dạng dấu nháy (' ’ ‘ ʼ `) để B'Lao, B’Lao, Blao đều thành "blao"
+  normalized = normalized.replace(/['\u2018\u2019\u02bc`]/g, '');
   // chuyển về chữ thường
   return normalized.toLowerCase();
 }

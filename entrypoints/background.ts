@@ -9,13 +9,20 @@ export default defineBackground(() => {
 
   // Initialize data setup when extension starts
   const dataSetup = new DataSetup();
+  let dataReady: Promise<boolean> | undefined;
+  function ensureDataReady() {
+    return (dataReady ??= dataSetup.checkAndUpdateData().catch((error) => {
+      dataReady = undefined;
+      throw error;
+    }));
+  }
 
   // Handle installation/update events
   browser.runtime.onInstalled.addListener(async (details) => {
     console.log('Extension installed/updated:', details.reason);
 
     try {
-      const wasUpdated = await dataSetup.checkAndUpdateData();
+      const wasUpdated = await ensureDataReady();
       if (wasUpdated) {
         console.log('Data updated after extension install/update');
       } else {
@@ -58,28 +65,30 @@ export default defineBackground(() => {
       return true;
     }
 
-    // Handle lookup requests from content scripts (they can't access extension IndexedDB)
-    if (message.type === 'LOOKUP_ALL_OLD_PROVINCES') {
-      wardLookup.getAllOldProvinces().then(sendResponse);
+    // Content scripts must not read an empty or partially imported dataset on first load.
+    function respondWithLookup(lookup: () => Promise<unknown[]>) {
+      ensureDataReady()
+        .then(lookup)
+        .then(sendResponse, (error) => {
+          console.error('Could not perform administrative lookup:', error);
+          sendResponse([]);
+        });
       return true;
     }
-    if (message.type === 'LOOKUP_ALL_NEW_PROVINCES') {
-      wardLookup.getAllNewProvinces().then(sendResponse);
-      return true;
-    }
-    if (message.type === 'LOOKUP_NEW_WARDS_BY_NAME') {
-      wardLookup.findNewWardsByName(message.wardName).then(sendResponse);
-      return true;
-    }
-    if (message.type === 'LOOKUP_NEW_WARDS_BY_NAME_AND_PROVINCE') {
-      wardLookup
-        .findNewWardsByNameAndProvince(message.wardName, message.provinceName)
-        .then(sendResponse);
-      return true;
-    }
-    if (message.type === 'LOOKUP_OLD_WARDS_FROM_NEW') {
-      wardLookup.getOldWardsFromNew(message.wardCode).then(sendResponse);
-      return true;
+
+    switch (message.type) {
+      case 'LOOKUP_ALL_OLD_PROVINCES':
+        return respondWithLookup(() => wardLookup.getAllOldProvinces());
+      case 'LOOKUP_ALL_NEW_PROVINCES':
+        return respondWithLookup(() => wardLookup.getAllNewProvinces());
+      case 'LOOKUP_NEW_WARDS_BY_NAME':
+        return respondWithLookup(() => wardLookup.findNewWardsByName(message.wardName));
+      case 'LOOKUP_NEW_WARDS_BY_NAME_AND_PROVINCE':
+        return respondWithLookup(() =>
+          wardLookup.findNewWardsByNameAndProvince(message.wardName, message.provinceName),
+        );
+      case 'LOOKUP_OLD_WARDS_FROM_NEW':
+        return respondWithLookup(() => wardLookup.getOldWardsFromNew(message.wardCode));
     }
 
     // Handle annotation count from content script
